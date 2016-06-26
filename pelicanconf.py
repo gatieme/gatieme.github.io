@@ -8,7 +8,7 @@ SITEURL = ''
 SITEURL = u'https://gatieme.github.io'
 SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
 
-
+FEED_DOMAIN = SITEURL
 PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
