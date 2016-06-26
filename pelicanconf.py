@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'gatieme'
 SITENAME = u'gatieme'
 SITEURL = ''
-
+SITEURL = u'https://gatieme.github.io'
 PATH = 'content'
 
 TIMEZONE = 'Hongkong'
