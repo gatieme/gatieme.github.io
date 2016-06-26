@@ -11,9 +11,14 @@ SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
 
 PATH = 'content'
 
-TIMEZONE = 'Hongkong'
+TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = u'cn'
+DEFAULT_LANG = u'zh'
+
+ARCHIVES_URL = "archives.html"
+
+GITHUB_URL = u"https://github.com/gatieme/gatieme.github.io"
+GITHUB_POSITION = "right"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
