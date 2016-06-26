@@ -6,6 +6,9 @@ AUTHOR = u'gatieme'
 SITENAME = u'gatieme'
 SITEURL = ''
 SITEURL = u'https://gatieme.github.io'
+SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
+
+
 PATH = 'content'
 
 TIMEZONE = 'Hongkong'
