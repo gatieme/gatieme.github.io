@@ -3,13 +3,17 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'gatieme'
+AUTHOR_EMAIL = u'gatieme@163.com'
+
+TAGLINE = 'Whatever is worth doing is worth doing well.'
+
 SITENAME = u'gatieme'
 SITEURL = u'http://localhost:8000'
 #SITEURL = u'https://gatieme.github.io'
 SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
+DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
-FEED_DOMAIN = SITEURL
-PATH = 'content'
+
 
 TIMEZONE = 'Asia/Shanghai'
 
@@ -17,15 +21,39 @@ DEFAULT_LANG = u'zh'
 
 ARCHIVES_URL = "archives.html"
 
+DELETE_OUTPUT_DIRECTORY = False
+
 GITHUB_URL = u"https://github.com/gatieme/gatieme.github.io"
 GITHUB_POSITION = "right"
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
+FEED_DOMAIN = SITEURL
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+
+
+# Content path
+PATH = 'content'
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['articles']
+STATIC_PATHS = ['images', 'files']
+EXTRA_PATH_METADATA = {
+    'files/robots.txt': {'path': 'robots.txt'},
+    'images/favicon.ico': {'path': 'favicon.ico'},
+}
+
+
+# URL settings
+PPAGINATION_PATTERNS = ((1, '{base_name}/', '{base_name}/index.html'),
+                       (2, '{base_name}/page/', '{base_name}/page/{number}.html'),)
+AARTICLE_URL = ('articles/{slug}.html')
+AARTICLE_SAVE_AS = ('articles/{slug}.html')
+PPAGE_LANG_SAVE_AS = False
+
 
 # Blogroll
 LINKS = (('LXR', 'http://lxr.free-electrons.com/'),
@@ -38,17 +66,19 @@ SOCIAL = (('github', 'https://github.com/gatieme'),
           ('twitter', 'https://twitter.com/gatieme'),
           ('facebook', 'https://www.facebook.com/gatieme'),)
 
-DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-THEME = './theme/zurb-F5-basic'
-#THEME = './theme/neat'
+# Theme
+THEME = 'pelican-themes/zurb-F5-basic'
+COVER_BG_COLOR = '#375152'
+DEFAULT_PAGINATION = 10
 
-#  plugins configure
-PLUGIN_PATH = u"pelican-plugins"
-PLUGINS = ["sitemap"]
+
+# Plugins configure
+PLUGIN_PATHS = ["pelican-plugins",]
+PLUGINS = ["sitemap", ]
 
 ## 配置sitemap 插件
 SITEMAP = {
@@ -68,3 +98,7 @@ SITEMAP = {
 # foobar will not be used, because it's not in caps. All configuration keys
 # have to be in caps
 foobar = "barbaz"
+
+
+# Can be useful in development, but set to False when you're ready to publish
+RELATIVE_URLS = False
