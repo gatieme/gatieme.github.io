@@ -32,6 +32,7 @@ ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
 endif
 
+
 help:
 	@echo 'Makefile for a pelican Web site                                        '
 	@echo '                                                                       '
