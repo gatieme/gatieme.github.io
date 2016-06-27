@@ -14,3 +14,6 @@ Source Code : https://github.com/lizherui/lizherui.github.io
 
 
 https://www.zhihu.com/question/21981094
+https://disqus.com/
+http://mcsrainbow.github.io/category/linuxunix.html
+https://github.com/mcsrainbow/pelican
