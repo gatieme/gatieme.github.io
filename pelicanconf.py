@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'gatieme'
 SITENAME = u'gatieme'
-SITEURL = u'https://gatieme.github.io'
+SITEURL = u'http://localhost:8000'
+#SITEURL = u'https://gatieme.github.io'
 SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
 
 FEED_DOMAIN = SITEURL
@@ -27,20 +28,43 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('LXR', 'http://lxr.free-electrons.com/'),
+         ('牛客', 'http://www.nowcoder.com/contestRoom'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('github', 'https://github.com/gatieme'),
+          ('facebook', 'https://www.facebook.com/gatieme'),
+          ('twitter', 'https://twitter.com/gatieme'),
+          ('csdn', 'http://blog.csdn.net/gatieme'),
+          ('stackoverflow', 'http://stackoverflow.com/users/4935308/gatieme'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-THEME = './theme/pelican-bootstrap3'
+THEME = './theme/zurb-F5-basic'
 #THEME = './theme/neat'
 
+#  plugins configure
+PLUGIN_PATH = u"pelican-plugins"
+PLUGINS = ["sitemap"]
+
+## 配置sitemap 插件
+SITEMAP = {
+    "format": "xml",
+    "priorities": {
+        "articles": 0.7,
+        "indexes": 0.5,
+        "pages": 0.3,
+    },
+    "changefreqs": {
+        "articles": "monthly",
+        "indexes": "daily",
+        "pages": "monthly",
+    }
+}
+
+# foobar will not be used, because it's not in caps. All configuration keys
+# have to be in caps
+foobar = "barbaz"
