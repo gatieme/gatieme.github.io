@@ -4,70 +4,70 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://localhost:8000/index.html</loc>
-<lastmod>2016-06-27T20:41:49-00:00</lastmod>
+<loc>https://gatieme.github.io/index.html</loc>
+<lastmod>2016-06-27T21:07:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/archives.html</loc>
-<lastmod>2016-06-27T20:41:49-00:00</lastmod>
+<loc>https://gatieme.github.io/archives.html</loc>
+<lastmod>2016-06-27T21:07:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tags.html</loc>
-<lastmod>2016-06-27T20:41:49-00:00</lastmod>
+<loc>https://gatieme.github.io/tags.html</loc>
+<lastmod>2016-06-27T21:07:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/categories.html</loc>
-<lastmod>2016-06-27T20:41:49-00:00</lastmod>
+<loc>https://gatieme.github.io/categories.html</loc>
+<lastmod>2016-06-27T21:07:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/pages/about.html</loc>
+<loc>https://gatieme.github.io/pages/about.html</loc>
 <lastmod>2013-03-14T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/hello.html</loc>
+<loc>https://gatieme.github.io/hello.html</loc>
 <lastmod>2014-09-24T02:06:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/category/uncategorized.html</loc>
+<loc>https://gatieme.github.io/category/uncategorized.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/pelican.html</loc>
+<loc>https://gatieme.github.io/tag/pelican.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/markdown.html</loc>
+<loc>https://gatieme.github.io/tag/markdown.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/author/mcsrainbow.html</loc>
+<loc>https://gatieme.github.io/author/mcsrainbow.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
