@@ -1,5 +1,5 @@
-Title:Link
-Date:2016-06-27 06:31
+Title: Link
+Date: 2016-06-27 06:31
 
 
 Static Site Generators
@@ -7,7 +7,7 @@ Static Site Generators
 
 A definitive list of tools for generating static websites.
 
-Table of Contents
+#1. Table of Contents
 -----------------
 
 * [.NET](#net)
@@ -39,16 +39,17 @@ Table of Contents
 * [Shell](#shell)
 * [Tcl](#tcl)
 
-## .NET
+##1.2  .NET
+-------
 
 * [Pretzel](https://github.com/Code52/pretzel)
 * [Wyam](http://wyam.io)
 
-## Awk
+##1.3  Awk
 
 * [zodiac](https://github.com/nuex/zodiac)
 
-## Bash
+##1.4  Bash
 
 * [baker](https://github.com/taylorchu/baker/)
 * [bashblog](https://github.com/carlesfe/bashblog)
@@ -56,15 +57,15 @@ Table of Contents
 * [Pagegen](http://pagegen.phnd.net/)
 * [SKF](http://skf.jeannedhack.org/)
 
-## C++
+##1.5  C++
 
 * [Leo](http://leohtml.sourceforge.net/)
 
-## C Sharp
+##1.6  C Sharp
 
 * [Graze](https://github.com/mikoskinen/graze)
 
-## C and Perl
+##1.7  C and Perl
 
 * [BlazeBlogger](http://blaze.blackened.cz/)
 * [blosxom](http://blosxom.sourceforge.net/documentation/users/configure/static.html)
@@ -81,19 +82,19 @@ Table of Contents
 * [XDO](http://www.idocs.com/xdo/)
 * [Zucchini](https://metacpan.org/pod/Zucchini)
 
-## Clojure
+##1.8  Clojure
 
 * [Cryogen](http://cryogenweb.org/)
 * [incise](http://www.ryanmcg.com/incise/)
 * [misaki](https://github.com/liquidz/misaki)
 * [Static](http://nakkaya.com/static.html)
 
-## Common Lisp
+##1.9  Common Lisp
 
 * [coleslaw](http://www.cliki.net/coleslaw)
 * [regenerate](https://gist.github.com/TeMPOraL/4190622)
 
-## Dropbox
+##1.10  Dropbox
 
 * [900dpi](http://900dpi.com/)
 * [Blogmark](https://blogmark.me/)
@@ -111,15 +112,15 @@ Table of Contents
 * [Telegram](https://telegr.am/)
 * [Yoozon](https://yoozon.com/)
 
-## Elixir
+##1.11 Elixir
 
 * [Obelisk](https://github.com/BennyHallett/obelisk)
 
-## Erlang
+##1.12 Erlang
 
 * [LambdaPad](https://github.com/gar1t/lambdapad)
 
-## Go
+##1.13 Go
 
 * [gor](https://github.com/wendal/gor)
 * [gostatic](https://github.com/piranha/gostatic)
@@ -128,23 +129,23 @@ Table of Contents
 * [jkl](https://github.com/drone/jkl)
 * [kkr](https://github.com/dchest/kkr)
 
-## Groovy
+##1.14  Groovy
 
 * [Grain](http://sysgears.com/grain/)
 * [Rizzo](https://github.com/fifthposition/rizzo/)
 
-## Haskell
+##1.15  Haskell
 
 * [Hakyll](http://jaspervdj.be/hakyll/)
 * [yst](https://github.com/jgm/yst)
 
-## Java
+##1.17  Java
 
 * [FMPP](http://fmpp.sourceforge.net/)
 * [JBake](http://jbake.org/)
 * [StaGen](https://github.com/wiztools/stagen)
 
-## Language Agnostic
+##1.18  Language Agnostic
 
 * [Hammer](http://hammerformac.com/)
 * [LiveReload](http://livereload.com/)
@@ -153,15 +154,15 @@ Table of Contents
 * [StaticMate](https://staticmate.com/)
 * [vimwiki](https://github.com/vim-scripts/vimwiki)
 
-## Lua
+##1.19  Lua
 
 * [Luapress](https://github.com/Fizzadar/Luapress)
 
-## Nimrod
+##1.20  Nimrod
 
 * [ipsum genera](https://github.com/dom96/ipsumgenera)
 
-## Node.js
+##1.21  Node.js
 
 * [antwar](https://github.com/antwarjs/antwar)
 * [Apto](https://github.com/modparadigm/apto)
@@ -253,12 +254,12 @@ Table of Contents
 * [yassg](https://npmjs.org/package/yassg)
 * [Yeoman](http://yeoman.io/)
 
-## OCaml
+##1.22  OCaml
 
 * [Stog](http://zoggy.github.io/stog/)
 * [Ultra Simple Site Maker](http://loup-vaillant.fr/projects/ussm/)
 
-## PHP
+##1.23  PHP
 
 * [Animal](https://github.com/billpatrianakos/animal-f)
 * [BloggerCMS](https://github.com/sarfraznawaz2005/BloggerCMS)
@@ -285,7 +286,7 @@ Table of Contents
 * [Yellow](http://github.com/datenstrom/yellow)
 * [Wadoo](https://github.com/alpacaaa/wadoo)
 
-## Python
+##1.24  Python
 
 * [Acrylamid](https://github.com/posativ/acrylamid)
 * [Blatter](https://bitbucket.org/jek/blatter/)
@@ -353,10 +354,10 @@ Table of Contents
 * [Webber](http://gitorious.org/webber)
 * [Wok](https://github.com/mythmon/wok)
 
-## Racket
+##1.25  Racket
 * [Frog](https://github.com/greghendershott/frog)
 
-## Ruby
+##1.26  Ruby
 
 * [Ace](https://github.com/botanicus/ace)
 * [Bonsai](http://tinytree.info/)
@@ -403,14 +404,14 @@ Table of Contents
 * [zenweb](http://www.zenspider.com/projects/zenweb.html)
 * [{ :awestruct }](http://awestruct.org/)
 
-## Scala
+##1.27  Scala
 * [monkeyman](https://github.com/wspringer/monkeyman)
 * [Scalate](https://github.com/scalate/scalate)
 
-## Scheme
-* [Hyde](http://wiki.call-cc.org/eggref/4/hyde)
+##1.28  Scheme
+*  [Hyde](http://wiki.call-cc.org/eggref/4/hyde)
 
-## Shell
+##1.29  Shell
 
 * [Exposé](https://github.com/Jack000/Expose)
 * [fugitive](https://gitorious.org/fugitive)
@@ -420,6 +421,24 @@ Table of Contents
 * [Vee](http://www.0x743.com/vee/)
 * [werc](http://werc.cat-v.org/)
 
-## Tcl
+##1.30  Tcl
 
 * [Tclssg](https://github.com/dbohdan/tclssg)
+
+
+#2  Help站点
+
+| 站点 | 描述 |
+|:-------:|:-------:|
+| [Static Site Generators](https://staticsitegenerators.net) | 统计了各种工具的使用情况, 排名等信息 |
+| [Disqus](https://disqus.com/admin/signup) | 第三方评论系统, 在Disqus上申请一个站点，记牢Shortname |
+| [Google Analytics](http://www.google.com/analytics) | 去Google Analytics申请账号，记下跟踪ID |
+| [Google Webmasters](http://www.google.com/webmasters) | 这个就是Google站长工具，使用它的目的是为了让博客被Google更好的收录，比如手动让Googlebot抓取、提交Robots、更新Sitemap等等，各方面完爆百度站长 |
+| [Godaddy](https://www.godaddy.com/) | 狗爹-域名注册商 |
+| [Dnspod](https://www.dnspod.cn/) | 提供DNS解析服务, 添加新域名，并申请一条A记录指向Github Pages的ip:207.97.227.245 |
+
+#3	关于本站
+-------
+
+本站点基于Peclian(Python)创建
+
