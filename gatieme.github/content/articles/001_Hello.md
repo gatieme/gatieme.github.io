@@ -1,6 +1,6 @@
 Title: Hello
-Date: 2014-09-24 02:06
-Category: Uncategorized
+Date: 2016-06-27 07:22
+Category: Linux
 Tags: Pelican, Markdown
 Slug: hello
 Author: mcsrainbow
