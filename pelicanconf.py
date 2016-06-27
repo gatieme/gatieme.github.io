@@ -33,10 +33,10 @@ LINKS = (('LXR', 'http://lxr.free-electrons.com/'),
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/gatieme'),
-          ('facebook', 'https://www.facebook.com/gatieme'),
-          ('twitter', 'https://twitter.com/gatieme'),
+          ('stackoverflow', 'http://stackoverflow.com/users/4935308/gatieme'),
           ('csdn', 'http://blog.csdn.net/gatieme'),
-          ('stackoverflow', 'http://stackoverflow.com/users/4935308/gatieme'),)
+          ('twitter', 'https://twitter.com/gatieme'),
+          ('facebook', 'https://www.facebook.com/gatieme'),)
 
 DEFAULT_PAGINATION = 10
 
