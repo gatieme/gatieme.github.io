@@ -21,6 +21,7 @@ DEFAULT_LANG = u'zh'
 
 ARCHIVES_URL = "archives.html"
 
+DISPLAY_CATEGORIES_ON_MENU = True
 DELETE_OUTPUT_DIRECTORY = False
 
 GITHUB_URL = u"https://github.com/gatieme/gatieme.github.io"
