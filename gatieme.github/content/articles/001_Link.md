@@ -1,6 +1,9 @@
-Title: Link
+Title: 各种语言的静态博客程序总结
 Date: 2016-06-27 06:31
-
+Tags: linux, blog, pelican
+Category: Linux
+Slug: static-site-generators
+Author: Francis Cabrel
 
 Static Site Generators
 ====================
