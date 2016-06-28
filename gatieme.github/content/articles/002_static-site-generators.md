@@ -1,4 +1,4 @@
-Title: 各种语言的静态博客程序总结
+Title: static-site-generators
 Date: 2016-06-27 06:31
 Tags: linux, blog, pelican
 Category: Linux
