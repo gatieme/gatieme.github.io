@@ -6,6 +6,7 @@ Slug: static-site-generators
 Author: gatieme
 Summary: With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
 
+With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
 
 | Title | Date | Category | Tags | Slug |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
@@ -19,7 +20,7 @@ A definitive list of tools for generating static websites.
 #1. Table of Contents
 -----------------
 
-* [.NET](#1.1  net)
+* [.NET](##1.2  .NET)
 * [Awk](#1.2  awk)
 * [Bash](#bash)
 * [C++](#c)
@@ -48,17 +49,17 @@ A definitive list of tools for generating static websites.
 * [Shell](#shell)
 * [Tcl](#tcl)
 
-##1.2  .NET
+##1.1  .NET
 -------
 
 * [Pretzel](https://github.com/Code52/pretzel)
 * [Wyam](http://wyam.io)
 
-##1.3  Awk
+##1.2  Awk
 
 * [zodiac](https://github.com/nuex/zodiac)
 
-##1.4  Bash
+##1.3  Bash
 
 * [baker](https://github.com/taylorchu/baker/)
 * [bashblog](https://github.com/carlesfe/bashblog)
@@ -66,15 +67,15 @@ A definitive list of tools for generating static websites.
 * [Pagegen](http://pagegen.phnd.net/)
 * [SKF](http://skf.jeannedhack.org/)
 
-##1.5  C++
+##1.4  C++
 
 * [Leo](http://leohtml.sourceforge.net/)
 
-##1.6  C Sharp
+##1.5  C Sharp
 
 * [Graze](https://github.com/mikoskinen/graze)
 
-##1.7  C and Perl
+##1.6  C and Perl
 
 * [BlazeBlogger](http://blaze.blackened.cz/)
 * [blosxom](http://blosxom.sourceforge.net/documentation/users/configure/static.html)
@@ -91,19 +92,19 @@ A definitive list of tools for generating static websites.
 * [XDO](http://www.idocs.com/xdo/)
 * [Zucchini](https://metacpan.org/pod/Zucchini)
 
-##1.8  Clojure
+##1.7  Clojure
 
 * [Cryogen](http://cryogenweb.org/)
 * [incise](http://www.ryanmcg.com/incise/)
 * [misaki](https://github.com/liquidz/misaki)
 * [Static](http://nakkaya.com/static.html)
 
-##1.9  Common Lisp
+##1.8  Common Lisp
 
 * [coleslaw](http://www.cliki.net/coleslaw)
 * [regenerate](https://gist.github.com/TeMPOraL/4190622)
 
-##1.10  Dropbox
+##1.9  Dropbox
 
 * [900dpi](http://900dpi.com/)
 * [Blogmark](https://blogmark.me/)
