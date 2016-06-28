@@ -6,12 +6,13 @@ Slug: static-site-generators
 Author: gatieme
 Summary: With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
 
-With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
+
 
 | Title | Date | Category | Tags | Slug |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
 | static-site-generators | 2016-06-27 06:31 | Linux | linux, blog, pelican | static-site-generators |
 
+With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
 
 These static blog generator are based on Bash, C/C++, C# and Perl, Clojure, Common Lisp, Dropbox and other preparation.
 
@@ -436,7 +437,7 @@ A definitive list of tools for generating static websites.
 * [Tclssg](https://github.com/dbohdan/tclssg)
 
 
-#2  Help站点
+#2  For Help
 
 | 站点 | 描述 |
 |:-------:|:-------:|
@@ -448,7 +449,7 @@ A definitive list of tools for generating static websites.
 | [Godaddy](https://www.godaddy.com/) | Get a free domain with a website from GoDaddy. |
 | [Dnspod](https://www.dnspod.cn/) | DNS resolution service, add a new domain name, and apply a Github Pages A record points to the ip: 207.97.227.245 |
 
-#3	关于本站
+#3	About This Site
 -------
 
 Our Site is based on Pelican(Python)

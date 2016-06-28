@@ -60,7 +60,7 @@ PPAGE_LANG_SAVE_AS = False
 # Blogroll
 LINKS = (('LXR', 'http://lxr.free-electrons.com/'),
          ('Pelican', 'http://docs.getpelican.com/en/3.6.3'),
-         ('牛客', 'http://www.nowcoder.com/contestRoom'),)
+         ('NowCoder', 'http://www.nowcoder.com/contestRoom'),)
 
 # Social widget
 SOCIAL = (('GitHub', 'https://github.com/gatieme'),
