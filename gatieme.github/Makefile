@@ -56,8 +56,9 @@ help:
 	@echo '                                                                       '
 
 html:
+	ln -s .. output
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-
+	rm output
 clean:
 	@echo "you can't clean this website..."
 	#[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)/*
