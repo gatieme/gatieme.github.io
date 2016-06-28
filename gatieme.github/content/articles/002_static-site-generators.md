@@ -20,7 +20,7 @@ A definitive list of tools for generating static websites.
 #1. Table of Contents
 -----------------
 
-* [.NET](##1.2  .NET)
+* [.NET](##1.1  .NET)
 * [Awk](#1.2  awk)
 * [Bash](#bash)
 * [C++](#c)
@@ -122,15 +122,15 @@ A definitive list of tools for generating static websites.
 * [Telegram](https://telegr.am/)
 * [Yoozon](https://yoozon.com/)
 
-##1.11 Elixir
+##1.10 Elixir
 
 * [Obelisk](https://github.com/BennyHallett/obelisk)
 
-##1.12 Erlang
+##1.11 Erlang
 
 * [LambdaPad](https://github.com/gar1t/lambdapad)
 
-##1.13 Go
+##1.12 Go
 
 * [gor](https://github.com/wendal/gor)
 * [gostatic](https://github.com/piranha/gostatic)
@@ -139,23 +139,23 @@ A definitive list of tools for generating static websites.
 * [jkl](https://github.com/drone/jkl)
 * [kkr](https://github.com/dchest/kkr)
 
-##1.14  Groovy
+##1.13  Groovy
 
 * [Grain](http://sysgears.com/grain/)
 * [Rizzo](https://github.com/fifthposition/rizzo/)
 
-##1.15  Haskell
+##1.14  Haskell
 
 * [Hakyll](http://jaspervdj.be/hakyll/)
 * [yst](https://github.com/jgm/yst)
 
-##1.17  Java
+##1.15  Java
 
 * [FMPP](http://fmpp.sourceforge.net/)
 * [JBake](http://jbake.org/)
 * [StaGen](https://github.com/wiztools/stagen)
 
-##1.18  Language Agnostic
+##1.16  Language Agnostic
 
 * [Hammer](http://hammerformac.com/)
 * [LiveReload](http://livereload.com/)
@@ -164,15 +164,15 @@ A definitive list of tools for generating static websites.
 * [StaticMate](https://staticmate.com/)
 * [vimwiki](https://github.com/vim-scripts/vimwiki)
 
-##1.19  Lua
+##1.17  Lua
 
 * [Luapress](https://github.com/Fizzadar/Luapress)
 
-##1.20  Nimrod
+##1.18  Nimrod
 
 * [ipsum genera](https://github.com/dom96/ipsumgenera)
 
-##1.21  Node.js
+##1.19  Node.js
 
 * [antwar](https://github.com/antwarjs/antwar)
 * [Apto](https://github.com/modparadigm/apto)
@@ -264,12 +264,12 @@ A definitive list of tools for generating static websites.
 * [yassg](https://npmjs.org/package/yassg)
 * [Yeoman](http://yeoman.io/)
 
-##1.22  OCaml
+##1.20  OCaml
 
 * [Stog](http://zoggy.github.io/stog/)
 * [Ultra Simple Site Maker](http://loup-vaillant.fr/projects/ussm/)
 
-##1.23  PHP
+##1.21  PHP
 
 * [Animal](https://github.com/billpatrianakos/animal-f)
 * [BloggerCMS](https://github.com/sarfraznawaz2005/BloggerCMS)
@@ -296,7 +296,7 @@ A definitive list of tools for generating static websites.
 * [Yellow](http://github.com/datenstrom/yellow)
 * [Wadoo](https://github.com/alpacaaa/wadoo)
 
-##1.24  Python
+##1.22  Python
 
 * [Acrylamid](https://github.com/posativ/acrylamid)
 * [Blatter](https://bitbucket.org/jek/blatter/)
@@ -364,10 +364,10 @@ A definitive list of tools for generating static websites.
 * [Webber](http://gitorious.org/webber)
 * [Wok](https://github.com/mythmon/wok)
 
-##1.25  Racket
+##1.23  Racket
 * [Frog](https://github.com/greghendershott/frog)
 
-##1.26  Ruby
+##1.24  Ruby
 
 * [Ace](https://github.com/botanicus/ace)
 * [Bonsai](http://tinytree.info/)
@@ -414,14 +414,14 @@ A definitive list of tools for generating static websites.
 * [zenweb](http://www.zenspider.com/projects/zenweb.html)
 * [{ :awestruct }](http://awestruct.org/)
 
-##1.27  Scala
+##1.25  Scala
 * [monkeyman](https://github.com/wspringer/monkeyman)
 * [Scalate](https://github.com/scalate/scalate)
 
-##1.28  Scheme
+##1.26  Scheme
 *  [Hyde](http://wiki.call-cc.org/eggref/4/hyde)
 
-##1.29  Shell
+##1.27  Shell
 
 * [Exposé](https://github.com/Jack000/Expose)
 * [fugitive](https://gitorious.org/fugitive)
@@ -431,7 +431,7 @@ A definitive list of tools for generating static websites.
 * [Vee](http://www.0x743.com/vee/)
 * [werc](http://werc.cat-v.org/)
 
-##1.30  Tcl
+##1.28  Tcl
 
 * [Tclssg](https://github.com/dbohdan/tclssg)
 
@@ -440,15 +440,15 @@ A definitive list of tools for generating static websites.
 
 | 站点 | 描述 |
 |:-------:|:-------:|
-| [Static Site Generators](https://staticsitegenerators.net) | 统计了各种工具的使用情况, 排名等信息 |
-| [Disqus](https://disqus.com/admin/signup) | 第三方评论系统, 在Disqus上申请一个站点，记牢Shortname |
-| [Google Analytics](http://www.google.com/analytics) | 去Google Analytics申请账号，记下跟踪ID |
-| [Google Webmasters](http://www.google.com/webmasters) | 这个就是Google站长工具，使用它的目的是为了让博客被Google更好的收录，比如手动让Googlebot抓取、提交Robots、更新Sitemap等等，各方面完爆百度站长 |
-| [Godaddy](https://www.godaddy.com/) | 狗爹-域名注册商 |
-| [Dnspod](https://www.dnspod.cn/) | 提供DNS解析服务, 添加新域名，并申请一条A记录指向Github Pages的ip:207.97.227.245 |
+| [Static Site Generators](https://staticsitegenerators.net) | Static Site Generators<br><br>The definitive listing of Static Site Generators — all 437 of them! |
+| [Disqus](https://disqus.com/admin/signup) | The #1 way to build your audience<br><br>Disqus offers the best add-on tools for site owners to power discussions, increase engagement, and earn revenue.<br> Please don't forget your Shortname |
+| [Google Analytics](http://www.google.com/analytics) | Get stronger results across all your sites, apps and offline channels. Google’s analytics solutions help you turn customer insights into real gains.
+ |
+| [Google Webmasters](http://www.google.com/webmasters) | Track your site's search performance with Google Search Console and browse around for more webmaster resources. |
+| [Godaddy](https://www.godaddy.com/) | Get a free domain with a website from GoDaddy. |
+| [Dnspod](https://www.dnspod.cn/) | DNS resolution service, add a new domain name, and apply a Github Pages A record points to the ip: 207.97.227.245 |
 
 #3	关于本站
 -------
 
-本站点基于Peclian(Python)创建
-
+Our Site is based on Pelican(Python)
