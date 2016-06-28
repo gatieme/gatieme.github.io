@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
 <head>
     <meta charset="utf-8" />
     <!-- Set the viewport width to device width for mobile -->
@@ -9,8 +10,8 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/foundation.min.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" />	
-    <script src="{{ SITEURL }}/theme/js/modernizr.js"></script>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" />
+    <script src="{{ SITEURL }}/theme/js/vendor/custom.modernizr.js"></script>
 </head>
 
 <body>
@@ -60,20 +61,25 @@
         <ul class="side-nav">
             <li><a href="{{ SITEURL }}/archives.html">Archives</a>
             <li><a href="{{ SITEURL }}/tags.html">Tags</a>
-            {% if FEED_RSS %}
-            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" rel="alternate">Atom feed</a></li>
+            {% if FEED_ALL_ATOM %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom feed</a></li>
             {% endif %}
             {% if FEED_RSS %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" rel="alternate">RSS feed</a></li>
             {% endif %}
+            {% if DISPLAY_PAGES_ON_RIGHT %}
+              {% for page in PAGES %}
+                  <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+              {% endfor %}
+            {% endif %}
         </ul>
 
-        {% if categories %}		
+        {% if categories %}
         <h5 class="sidebar-title">Categories</h5>
         <ul class="side-nav">
         {% for cat, null in categories %}
             <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-        {% endfor %}   
+        {% endfor %}
         </ul>
         {% endif %}
 
@@ -85,10 +91,10 @@
         {% endfor %}
         </ul>
         {% endif %}
-		
+
         {% if SOCIAL %}
         <h5 class="sidebar-title">Social</h5>
-        <ul class="side-nav">
+        <ul class="side-nav social">
         {% for name, link in SOCIAL %}
             <li><a href="{{ link }}">{{ name }}</a></li>
         {% endfor %}
@@ -100,6 +106,7 @@
 </div> <!-- End Main Content and Sidebar -->
 
 
+
 <!-- Footer -->
 <footer class="row">
     <div class="large-12 columns">
@@ -107,6 +114,7 @@
         <div class="row">
             <div class="large-6 columns">
                     <p><a href="https://github.com/getpelican/pelican-themes/tree/master/zurb-F5-basic">ZurbFoundation5</a> Theme | Powered by <a href="http://docs.getpelican.com/">Pelican</a><p>
+                    <p><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2014
                     {% include 'by_nc_sa.html' %}
             </div>
             </div>
