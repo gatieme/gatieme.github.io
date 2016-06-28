@@ -4,29 +4,23 @@ Tags: linux, blog, pelican
 Category: Linux
 Slug: static-site-generators
 Author: gatieme
-Summary: 随着Wordpress等博客系统的日益CMS化，愈发臃肿。而静态博客系统的出现在一定程度上解决了这一问题，因而获得了不少个人博主的青睐。那么，静态博客程序到底都有哪些呢?
+Summary: With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
+
 
 | Title | Date | Category | Tags | Slug |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
 | static-site-generators | 2016-06-27 06:31 | Linux | linux, blog, pelican | static-site-generators |
 
 
-
-
-
-Static Site Generators
-====================
-
-这些静态博客生成程序分别是基于Bash、、C++、C#、C and Perl、Clojure、Common Lisp、Dropbox等编写的。
-
+These static blog generator are based on Bash, C/C++, C# and Perl, Clojure, Common Lisp, Dropbox and other preparation.
 
 A definitive list of tools for generating static websites.
 
 #1. Table of Contents
 -----------------
 
-* [.NET](#net)
-* [Awk](#awk)
+* [.NET](#1.1  net)
+* [Awk](#1.2  awk)
 * [Bash](#bash)
 * [C++](#c)
 * [C#](#c-sharp)
