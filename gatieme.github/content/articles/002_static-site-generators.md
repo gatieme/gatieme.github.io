@@ -6,6 +6,13 @@ Slug: static-site-generators
 Author: gatieme
 Summary: 随着Wordpress等博客系统的日益CMS化，愈发臃肿。而静态博客系统的出现在一定程度上解决了这一问题，因而获得了不少个人博主的青睐。那么，静态博客程序到底都有哪些呢?
 
+| Title | Date | Category | Tags | Slug |
+|:-------:|:-------:|:-------:|:-------:|:-------:|
+| static-site-generators | 2016-06-27 06:31 | Linux | linux, blog, pelican | static-site-generators |
+
+
+
+
 
 Static Site Generators
 ====================
