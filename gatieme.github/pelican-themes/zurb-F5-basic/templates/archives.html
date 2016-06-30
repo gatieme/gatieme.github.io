@@ -9,8 +9,6 @@
         <tr>
         <td>{{ article.locale_date }}</td>
         <td><a href='{{ article.url }}'>{{ article.title }}</a></td>
-    {% include 'article_infos.html' %}{{ article.summary }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
-
         </tr>
     {% endfor %}
 
