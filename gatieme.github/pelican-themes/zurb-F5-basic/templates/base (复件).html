@@ -108,42 +108,43 @@
 
 
 <!-- Footer -->
-<footer id="credits" class="row">
-  <div class="seven columns left-center">
-
-        <div class="large-6 columns">
-            <p><a href="https://github.com/getpelican/pelican-themes/tree/master/zurb-F5-basic">ZurbFoundation5</a> Theme | Powered by <a href="http://docs.getpelican.com/">Pelican</a><p>
-            <p><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2016
-                {% include 'by_nc_sa.html' %}
-        </div>
-  </div>
-
-
-  <div class="seven columns">
-    <div class="row">
-      <ul class="socbtns">
-
-        {% if GITHUB_URL %}
-        <li><div class="btn primary"><a href="{{ GITHUB_URL }}" target="_blank">Github</a></div></li>
-        {% endif %}
-
-        {% if TWITTER_URL %}
-        <li><div class="btn twitter"><a href="{{ TWITTER_URL }}" target="_blank">Twitter</a></div></li>
-        {% endif %}
-
-        {% if FACEBOOK_URL %}
-        <li><div class="btn facebook"><a href="{{ FACEBOOK_URL }}" target="_blank">Facebook</a></div></li>
-        {% endif %}
-
-        {% if GOOGLEPLUS_URL %}
-        <li><div class="btn danger"><a href="{{ GOOGLEPLUS_URL }}" target="_blank">Google+</a></div></li>
-        {% endif %}
-
-      </ul>
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+                <p><a href="https://github.com/getpelican/pelican-themes/tree/master/zurb-F5-basic">ZurbFoundation5</a> Theme | Powered by <a href="http://docs.getpelican.com/">Pelican</a><p>
+                <p><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2016
+                    {% include 'by_nc_sa.html' %}
+            </div>
+            </div>
     </div>
-  </div>
-</footer>
 
+    <div class="seven columns">
+  <div class="row">
+    <ul class="socbtns">
+
+      {% if GITHUB_URL %}
+      <li><div class="btn primary"><a href="{{ GITHUB_URL }}" target="_blank">Github</a></div></li>
+      {% endif %}
+
+      {% if TWITTER_URL %}
+      <li><div class="btn twitter"><a href="{{ TWITTER_URL }}" target="_blank">Twitter</a></div></li>
+      {% endif %}
+
+      {% if FACEBOOK_URL %}
+      <li><div class="btn facebook"><a href="{{ FACEBOOK_URL }}" target="_blank">Facebook</a></div></li>
+      {% endif %}
+
+      {% if GOOGLEPLUS_URL %}
+      <li><div class="btn danger"><a href="{{ GOOGLEPLUS_URL }}" target="_blank">Google+</a></div></li>
+      {% endif %}
+
+    </ul>
+  </div>
+</div>
+
+</footer>
 {% include 'piwik.html' %}
 {% include 'github.html' %}
 {% include 'google_analytics.html' %}
