@@ -7,7 +7,7 @@ AUTHOR_EMAIL = u'gatieme@163.com'
 
 TAGLINE = 'Whatever is worth doing is worth doing well.'
 
-SITENAME = u'gatieme'
+SITENAME = u'Wind Rises'
 #SITEURL = u'http://localhost:8000'
 SITEURL = u'https://gatieme.github.io'
 SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
