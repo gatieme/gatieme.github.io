@@ -8,8 +8,8 @@ AUTHOR_EMAIL = u'gatieme@163.com'
 TAGLINE = 'Whatever is worth doing is worth doing well.'
 
 SITENAME = u'gatieme'
-#SITEURL = u'http://localhost:8000'
-SITEURL = u'https://gatieme.github.io'
+SITEURL = u'http://localhost:8000'
+#SITEURL = u'https://gatieme.github.io'
 SITE_SOURCE = u"https://github.com/gatieme/gatieme.github.io"
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
@@ -74,7 +74,9 @@ SOCIAL = (('GitHub', 'https://github.com/gatieme'),
 #RELATIVE_URLS = True
 
 # Theme
-THEME = './pelican-themes/zurb-F5-basic'
+#THEME = './pelican-themes/zurb-F5-basic'
+THEME = './pelican-themes/gum'
+#THEME = './pelican-themes/zurb-F5-basic'
 #COVER_BG_COLOR = '#375152'
 DEFAULT_PAGINATION = 10
 

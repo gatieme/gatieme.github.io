@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="utf-8" />
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
 
-    <title>static-site-generators</title>
+        <title>static-site-generators</title>
+        <meta charset="utf-8" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gatieme Full Atom Feed" />
+        <link href="http://localhost:8000/feeds/linux.atom.xml" type="application/atom+xml" rel="alternate" title="gatieme Categories Atom Feed" />
 
-    <link rel="stylesheet" href="https://gatieme.github.io/theme/css/normalize.css" />
-    <link rel="stylesheet" href="https://gatieme.github.io/theme/css/foundation.min.css" />
-    <link rel="stylesheet" href="https://gatieme.github.io/theme/css/style.css" />
-    <link rel="stylesheet" href="https://gatieme.github.io/theme/css/pygments.css" />
-    <script src="https://gatieme.github.io/theme/js/vendor/custom.modernizr.js"></script>
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygment.css" />
+
+        <script src="http://localhost:8000/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
 </head>
 
-<body>
-
-<!-- Nav Bar -->
-<nav>
-<div class="top-bar">
-<div class="row">
-    <div class="large-9 large-centered columns">
-	    <h1><a href="https://gatieme.github.io">gatieme</a></h1>
-    </div>
-</div>
-</div>
-
-<!-- Show menu items and pages -->
-<div class="row">
-<div class="large-9 columns">
-    <ul class="button-group navigation">
-
-            <li><a href="https://gatieme.github.io/pages/about.html" class="button secondary small">About</a></li>
-    </ul>
-</div>
-</div>
-</nav>
-<!-- End Nav -->
+<body id="index" class="home">
 
 
-<!-- Main Page Content and Sidebar -->
-<div class="row">
+    <div class="container">
 
-    <!-- Main Blog Content -->
-    <div class="large-9 columns">
-<article>
-    <header>
-        <h3 class="article-title"><a href="https://gatieme.github.io/static-site-generators.html" rel="bookmark"
-        title="Permalink to static-site-generators">static-site-generators</a></h3>
-    </header>
+        <div class="row">
 
-<h6 class="subheader" title="2016-06-27T06:31:00+08:00">2016-06-27
-</h6>
+          <header id="banner" class="body">
+                  <h1><a href="http://localhost:8000/">gatieme <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://localhost:8000/">Home</a></li>
+
+                <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
 
 
-    <table>
+            <header>
+              <h2 class="entry-title">
+                <a href="http://localhost:8000/static-site-generators.html" rel="bookmark"
+                   title="Permalink to static-site-generators">static-site-generators</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2016-06-27T06:31:00+08:00">
+                2016-06-27
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="http://localhost:8000/author/gatieme.html"> gatieme</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <table>
 <thead>
 <tr>
 <th align="center">Title</th>
@@ -540,80 +551,84 @@
 <h1>3  About This Site</h1>
 <hr />
 <p>Our Site is based on Pelican(Python)</p>
-<p class="subheader">Category: <a href="https://gatieme.github.io/category/linux.html">Linux</a>
-
-    Tagged: 
-    <a href="https://gatieme.github.io/tag/linux.html">linux </a>
-    <a href="https://gatieme.github.io/tag/blog.html">blog </a>
-    <a href="https://gatieme.github.io/tag/pelican.html">pelican </a>
-</p>
+            </div><!-- /.entry-content -->
 
 
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="http://localhost:8000/category/linux.html">Linux</a></li>
+</ul>
 
 
-</article>
-    </div>
-    <!-- End Main Content -->
-
-    <!-- Sidebar -->
-    <aside class="large-3 columns">
-        <h5 class="sidebar-title">Site</h5>
-        <ul class="side-nav">
-            <li><a href="https://gatieme.github.io/archives.html">Archives</a>
-            <li><a href="https://gatieme.github.io/tags.html">Tags</a>
-            <li><a href="https://gatieme.github.io/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
-        </ul>
-
-        <h5 class="sidebar-title">Categories</h5>
-        <ul class="side-nav">
-            <li><a href="https://gatieme.github.io/category/linux.html">Linux</a></li>
-        </ul>
-
-        <h5 class="sidebar-title">Links</h5>
-        <ul class="side-nav">
-            <li><a href="http://lxr.free-electrons.com/">LXR</a></li>
-            <li><a href="http://docs.getpelican.com/en/3.6.3">Pelican</a></li>
-            <li><a href="http://www.nowcoder.com/contestRoom">NowCoder</a></li>
-        </ul>
-
-        <h5 class="sidebar-title">Social</h5>
-        <ul class="side-nav social">
-            <li><a href="https://github.com/gatieme">GitHub</a></li>
-            <li><a href="http://stackoverflow.com/users/4935308/gatieme">StackOverFlow</a></li>
-            <li><a href="http://blog.csdn.net/gatieme">CSDN</a></li>
-            <li><a href="https://twitter.com/gatieme">Twitter</a></li>
-            <li><a href="https://www.facebook.com/gatieme">FaceBook</a></li>
-        </ul>
-
-    </aside> <!-- End Sidebar -->
-
-</div> <!-- End Main Content and Sidebar -->
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
 
 
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/gatieme">GitHub</a></li>
+    <li><a href="http://stackoverflow.com/users/4935308/gatieme">StackOverFlow</a></li>
+    <li><a href="http://blog.csdn.net/gatieme">CSDN</a></li>
+    <li><a href="https://twitter.com/gatieme">Twitter</a></li>
+    <li><a href="https://www.facebook.com/gatieme">FaceBook</a></li>
+  </ul>
+</nav>
 
-<!-- Footer -->
-<footer class="row">
-    <div class="large-12 columns">
-        <hr />
-        <div class="row">
-            <div class="large-6 columns">
-                <p><a href="https://github.com/getpelican/pelican-themes/tree/master/zurb-F5-basic">ZurbFoundation5</a> Theme | Powered by <a href="http://docs.getpelican.com/">Pelican</a><p>
-                <p><a href="https://gatieme.github.io">gatieme</a> &copy; gatieme 2016
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></br></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 </a>.            </div>
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="https://github.com/gatieme/gatieme.github.io" target="_blank">Github</a></div></li>
+
+
+
+
+              </ul>
             </div>
+          </div>
+        </footer>
+
     </div>
-</footer>
-<a href="https://github.com/gatieme/gatieme.github.io">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="//s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-2345097-6', 'auto');
-  ga('send', 'pageview');
 
-</script></body>
+  <script src="http://localhost:8000/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://localhost:8000/theme/js/libs/gumby.min.js"></script>
+  <script src="http://localhost:8000/theme/js/plugins.js"></script>
+</body>
 </html>
