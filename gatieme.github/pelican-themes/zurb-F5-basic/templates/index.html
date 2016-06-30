@@ -32,19 +32,15 @@
                 {% for tag in article.tags %}
                   <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
                 {% endfor %}
+                {% endif %}
                 <!--Tagged ad from gum theme index.html-->
 
-                
+
                 <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                 <hr  class="gradient"/>
 
 
             </article>
-
-
-    {% endif %}
-      </div>
-
 
         {% endif %}
 
