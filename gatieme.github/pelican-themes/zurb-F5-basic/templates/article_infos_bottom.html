@@ -6,6 +6,15 @@
     <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} </a>
     {% endfor %}
 {% endif %}
+
+<!--Tagged ad from gum theme index.html-->
+{% if article.tags %}
+	<span>Tagged as : </span>
+                {% for tag in article.tags %}
+                  <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
+                {% endfor %}
+                {% endif %}
+                <!--Tagged ad from gum theme index.html-->
 </p>
 
 {% if PDF_PROCESSOR %}<p><a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a></p>{% endif %}
