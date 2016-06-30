@@ -9,4 +9,4 @@ Author: gatieme
 sudo apt install cmatrix
 ```
 
-![cmatrix](images/201606002-cmatrix.jpg)
+![cmatrix](images/2016/06/002-cmatrix.jpg)
