@@ -1,173 +1,126 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="author" content="{{ AUTHOR }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="{{ SITEURL }}/theme/html5.js"></script>
-    <![endif]-->
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 
-    <!-- Le styles -->
-    <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
-
-    <!-- So Firefox can bookmark->"abo this site" -->
-    {% if FEED_ALL_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
-    {% endif %}
-    {% if FEED_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
-    {% endif %}
-    {% if FEED_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
-    {% endif %}
-    {% if FEED_ALL_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
-    {% endif %}
-
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" />
+    <script src="{{ SITEURL }}/theme/js/vendor/custom.modernizr.js"></script>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="navbar-inner">
-    <div class="container">
-
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-         </a>
-
-        <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
-
-        <div class="nav-collapse">
-        <ul class="nav">
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-            
-        {% if DISPLAY_PAGES_ON_MENU %}
-        {% for page in PAGES %}
-            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}
-        {% endif %}
-        </ul>
-        </div>
-        
-    </div>
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
     </div>
 </div>
+</div>
 
-<div class="container">
-    <div class="content">
-    <div class="row">
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+	{% for title, link in MENUITEMS %}
+    <li><a href="{{ link }}" class="button secondary small">{{ title }}</a></li>
+    {% endfor %}
 
-        <div class="span9">
-        {% block content %}{% endblock %}
+    {% if DISPLAY_PAGES_ON_MENU %}
+        {% for page in PAGES %}
+            <li><a href="{{ SITEURL }}/{{ page.url }}" class="button secondary small">{{ page.title }}</a></li>
+        {% endfor %}
+    {% endif %}
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+    {% block content %}{% endblock %}
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="{{ SITEURL }}/archives.html">Archives</a>
+            <li><a href="{{ SITEURL }}/tags.html">Tags</a>
+            {% if FEED_ALL_ATOM %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom feed</a></li>
+            {% endif %}
+            {% if FEED_RSS %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" rel="alternate">RSS feed</a></li>
+            {% endif %}
+            {% if DISPLAY_PAGES_ON_RIGHT %}
+              {% for page in PAGES %}
+                  <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+        </ul>
+
+        {% if categories %}
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+        {% for cat, null in categories %}
+            <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if LINKS %}
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+        {% for name, link in LINKS %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if SOCIAL %}
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav social">
+        {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+
+<!-- Footer -->
+<footer id="credits" class="row">
+  <div class="seven columns left-center">
+
+        <div class="large-6 columns">
+            <p><a href="https://github.com/getpelican/pelican-themes/tree/master/zurb-F5-basic">ZurbFoundation5</a> Theme | Powered by <a href="http://docs.getpelican.com/">Pelican</a><p>
+            <p><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2016
+                {% include 'by_nc_sa.html' %}
         </div>
-        
-        <div class="span3">
-
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Site
-                </li>
-            
-                <li><a href="{{ SITEURL }}/archives.html">Archives</a>
-                <li><a href="{{ SITEURL }}/tags.html">Tags</a>
-
-
-
-                {% if FEED_ALL_ATOM %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom feed</a></li>
-                {% endif %}
-                {% if FEED_ATOM %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" rel="alternate">Atom feed</a></li>
-                {% endif %}
-                {% if FEED_RSS %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" rel="alternate">RSS feed</a></li>
-                {% endif %}
-                {% if FEED_ALL_RSS %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" rel="alternate">RSS feed</a></li>
-                {% endif %}
-
-            </ul>
-            </div>
-
-
-            {% if categories %}
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Categories
-                </li>
-                
-                {% for cat, null in categories %}
-                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                {% endfor %}                   
-            </ul>
-            </div>
-            {% endif %}
-
-
-            {% if LINKS %}
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Links
-                </li>
-            
-            {% for name, link in LINKS %}
-                <li><a href="{{ link }}">{{ name }}</a></li>
-            {% endfor %}
-            </ul>
-            </div>
-            {% endif %}
-
-
-            {% if SOCIAL %}
-            <div class="social">
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Social
-                </li>
-           
-                {% for name, link in SOCIAL %}
-                <li><a href="{{ link }}">{{ name }}</a></li>
-                {% endfor %}
-            </ul>
-            </div>
-            </div>
-            {% endif %}
-
-        </div> {# End span3 #} 
-    </div> {# End row #}
-    </div> {# End content #}
-
-<footer>
-<br />
-{% if articles %}
-   {% set copy_date = articles[0].date.strftime('%Y') %}
-{% else %}
-   {% set copy_date = '' %}
-{% endif %}
-<p><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} {{ copy_date }}</p>
+  </div>
 </footer>
 
-</div> <!-- /container -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="{{ SITEURL }}/theme/bootstrap-collapse.js"></script>
-{% include "analytics.html" %}
-{% include "github.html" %} 
+{% include 'piwik.html' %}
+{% include 'github.html' %}
+{% include 'google_analytics.html' %}
 </body>
 </html>
