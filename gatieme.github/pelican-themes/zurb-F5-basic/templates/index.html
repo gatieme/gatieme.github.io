@@ -25,8 +25,6 @@
             <article>
                 <a href="{{ SITEURL }}/{{ article.url }}"><h3 class="article-title">{{ article.title }}</h3></a>
                 {% include 'article_infos.html' %}{{ article.summary }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
-                <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
-                <hr  class="gradient"/>
 
                 <!--Tagged ad from gum theme index.html-->
                 {% if article.tags %}
@@ -34,6 +32,13 @@
                 {% for tag in article.tags %}
                   <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
                 {% endfor %}
+                <!--Tagged ad from gum theme index.html-->
+
+                
+                <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                <hr  class="gradient"/>
+
+
             </article>
 
 
