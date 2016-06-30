@@ -26,6 +26,9 @@ DELETE_OUTPUT_DIRECTORY = False
 
 GITHUB_URL = u"https://github.com/gatieme/gatieme.github.io"
 GITHUB_POSITION = "right"
+TWITTER_URL = u'https://twitter.com/gatieme'
+FACEBOOK_URL = u'https://www.facebook.com/gatieme'
+
 
 # Feed generation is usually not desired when developing
 FEED_DOMAIN = SITEURL
