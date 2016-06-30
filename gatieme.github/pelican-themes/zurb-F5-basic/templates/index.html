@@ -8,7 +8,10 @@
         {% if loop.first and not articles_page.has_previous() %}
             <article>
                 <a href="{{ SITEURL }}/{{ article.url }}"><h3 class="article-title">{{ article.title }}</h3></a>
-                {% include 'article_infos.html' %}{{ article.content }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
+                {% include 'article_infos.html' %}
+                {% include 'article_infos_bottom.html' %}
+                {{ article.content }}
+                {% include 'comments.html' %}
             </article>
 
             {% if loop.length == 1 %}
@@ -23,9 +26,11 @@
         {% else %}
 
             <article>
-                {% include 'article_infos.html' %}{{ article.summary }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
-
                 <a href="{{ SITEURL }}/{{ article.url }}"><h3 class="article-title">{{ article.title }}</h3></a>
+                {% include 'article_infos.html' %}
+                {% include 'article_infos_bottom.html' %}
+                {{ article.summary }}
+                {% include 'comments.html' %}
                 <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                 <hr  class="gradient"/>
             </article>
