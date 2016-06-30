@@ -7,6 +7,29 @@
 
     <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 
+
+
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" />
+    <script src="{{ SITEURL }}/theme/js/vendor/custom.modernizr.js"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+
         <div class="nav-collapse">
         <ul class="nav">
         {% for title, link in MENUITEMS %}
@@ -21,15 +44,10 @@
         </ul>
         </div>
         
+    </div>
+    </div>
+</div>
 
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/foundation.min.css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" />
-    <script src="{{ SITEURL }}/theme/js/vendor/custom.modernizr.js"></script>
-</head>
-
-<body>
 
 <!-- Nav Bar -->
 <nav>
