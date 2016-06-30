@@ -17,8 +17,8 @@ DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = u'zh'  # 默认语言
-LOCALE = ("zh_CN")  # 设置语言环境
+DEFAULT_LANG = u'en'  # 默认语言
+#LOCALE = ("zh_CN")  # 设置语言环境
 
 ARCHIVES_URL = "archives.html"
 
