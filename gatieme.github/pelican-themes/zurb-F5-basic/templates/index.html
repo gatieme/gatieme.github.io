@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content_title %}{% endblock %}
-{% block content %}        
+{% block content %}
 {% if articles %}
-    {% for article in articles_page.object_list %}        
+    {% for article in articles_page.object_list %}
 
         {# First item #}
         {% if loop.first and not articles_page.has_previous() %}
@@ -28,6 +28,17 @@
                 <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                 <hr  class="gradient"/>
             </article>
+
+            <div class="row tag-row">
+    {% if article.tags %}
+        <span>Tagged as : </span>
+        {% for tag in article.tags %}
+            <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
+        {% endfor %}
+    {% endif %}
+      </div>
+
+
         {% endif %}
 
         {% if loop.last %}
