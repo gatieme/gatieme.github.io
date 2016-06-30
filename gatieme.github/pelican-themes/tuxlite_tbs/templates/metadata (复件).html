@@ -22,3 +22,10 @@ by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.au
                 <!--Tagged ad from gum theme index.html-->
 </p>
 
+{# Filed under <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> #}
+
+{# 
+{% if article.tags %} 
+    Tags {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% endfor %}
+{% endif %}
+#}
