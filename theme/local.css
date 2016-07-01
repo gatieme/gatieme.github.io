@@ -22,7 +22,6 @@
 /*注意选择器的层叠关系*/
 
 table tr th{ height:28px; line-height:28px; background:#999}
-table.stripe tr td{ height:28px; line-height:28px; text-align:center;background:#FFF;vertical-align:middle;}
 /* css注释：默认css背景被白色 */
 table.stripe tr.alt td { background:#F2F2F2;}
 /* css 注释：默认隔行背景颜色 */
