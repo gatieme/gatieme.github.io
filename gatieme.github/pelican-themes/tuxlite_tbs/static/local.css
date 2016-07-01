@@ -20,7 +20,6 @@
 }
 
 /*注意选择器的层叠关系*/
-
 table tr th{ height:28px; line-height:28px; background:#999}
 /* css注释：默认css背景被白色 */
 table.stripe tr.alt td { background:#F2F2F2;}
