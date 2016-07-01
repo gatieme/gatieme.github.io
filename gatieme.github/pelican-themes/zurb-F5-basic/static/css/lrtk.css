@@ -24,7 +24,10 @@ a:hover{
   color: #e86256;
   text-decoration: none;
 }
-
+a:visited{
+  color: #e86256;
+  text-decoration: none;
+}
 /* --------------------------------
 
 Modules - reusable parts of our design
