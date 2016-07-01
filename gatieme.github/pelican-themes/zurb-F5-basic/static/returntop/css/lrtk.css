@@ -1,4 +1,4 @@
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -17,16 +17,15 @@ html * {
 body {
   font-size: 100%;
   font-family: "Bitter", sans-serif;
-  color: #f5f4ed;
-  background-color: #795d6b;
+
 }
 
-a {
+a:hover{
   color: #e86256;
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -45,53 +44,6 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-header {
-  background: #5c4751;
-  height: 100px;
-  text-align: center;
-}
-header h1 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 1.6em;
-  margin-bottom: .2em;
-}
-header p {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: #957484;
-}
-@media only screen and (min-width: 1024px) {
-  header {
-    height: 200px;
-  }
-  header h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-    padding-top: 2.6em;
-  }
-}
-
-main p {
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 22px;
-}
-@media only screen and (min-width: 1024px) {
-  main p {
-    font-size: 14px;
-    font-size: 1rem;
-  }
-}
 
 .cd-top {
   display: inline-block;
@@ -118,7 +70,7 @@ main p {
   opacity: 1;
 }
 .cd-top.cd-fade-out {
-  /* Èç¹ûÓÃ»§¼ÌÐøÏòÏÂ¹ö¶¯,Õâ¸ö°´Å¥µÄÍ¸Ã÷¶È»á±äµÃ¸üµÍ */
+  /* ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½Í¸ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ */
   opacity: .5;
 }
 .no-touch .cd-top:hover {

@@ -18,6 +18,9 @@
     <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/lrtk.css" type="text/css" />
+    <script src="{{ SITEURL }}/theme/jquery.min.js"></script>
+    <script src="{{ SITEURL }}/theme/lrtk.js"></script>
     <!-- So Firefox can bookmark->"abo this site" -->
     {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
@@ -35,6 +38,8 @@
 </head>
 
 <body>
+
+<a href="#0" class="cd-top">Top</a>
 
 <div class="navbar">
     <div class="navbar-inner">
