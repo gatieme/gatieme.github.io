@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
 	//hide or show the "back to top" link
 	$(window).scroll(function(){
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-		if( $(this).scrollTop() > offset_opacity ) { 
+		if( $(this).scrollTop() > offset_opacity ) {
 			$back_to_top.addClass('cd-fade-out');
 		}
 	});
@@ -26,3 +26,18 @@ jQuery(document).ready(function($){
 	});
 
 });
+
+
+
+<!-- 鼠标悬停在表格行上时变色  -->
+<script type="text/javascript">
+        //隔行变色
+    $(document).ready(function(){
+
+             $(".stripe tr").mouseover(function(){ //如果鼠标移到class为stripe_tb的表格的tr上时，执行函数
+             $(this).addClass("over");}).mouseout(function(){ //给这行添加class值为over，并且当鼠标一出该行时执行函数
+             $(this).removeClass("over");}) //移除该行的class
+             $(".stripe tr:even").addClass("alt"); //给class为stripe_tb的表格的偶数行添加class值为alt
+
+        });
+    </script>
