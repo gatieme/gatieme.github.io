@@ -44,53 +44,6 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
-header {
-  background: #5c4751;
-  height: 100px;
-  text-align: center;
-}
-header h1 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 1.6em;
-  margin-bottom: .2em;
-}
-header p {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: #957484;
-}
-@media only screen and (min-width: 1024px) {
-  header {
-    height: 200px;
-  }
-  header h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-    padding-top: 2.6em;
-  }
-}
-
-main p {
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 22px;
-}
-@media only screen and (min-width: 1024px) {
-  main p {
-    font-size: 14px;
-    font-size: 1rem;
-  }
-}
 
 .cd-top {
   display: inline-block;
