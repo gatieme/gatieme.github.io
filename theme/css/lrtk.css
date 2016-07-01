@@ -51,6 +51,7 @@ Main components
 -------------------------------- */
 header {
   background: #5c4751;
+  height: 100px;
   text-align: center;
 }
 header h1 {
@@ -63,11 +64,7 @@ header h1 {
   padding-top: 1.6em;
   margin-bottom: .2em;
 }
-header p {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: #957484;
-}
+
 @media only screen and (min-width: 1024px) {
   header {
     height: 200px;
