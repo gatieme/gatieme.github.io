@@ -1,0 +1,24 @@
+{{ article.locale_date }}
+
+{% if article.author %}
+by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+    {% if article.translations %}
+        <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-info xsmall">{{ article.lang or DEFAULT_LANG }}</a>
+        {% for translation in article.translations %}
+            <a href="{{ SITEURL }}/{{ translation.url }}" class="btn btn-info xsmall">{{ translation.lang }}</a>&nbsp;
+        {% endfor %}
+    {% endif %}
+{% endif %} 
+
+<p class="subheader">Category: <a class="danger label" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+
+<!--Tagged ad from gum theme index.html-->
+{% if article.tags %}
+    <span>Tagged as : </span>
+    {% for tag in article.tags %}
+        <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
+    {% endfor %}
+    {% endif %}
+                <!--Tagged ad from gum theme index.html-->
+</p>
+
