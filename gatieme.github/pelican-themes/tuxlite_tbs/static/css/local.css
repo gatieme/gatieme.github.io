@@ -44,13 +44,7 @@ onmouseout: expression(onmouseout=function (){
   });
 background-color:#ffffff;
 }
-table{border:0;margin:100px auto 0;text-align:center;border-collapse:collapse;border-spacing:0;}
-table th{background:#0090D7;font-weight:normal;line-height:30px;font-size:14px;color:#FFF;}
-table tr:nth-child(odd){background:#F4F4F4;}
-table td:nth-child(even){color:#C00;}
-table tr:nth-child(5){background:#73B1E0;color:#FFF;}
-table tr:hover{background:#73B1E0;color:#FFF;}
-table td,table th{border:1px solid #EEE;}
+
 
 table {
   background: white;
@@ -82,7 +76,7 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125rem; }
-    
+
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
 .content-title { margin-bottom: 30px; }
