@@ -55,7 +55,7 @@
 
         <div class="nav-collapse">
         <ul class="nav pull-right top-menu">
-        <li><a href="{{ SITEURL }}">Home</a></li>
+        <li {% if page_name == "index" %} class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
 
         {% for title, link in MENUITEMS %}
             <li {% if page_name == "index" %} class="active"{% endif %}><a href="{{ link }}">{{ title }}</a></li>
