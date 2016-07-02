@@ -54,7 +54,9 @@
         <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
 
         <div class="nav-collapse">
-        <ul class="nav">
+        <ul class="nav pull-right top-menu">
+        <li {% if page_name == "index" %} class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
+
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
         {% endfor %}
