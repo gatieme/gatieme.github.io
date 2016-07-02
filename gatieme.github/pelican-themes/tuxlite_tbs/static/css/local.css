@@ -75,3 +75,8 @@ h3 { margin-top: 2.5em; }
 .social a[href*='rss.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='stackoverflow.com']:before {content: url('./images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='twitter.com']:before {content: url('./images/icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
+
+
+
+
+tr {background-color:expression((this.sectionRowIndex%2==0)?"#E1F1F1":"#F0F0F0")}
