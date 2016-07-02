@@ -34,7 +34,6 @@ h3 { margin-top: 2.5em; }
 .table th, .table td { line-height: 1.3em; }
 tr {background-color:expression((this.sectionRowIndex%2==0)?"#E1F1F1":"#F0F0F0")}
 
-table { background-color:#000000; cursor:hand; width:100%; }
 td {
 
 onmouseover: expression(onmouseover=function (){
