@@ -64,7 +64,7 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125rem; }
-    tr {background-color:expression((this.sectionRowIndex % 2==0)?"#E1F1F1":"#F0F0F0")}
+    tr {background-color:expression((this.sectionRowIndex % 2==0)?"#FFFFFF":"#F0F0F0")}
 
 
 
