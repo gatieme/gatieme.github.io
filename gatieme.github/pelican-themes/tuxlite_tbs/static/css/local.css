@@ -68,7 +68,7 @@ table th{background:#0090D7;font-weight:normal;color:#FFF;text-align: center;}
 
 /*tr {background-color:expression((this.sectionRowIndex % 2==0)?"#CCCCCC":"#F0F0F0")}*/
 
-    table tr:nth-child(even){background:"#CDCDB4";}
+    table tr:nth-child(even){background:"#CDC5BF";}
     table td:nth-child(odd){background:"#FFFFFF";}
 
 /* Styling for articles */
