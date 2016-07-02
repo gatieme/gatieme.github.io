@@ -64,9 +64,10 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125rem; }
-    tr {background-color:expression((this.sectionRowIndex % 2==0)?"#FFFFFF":"#F0F0F0")}
+    /*tr {background-color:expression((this.sectionRowIndex % 2==0)?"#E1F1F1":"#F0F0F0")}*/
 
-
+    table tr:nth-child(odd){background:#F4F4F4;}
+    table td:nth-child(even){color:#C00;}
 
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
