@@ -451,8 +451,8 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align="center"&gt;站点&lt;/th&gt;
-&lt;th align="center"&gt;描述&lt;/th&gt;
+&lt;th align="center"&gt;WebSite&lt;/th&gt;
+&lt;th align="center"&gt;description&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
