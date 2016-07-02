@@ -69,7 +69,7 @@ table th{background:#0090D7;font-weight:normal;color:#FFF;}
 /*tr {background-color:expression((this.sectionRowIndex % 2==0)?"#CCCCCC":"#F0F0F0")}*/
 
     table tr:nth-child(odd){background:#F4F4F4;}
-    table td:nth-child(even){color:#C00;}
+    table td:nth-child(even){background:#F0F0F0";}
 
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
