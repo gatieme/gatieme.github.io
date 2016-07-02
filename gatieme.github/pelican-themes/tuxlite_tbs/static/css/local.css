@@ -31,7 +31,6 @@ p { font-size: 100%; line-height: 1.6em; margin-top: 0.8em; margin-bottom: 0.8em
 li { line-height: 1.8em; }
 h3 { margin-top: 2.5em; }
 
-tr {background-color:expression((this.sectionRowIndex%2==0)?"#E1F1F1":"#F0F0F0")}
 
 
 
@@ -65,6 +64,9 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125rem; }
+    tr {background-color:expression((this.sectionRowIndex % 2==0)?"#E1F1F1":"#F0F0F0")}
+
+
 
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
