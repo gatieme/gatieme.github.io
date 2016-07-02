@@ -443,8 +443,7 @@ A definitive list of tools for generating static websites.
 |:-------:|:-------:|
 | [Static Site Generators](https://staticsitegenerators.net) | Static Site Generators<br><br>The definitive listing of Static Site Generators — all 437 of them! |
 | [Disqus](https://disqus.com/admin/signup) | The #1 way to build your audience<br><br>Disqus offers the best add-on tools for site owners to power discussions, increase engagement, and earn revenue.<br> Please don't forget your Shortname |
-| [Google Analytics](http://www.google.com/analytics) | Get stronger results across all your sites, apps and offline channels. Google’s analytics solutions help you turn customer insights into real gains.
- |
+| [Google Analytics](http://www.google.com/analytics) | Get stronger results across all your sites, apps and offline channels. Google’s analytics solutions help you turn customer insights into real gains. |
 | [Google Webmasters](http://www.google.com/webmasters) | Track your site's search performance with Google Search Console and browse around for more webmaster resources. |
 | [Godaddy](https://www.godaddy.com/) | Get a free domain with a website from GoDaddy. |
 | [Dnspod](https://www.dnspod.cn/) | DNS resolution service, add a new domain name, and apply a Github Pages A record points to the ip: 207.97.227.245 |
