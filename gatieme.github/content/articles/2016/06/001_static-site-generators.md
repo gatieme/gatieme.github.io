@@ -439,7 +439,7 @@ A definitive list of tools for generating static websites.
 
 #2  For Help
 
-| WebSite | description |
+| WebSite | Description |
 |:-------:|:-------:|
 | [Static Site Generators](https://staticsitegenerators.net) | Static Site Generators<br><br>The definitive listing of Static Site Generators — all 437 of them! |
 | [Disqus](https://disqus.com/admin/signup) | The #1 way to build your audience<br><br>Disqus offers the best add-on tools for site owners to power discussions, increase engagement, and earn revenue.<br> Please don't forget your Shortname |
