@@ -64,7 +64,7 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125rem; }
-table th{background:#0090D7;font-weight:normal;line-height:30px;font-size:14px;color:#FFF;}
+table th{background:#0090D7;font-weight:normal;color:#FFF;}
 
 tr {background-color:expression((this.sectionRowIndex % 2==0)?"#CDC5BF":"#F0F0F0")}
 /*
