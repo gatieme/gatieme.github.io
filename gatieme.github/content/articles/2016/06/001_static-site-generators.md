@@ -1,4 +1,4 @@
-Title: static-site-generators
+Title: Static site generators
 Date: 2016-06-27 06:31
 Tags: linux, blog, pelican
 Category: Linux
