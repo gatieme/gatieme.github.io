@@ -3,12 +3,12 @@
 {% block content %}
     <div class='article'>
         <div class="content-title">
-            <h1>{{ article.title }}</h1>
+            <title>{{ article.title }}</title>
             {% include "metadata.html" %}
         </div>
-	
+
         <div>{{ article.content }}</div>
-	
+
         <hr>
 
 	{% include "twitter.html" %}
