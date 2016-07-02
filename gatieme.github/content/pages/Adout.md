@@ -1,7 +1,7 @@
 Title: About
 Date: 2013-03-14
 
-## 关于
+# About
 ```bash
 $ whoami
 gatieme
@@ -39,19 +39,18 @@ $ history | sed "s#^\s\+[0-9]\+\s\+##g" | grep -oP "(?<=^|\|)\w+"|sort |uniq -c|
     151 cat
 ```
 
-## Open Source
+# Open Source
 -------
 
 
 
-## License
+# License
 -------
 
-![知识共享许可协议](http://i.creativecommons.org/l/by-sa/3.0/cn/88x31.png)
+![CC BY-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
 Our works are licensed under [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-](http://creativecommons.org/licenses/by-sa/3.0/cn/)
+](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Contact Us
 -------
-
