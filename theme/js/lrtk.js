@@ -27,17 +27,26 @@ jQuery(document).ready(function($){
 
 });
 
-
-
-<!-- 鼠标悬停在表格行上时变色  -->
 <script type="text/javascript">
-        //隔行变色
-    $(document).ready(function(){
-
-             $(".stripe tr").mouseover(function(){ //如果鼠标移到class为stripe_tb的表格的tr上时，执行函数
-             $(this).addClass("over");}).mouseout(function(){ //给这行添加class值为over，并且当鼠标一出该行时执行函数
-             $(this).removeClass("over");}) //移除该行的class
-             $(".stripe tr:even").addClass("alt"); //给class为stripe_tb的表格的偶数行添加class值为alt
-
-        });
-    </script>
+<!--
+//分别是奇数行默认颜色,偶数行颜色,鼠标放上时奇偶行颜色
+var aBgColor = ["#FFFFFF","#f2faff","#FFFFCC","#FFFFCC"];
+//从前面iHead行开始变色，直到倒数iEnd行结束
+function addTableListener(o,iHead,iEnd)
+{
+o.style.cursor = "normal";
+iHead = iHead > o.rows.length?0:iHead;
+iEnd = iEnd > o.rows.length?0:iEnd;
+for (var i=iHead;i<o.rows.length-iEnd ;i++ )
+{
+o.rows[i].onmouseover = function(){setTrBgColor(this,true)}
+o.rows[i].onmouseout = function(){setTrBgColor(this,false)}
+}
+}
+function setTrBgColor(oTr,b)
+{
+oTr.rowIndex % 2 != 0 ? oTr.style.backgroundColor = b ? aBgColor[3] : aBgColor[1] : oTr.style.backgroundColor = b ? aBgColor[2] : aBgColor[0];
+}
+window.onload = function(){addTableListener(document.getElementById("tbColor"),0,0);}
+//-->
+</script>
