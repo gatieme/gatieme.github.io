@@ -35,7 +35,6 @@ h3 { margin-top: 2.5em; }
 tr {background-color:expression((this.sectionRowIndex%2==0)?"#E1F1F1":"#F0F0F0")}
 
 td {
-
 onmouseover: expression(onmouseover=function (){
   this.style.borderColor ='blue';this.style.color='red';this.style.backgroundColor ='yellow'
   });
@@ -45,7 +44,13 @@ onmouseout: expression(onmouseout=function (){
   });
 background-color:#ffffff;
 }
-
+table{width:500px;border:0;margin:100px auto 0;text-align:center;border-collapse:collapse;border-spacing:0;}
+table th{background:#0090D7;font-weight:normal;line-height:30px;font-size:14px;color:#FFF;}
+table tr:nth-child(odd){background:#F4F4F4;}
+table td:nth-child(even){color:#C00;}
+table tr:nth-child(5){background:#73B1E0;color:#FFF;}
+table tr:hover{background:#73B1E0;color:#FFF;}
+table td,table th{border:1px solid #EEE;}
 
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
