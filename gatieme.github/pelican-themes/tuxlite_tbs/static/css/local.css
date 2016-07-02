@@ -31,19 +31,8 @@ p { font-size: 100%; line-height: 1.6em; margin-top: 0.8em; margin-bottom: 0.8em
 li { line-height: 1.8em; }
 h3 { margin-top: 2.5em; }
 
-.table th, .table td { line-height: 1.3em; }
 tr {background-color:expression((this.sectionRowIndex%2==0)?"#E1F1F1":"#F0F0F0")}
 
-td {
-onmouseover: expression(onmouseover=function (){
-  this.style.borderColor ='blue';this.style.color='red';this.style.backgroundColor ='yellow'
-  });
-
-onmouseout: expression(onmouseout=function (){
-  this.style.borderColor='';this.style.color='';this.style.backgroundColor =''
-  });
-background-color:#ffffff;
-}
 
 
 table {
