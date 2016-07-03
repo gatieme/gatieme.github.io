@@ -113,3 +113,4 @@ table th{background:#0090D7;font-weight:normal;color:#FFF;text-align: center;}
 .social a[href*='rss.xml']:before {content: url('../images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='stackoverflow.com']:before {content: url('../images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='twitter.com']:before {content: url('../images/icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='csdn.com']:before {content: url('../images/icons/csdn.png'); margin-right: 2px; vertical-align: -3px;}
