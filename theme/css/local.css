@@ -46,7 +46,7 @@ table {
     table tfoot tr th,
     table tfoot tr td {
       padding: 0.5rem 0.625rem 0.625rem;
-      font-size: 0.875rem;
+      font-size: 1rem;
       color: #222222;
       text-align: center; }
   table tr th,
