@@ -78,8 +78,9 @@ SOCIAL = (('GitHub', 'https://github.com/gatieme'),
 #RELATIVE_URLS = True
 
 # Theme
-THEME = './pelican-themes/zurb-F5-basic'
-#THEME = './pelican-themes/tuxlite_tbs'
+#THEME = './pelican-themes/zurb-F5-basic'
+#THEME = './pelican-themes/elegant'
+THEME = './pelican-themes/tuxlite_tbs'
 #THEME = './pelican-themes/gum'
 #COVER_BG_COLOR = '#375152'
 DEFAULT_PAGINATION = 10

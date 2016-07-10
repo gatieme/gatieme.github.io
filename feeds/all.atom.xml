@@ -3,7 +3,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="cmatrix" src="images/2016/06/002-cmatrix.jpg" /&gt;&lt;/p&gt;</summary><category term="linux"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>static-site-generators</title><link href="https://gatieme.github.io/static-site-generators.html" rel="alternate"></link><published>2016-06-27T06:31:00+08:00</published><author><name>gatieme</name></author><id>tag:gatieme.github.io,2016-06-27:static-site-generators.html</id><summary type="html">&lt;table&gt;
+&lt;p&gt;&lt;img alt="cmatrix" src="images/2016/06/002-cmatrix.jpg" /&gt;&lt;/p&gt;</summary><category term="linux"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Static site generators</title><link href="https://gatieme.github.io/static-site-generators.html" rel="alternate"></link><published>2016-06-27T06:31:00+08:00</published><author><name>gatieme</name></author><id>tag:gatieme.github.io,2016-06-27:static-site-generators.html</id><summary type="html">&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align="center"&gt;Title&lt;/th&gt;
@@ -451,8 +451,8 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align="center"&gt;站点&lt;/th&gt;
-&lt;th align="center"&gt;描述&lt;/th&gt;
+&lt;th align="center"&gt;WebSite&lt;/th&gt;
+&lt;th align="center"&gt;Description&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -467,10 +467,6 @@
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://www.google.com/analytics"&gt;Google Analytics&lt;/a&gt;&lt;/td&gt;
 &lt;td align="center"&gt;Get stronger results across all your sites, apps and offline channels. Google’s analytics solutions help you turn customer insights into real gains.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="center"&gt;&lt;/td&gt;
-&lt;td align="center"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://www.google.com/webmasters"&gt;Google Webmasters&lt;/a&gt;&lt;/td&gt;
