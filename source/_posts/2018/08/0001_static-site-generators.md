@@ -1,6 +1,6 @@
 ---
 title: Static site generators
-date: 2016-06-27 06:31
+date: 2018-08-05 14:37
 author: gatieme
 Tags: linux, blog
 Category: Linux
