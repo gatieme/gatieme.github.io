@@ -1,9 +1,15 @@
+---
 title: cmatrix
 date: 2018-08-05 14:38
-tags: linux, blog, pelican
+tags: linux
 author: gatieme
-category: Linux
-blogexcerpt:cmatrix
+categories:
+        - linux
+        - shell
+thumbnail:
+blogexcerpt: cmatrix
+
+---
 
 
 ```c
