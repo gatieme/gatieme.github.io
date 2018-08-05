@@ -5,7 +5,6 @@ tags: linux
 author: gatieme
 categories:
         - linux
-        - shell
 thumbnail:
 blogexcerpt: cmatrix
 
