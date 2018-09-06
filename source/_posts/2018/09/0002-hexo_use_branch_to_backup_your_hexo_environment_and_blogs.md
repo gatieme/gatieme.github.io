@@ -5,7 +5,8 @@ author: gatieme
 tags: hexo
 categories:
         - hexo
-thumbnail: Hexo 是一个快速、简洁且高效的博客框架. 前文介绍了如果使用 `Hexo` 来搭建属于你自己的 `Github Page` 博客, 本文将继续为大家介绍一个方便的管理方法来管理我们的博客源码和静态网页.
+thumbnail: 
+blogexcerpt: `Hexo` 是一个快速、简洁且高效的博客框架. 支持使用 Markdown (或其他渲染引擎)解析文章. `Hexo` 生成静态网页的素服非常快, 在几秒内，即可利用靓丽的主题生成静态网页. 本文将介绍如果使用 `Hexo` 来搭建属于你自己的 `Github Page` 博客
 
 ---
 
