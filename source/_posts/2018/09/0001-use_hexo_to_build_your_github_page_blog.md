@@ -13,8 +13,7 @@ blogexcerpt: Hexo 是一个快速、简洁且高效的博客框架. 支持使用
 
 | CSDN | GitHub | Hexo |
 |:----:|:------:|:----:|
-| [使用 Hexo 搭建 GitHub Page 博客(一)](https://blog.csdn.net/gatieme/article/details/82317681) | [`AderXCoding/blob/master/system/tools/hexo/01-use_hexo`](https://github.com/gatieme/AderXCoding/blob/master/system/tools/hexo/01-use_hexo) |
-
+| [使用 Hexo 搭建 GitHub Page 博客(一)](https://blog.csdn.net/gatieme/article/details/82317681) | [`AderXCoding/blob/master/system/tools/hexo/01-use_hexo`](https://github.com/gatieme/AderXCoding/blob/master/system/tools/hexo/01-use_hexo) | [gatieme.github.io/2018/09/0001-use_hexo_to_build_your_github_page_blog](https://gatieme.github.io/2018/09/02/2018/09/0001-use_hexo_to_build_your_github_page_blog/)
 <br>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
