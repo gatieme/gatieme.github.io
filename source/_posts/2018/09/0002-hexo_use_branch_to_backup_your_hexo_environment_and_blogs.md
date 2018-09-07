@@ -12,7 +12,7 @@ blogexcerpt: Hexo 是一个快速、简洁且高效的博客框架. 支持使用
 
 | CSDN | GitHub | Hexo |
 |:----:|:------:|:----:|
-| [使用 Hexo 搭建 GitHub Page 博客(二)--使用 GitHub 分支保存 Hexo 环境和博文](https://blog.csdn.net/gatieme/article/details/82317704) | [`AderXCoding/system/tools/hexo/02-use_branch_to_backup`](https://github.com/gatieme/AderXCoding/tree/master/system/tools/hexo/02-use_branch_to_backup) |
+| [使用 Hexo 搭建 GitHub Page 博客(二)--使用 GitHub 分支保存 Hexo 环境和博文](https://blog.csdn.net/gatieme/article/details/82317704) | [`AderXCoding/system/tools/hexo/02-use_branch_to_backup`](https://github.com/gatieme/AderXCoding/tree/master/system/tools/hexo/02-use_branch_to_backup) | [gatieme.github.io/2018/09/0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs](https://gatieme.github.io/2018/09/02/2018/09/0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/) |
 
 <br>
 
