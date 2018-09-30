@@ -1,7 +1,7 @@
 ---
 
 title: qemu中使用 9p virtio, 支持 host 和 guest 中共享目录
-date: 2018-09-02 18:40
+date: 2018-09-30 19:46
 author: gatieme
 tags: qemu
 categories:
