@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>Static site generators | KernelShow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel" >
+    <meta name="description" content="绊铖-内核Show" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="KernelShow" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">KernelShow</span>
+                    <span class="description">绊铖-内核Show</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2018/08/05/2018/08/0001_static-site-generators/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2018/08/05/2018/08/0001_static-site-generators/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2018/08/05/2018/08/0001_static-site-generators/index.html" class="item ">
+                <a href="/navigation/" title="网址导航" class="icon-lab">&nbsp;网址导航</a>
+            </li>
+            
+            <li rel="/2018/08/05/2018/08/0001_static-site-generators/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2018/08/05/2018/08/0001_static-site-generators/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/gatieme" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://github.com/gatieme/gatieme.github.io" target="_blank">Hosted by Github Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="https://blog.csdn.net/gatieme" class="csdn" target="_blank"><b>■</b> CSDN 博客</a>
+                    
+                        <a href="https://www.facebook.com/gatieme" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/gatieme.jpg" alt="avatar" title="Gatieme-(绊铖)" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>Static site generators</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        gatieme 发表于
+        <time datetime="2018-08-05T06:37:00.000Z">2018-08-05</time>
+    </p>
+    <div class="post-content">
+        <table>
+<thead>
+<tr>
+<th style="text-align:center">Title</th>
+<th style="text-align:center">Date</th>
+<th style="text-align:center">Category</th>
+<th style="text-align:center">Tags</th>
+<th style="text-align:center">Slug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">static-site-generators</td>
+<td style="text-align:center">2016-06-27 06:31</td>
+<td style="text-align:center">Linux</td>
+<td style="text-align:center">linux, blog, pelican</td>
+<td style="text-align:center">static-site-generators</td>
+</tr>
+</tbody>
+</table>
+<p>With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?</p>
+<p>These static blog generator are based on Bash, C/C++, C# and Perl, Clojure, Common Lisp, Dropbox and other preparation.</p>
+<p>A definitive list of tools for generating static websites.</p>
+<h2 id="1-Table-of-Contents"><a href="#1-Table-of-Contents" class="headerlink" title="#1. Table of Contents"></a>#1. Table of Contents</h2><ul>
+<li><a href="##1.1  .NET">.NET</a></li>
+<li><a href="#1.2  awk">Awk</a></li>
+<li><a href="#bash">Bash</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#c-sharp">C#</a></li>
+<li><a href="#c-and-perl">C and Perl</a></li>
+<li><a href="#clojure">Clojure</a></li>
+<li><a href="#common-lisp">Common Lisp</a></li>
+<li><a href="#dropbox">Dropbox</a></li>
+<li><a href="#elixir">Elixir</a></li>
+<li><a href="#erlang">Erlang</a></li>
+<li><a href="#go">Go</a></li>
+<li><a href="#groovy">Groovy</a></li>
+<li><a href="#haskell">Haskell</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#language-agnostic">Language Agnostic</a></li>
+<li><a href="#lua">Lua</a></li>
+<li><a href="#nimrod">Nimrod</a></li>
+<li><a href="#nodejs">Node.js</a></li>
+<li><a href="#ocaml">OCaml</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#racket">Racket</a></li>
+<li><a href="#ruby">Ruby</a></li>
+<li><a href="#scala">Scala</a></li>
+<li><a href="#scheme">Scheme</a></li>
+<li><a href="#shell">Shell</a></li>
+<li><a href="#tcl">Tcl</a></li>
+</ul>
+<h2 id="1-1-NET"><a href="#1-1-NET" class="headerlink" title="##1.1  .NET"></a>##1.1  .NET</h2><ul>
+<li><a href="https://github.com/Code52/pretzel" target="_blank" rel="noopener">Pretzel</a></li>
+<li><a href="http://wyam.io" target="_blank" rel="noopener">Wyam</a></li>
+</ul>
+<p>##1.2  Awk</p>
+<ul>
+<li><a href="https://github.com/nuex/zodiac" target="_blank" rel="noopener">zodiac</a></li>
+</ul>
+<p>##1.3  Bash</p>
+<ul>
+<li><a href="https://github.com/taylorchu/baker/" target="_blank" rel="noopener">baker</a></li>
+<li><a href="https://github.com/carlesfe/bashblog" target="_blank" rel="noopener">bashblog</a></li>
+<li><a href="http://nanoblogger.sourceforge.net/" target="_blank" rel="noopener">NanoBlogger</a></li>
+<li><a href="http://pagegen.phnd.net/" target="_blank" rel="noopener">Pagegen</a></li>
+<li><a href="http://skf.jeannedhack.org/" target="_blank" rel="noopener">SKF</a></li>
+</ul>
+<p>##1.4  C++</p>
+<ul>
+<li><a href="http://leohtml.sourceforge.net/" target="_blank" rel="noopener">Leo</a></li>
+</ul>
+<p>##1.5  C Sharp</p>
+<ul>
+<li><a href="https://github.com/mikoskinen/graze" target="_blank" rel="noopener">Graze</a></li>
+</ul>
+<p>##1.6  C and Perl</p>
+<ul>
+<li><a href="http://blaze.blackened.cz/" target="_blank" rel="noopener">BlazeBlogger</a></li>
+<li><a href="http://blosxom.sourceforge.net/documentation/users/configure/static.html" target="_blank" rel="noopener">blosxom</a></li>
+<li><a href="https://metacpan.org/pod/Bryar::Frontend::Static" target="_blank" rel="noopener">Bryar</a></li>
+<li><a href="http://vanilladraft.com/dapper/" target="_blank" rel="noopener">Dapper</a></li>
+<li><a href="https://metacpan.org/pod/HiD" target="_blank" rel="noopener">HiD</a></li>
+<li><a href="https://ikiwiki.info/" target="_blank" rel="noopener">ikiwiki</a></li>
+<li><a href="https://metacpan.org/pod/Papery" target="_blank" rel="noopener">Papery</a></li>
+<li><a href="http://search.cpan.org/dist/Quietly-Confident/qc.pod" target="_blank" rel="noopener">Quietly::Confident</a></li>
+<li><a href="https://metacpan.org/pod/StaticVolt" target="_blank" rel="noopener">StaticVolt</a></li>
+<li><a href="https://metacpan.org/pod/Statocles" target="_blank" rel="noopener">Statocles</a></li>
+<li><a href="https://github.com/skx/templer" target="_blank" rel="noopener">Templer</a></li>
+<li><a href="http://www.thewml.org/" target="_blank" rel="noopener">Website Meta Language</a></li>
+<li><a href="http://www.idocs.com/xdo/" target="_blank" rel="noopener">XDO</a></li>
+<li><a href="https://metacpan.org/pod/Zucchini" target="_blank" rel="noopener">Zucchini</a></li>
+</ul>
+<p>##1.7  Clojure</p>
+<ul>
+<li><a href="http://cryogenweb.org/" target="_blank" rel="noopener">Cryogen</a></li>
+<li><a href="http://www.ryanmcg.com/incise/" target="_blank" rel="noopener">incise</a></li>
+<li><a href="https://github.com/liquidz/misaki" target="_blank" rel="noopener">misaki</a></li>
+<li><a href="http://nakkaya.com/static.html" target="_blank" rel="noopener">Static</a></li>
+</ul>
+<p>##1.8  Common Lisp</p>
+<ul>
+<li><a href="http://www.cliki.net/coleslaw" target="_blank" rel="noopener">coleslaw</a></li>
+<li><a href="https://gist.github.com/TeMPOraL/4190622" target="_blank" rel="noopener">regenerate</a></li>
+</ul>
+<p>##1.9  Dropbox</p>
+<ul>
+<li><a href="http://900dpi.com/" target="_blank" rel="noopener">900dpi</a></li>
+<li><a href="https://blogmark.me/" target="_blank" rel="noopener">Blogmark</a></li>
+<li><a href="http://brace.io/" target="_blank" rel="noopener">Brace</a></li>
+<li><a href="http://calepin.co/" target="_blank" rel="noopener">Calepin</a></li>
+<li><a href="http://chilipy.com/" target="_blank" rel="noopener">Chili</a></li>
+<li><a href="http://cloudcannon.com/" target="_blank" rel="noopener">Cloud Cannon</a></li>
+<li><a href="https://github.com/louissobel/Drapache" target="_blank" rel="noopener">Drapache</a></li>
+<li><a href="http://droppages.com/" target="_blank" rel="noopener">DropPages</a></li>
+<li><a href="http://www.kissr.com/" target="_blank" rel="noopener">KISSr</a></li>
+<li><a href="https://www.pancake.io/" target="_blank" rel="noopener">Pancake.io</a></li>
+<li><a href="http://scriptogr.am/" target="_blank" rel="noopener">Scriptogr.am</a></li>
+<li><a href="http://www.site44.com/" target="_blank" rel="noopener">Site44</a></li>
+<li><a href="http://www.sitebox.io/" target="_blank" rel="noopener">Sitebox.io</a></li>
+<li><a href="https://telegr.am/" target="_blank" rel="noopener">Telegram</a></li>
+<li><a href="https://yoozon.com/" target="_blank" rel="noopener">Yoozon</a></li>
+</ul>
+<p>##1.10 Elixir</p>
+<ul>
+<li><a href="https://github.com/BennyHallett/obelisk" target="_blank" rel="noopener">Obelisk</a></li>
+</ul>
+<p>##1.11 Erlang</p>
+<ul>
+<li><a href="https://github.com/gar1t/lambdapad" target="_blank" rel="noopener">LambdaPad</a></li>
+</ul>
+<p>##1.12 Go</p>
+<ul>
+<li><a href="https://github.com/wendal/gor" target="_blank" rel="noopener">gor</a></li>
+<li><a href="https://github.com/piranha/gostatic" target="_blank" rel="noopener">gostatic</a></li>
+<li><a href="https://github.com/mkaz/hastie" target="_blank" rel="noopener">Hastie</a></li>
+<li><a href="http://hugo.spf13.com/" target="_blank" rel="noopener">Hugo</a></li>
+<li><a href="https://github.com/drone/jkl" target="_blank" rel="noopener">jkl</a></li>
+<li><a href="https://github.com/dchest/kkr" target="_blank" rel="noopener">kkr</a></li>
+</ul>
+<p>##1.13  Groovy</p>
+<ul>
+<li><a href="http://sysgears.com/grain/" target="_blank" rel="noopener">Grain</a></li>
+<li><a href="https://github.com/fifthposition/rizzo/" target="_blank" rel="noopener">Rizzo</a></li>
+</ul>
+<p>##1.14  Haskell</p>
+<ul>
+<li><a href="http://jaspervdj.be/hakyll/" target="_blank" rel="noopener">Hakyll</a></li>
+<li><a href="https://github.com/jgm/yst" target="_blank" rel="noopener">yst</a></li>
+</ul>
+<p>##1.15  Java</p>
+<ul>
+<li><a href="http://fmpp.sourceforge.net/" target="_blank" rel="noopener">FMPP</a></li>
+<li><a href="http://jbake.org/" target="_blank" rel="noopener">JBake</a></li>
+<li><a href="https://github.com/wiztools/stagen" target="_blank" rel="noopener">StaGen</a></li>
+</ul>
+<p>##1.16  Language Agnostic</p>
+<ul>
+<li><a href="http://hammerformac.com/" target="_blank" rel="noopener">Hammer</a></li>
+<li><a href="http://livereload.com/" target="_blank" rel="noopener">LiveReload</a></li>
+<li><a href="http://mixture.io/" target="_blank" rel="noopener">Mixture</a></li>
+<li><a href="http://sitebuilder.codeplex.com/" target="_blank" rel="noopener">Site builder console</a></li>
+<li><a href="https://staticmate.com/" target="_blank" rel="noopener">StaticMate</a></li>
+<li><a href="https://github.com/vim-scripts/vimwiki" target="_blank" rel="noopener">vimwiki</a></li>
+</ul>
+<p>##1.17  Lua</p>
+<ul>
+<li><a href="https://github.com/Fizzadar/Luapress" target="_blank" rel="noopener">Luapress</a></li>
+</ul>
+<p>##1.18  Nimrod</p>
+<ul>
+<li><a href="https://github.com/dom96/ipsumgenera" target="_blank" rel="noopener">ipsum genera</a></li>
+</ul>
+<p>##1.19  Node.js</p>
+<ul>
+<li><a href="https://github.com/antwarjs/antwar" target="_blank" rel="noopener">antwar</a></li>
+<li><a href="https://github.com/modparadigm/apto" target="_blank" rel="noopener">Apto</a></li>
+<li><a href="http://assemble.io" target="_blank" rel="noopener">Assemble</a></li>
+<li><a href="http://indigounited.com/automaton/" target="_blank" rel="noopener">Automaton</a></li>
+<li><a href="https://npmjs.org/package/bam" target="_blank" rel="noopener">BAM</a></li>
+<li><a href="https://github.com/flatiron/blacksmith/" target="_blank" rel="noopener">blacksmith</a></li>
+<li><a href="https://github.com/stackoverflow/blode" target="_blank" rel="noopener">Blode</a></li>
+<li><a href="https://github.com/pvorb/node-bread" target="_blank" rel="noopener">bread</a></li>
+<li><a href="http://broccoli-taco.com/" target="_blank" rel="noopener">Broccoli Taco</a></li>
+<li><a href="http://brunch.io/" target="_blank" rel="noopener">Brunch</a></li>
+<li><a href="http://www.cabinjs.com/" target="_blank" rel="noopener">Cabin</a></li>
+<li><a href="https://github.com/cdmedia/cms.js" target="_blank" rel="noopener">CMS.js</a></li>
+<li><a href="https://github.com/logicalparadox/codex" target="_blank" rel="noopener">Codex</a></li>
+<li><a href="https://github.com/braziljs/conf-boilerplate" target="_blank" rel="noopener">Conf-Boilerplate</a> (For Conference and Events)</li>
+<li><a href="http://derbyjs.com/" target="_blank" rel="noopener">Derby</a></li>
+<li><a href="https://github.com/bevry/docpad" target="_blank" rel="noopener">DocPad</a></li>
+<li><a href="https://github.com/easystatic/easystatic" target="_blank" rel="noopener">Easystatic</a></li>
+<li><a href="https://github.com/fortes/enfield" target="_blank" rel="noopener">Enfield</a></li>
+<li><a href="https://github.com/thibaultCha/Equiprose" target="_blank" rel="noopener">Equiprose</a></li>
+<li><a href="https://github.com/alexmingoia/gabby" target="_blank" rel="noopener">Gabby</a></li>
+<li><a href="https://github.com/yeoman/generator-gulp-webapp" target="_blank" rel="noopener">generator-gulp-webapp</a></li>
+<li><a href="http://forge.synthmedia.co.uk/genesis/" target="_blank" rel="noopener">Genesis</a></li>
+<li><a href="https://github.com/mixu/ghost-render" target="_blank" rel="noopener">ghost-render</a></li>
+<li><a href="https://github.com/colynb/generator-go-static" target="_blank" rel="noopener">Go-Static!</a></li>
+<li><a href="http://gruntjs.com/" target="_blank" rel="noopener">Grunt</a></li>
+<li><a href="http://tsvensen.github.io/GruntStart/" target="_blank" rel="noopener">GruntStart</a></li>
+<li><a href="https://github.com/tvooo/grunt-bear" target="_blank" rel="noopener">grunt-bear</a></li>
+<li><a href="https://github.com/TxSSC/grunt-carpenter" target="_blank" rel="noopener">Grunt-Carpenter</a></li>
+<li><a href="https://github.com/aaaristo/grunt-html-builder" target="_blank" rel="noopener">grunt-html-builder</a></li>
+<li><a href="https://github.com/cambridge-healthcare/grunt-stencil" target="_blank" rel="noopener">grunt-stencil</a></li>
+<li><a href="https://github.com/paulwib/gulp-ssg" target="_blank" rel="noopener">gulp-ssg</a></li>
+<li><a href="https://github.com/es6rocks/harmonic" target="_blank" rel="noopener">Harmonic</a></li>
+<li><a href="http://harpjs.com" target="_blank" rel="noopener">Harp</a></li>
+<li><a href="http://macwright.org/heckle/" target="_blank" rel="noopener">Heckle</a></li>
+<li><a href="https://github.com/tommy351/hexo" target="_blank" rel="noopener">Hexo</a></li>
+<li><a href="http://hood.ie/" target="_blank" rel="noopener">Hoodie</a></li>
+<li><a href="https://github.com/rfunduk/jen" target="_blank" rel="noopener">jen</a></li>
+<li><a href="http://zohooo.github.io/jekyde/" target="_blank" rel="noopener">Jekyde</a></li>
+<li><a href="https://github.com/jonsherrard/jott" target="_blank" rel="noopener">Jott</a></li>
+<li><a href="https://github.com/koostudios/kel" target="_blank" rel="noopener">Kel</a></li>
+<li><a href="https://github.com/jaredhanson/kerouac" target="_blank" rel="noopener">Kerouac</a></li>
+<li><a href="https://github.com/testdouble/lineman" target="_blank" rel="noopener">Lineman</a></li>
+<li><a href="https://github.com/jpettersson/lingon" target="_blank" rel="noopener">Lingon</a></li>
+<li><a href="https://github.com/walmartlabs/lumbar" target="_blank" rel="noopener">Lumbar</a></li>
+<li><a href="https://github.com/mixu/markdown-styles" target="_blank" rel="noopener">markdown-styles</a></li>
+<li><a href="https://github.com/jgallen23/markx" target="_blank" rel="noopener">markx</a></li>
+<li><a href="http://www.metalsmith.io/" target="_blank" rel="noopener">Metalsmith</a></li>
+<li><a href="http://mimosajs.com/" target="_blank" rel="noopener">Mimosa</a></li>
+<li><a href="http://modulejs.github.io/modjs/" target="_blank" rel="noopener">Modjs</a></li>
+<li><a href="https://github.com/anupshinde/nirman" target="_blank" rel="noopener">Nirman</a></li>
+<li><a href="http://lab.lepture.com/nico/" target="_blank" rel="noopener">Nico</a></li>
+<li><a href="https://github.com/creationix/node-blog" target="_blank" rel="noopener">node-blog</a></li>
+<li><a href="https://github.com/wangbus/node-jekyll" target="_blank" rel="noopener">node-jekyll</a></li>
+<li><a href="https://github.com/the-grid/noflo-jekyll" target="_blank" rel="noopener">noflo-jekyll</a></li>
+<li><a href="https://github.com/c9/nog" target="_blank" rel="noopener">Nog</a></li>
+<li><a href="https://github.com/jawerty/pagen" target="_blank" rel="noopener">pagen</a></li>
+<li><a href="https://github.com/caolan/petrify" target="_blank" rel="noopener">Petrify</a></li>
+<li><a href="https://phenomic.io/" target="_blank" rel="noopener">Phenomic</a></li>
+<li><a href="http://jsantell.github.io/poet/" target="_blank" rel="noopener">Poet</a></li>
+<li><a href="https://github.com/alexyoung/pop" target="_blank" rel="noopener">Pop</a></li>
+<li><a href="https://github.com/thegreatsunra/propeller" target="_blank" rel="noopener">Propeller</a></li>
+<li><a href="https://github.com/laktek/punch" target="_blank" rel="noopener">Punch</a></li>
+<li><a href="https://github.com/shanewholloway/node-qssg" target="_blank" rel="noopener">Qabex</a></li>
+<li><a href="https://github.com/tjvantoll/quick-start-template" target="_blank" rel="noopener">Quick Start Guide Template</a></li>
+<li><a href="https://npmjs.org/package/quill" target="_blank" rel="noopener">Quill</a></li>
+<li><a href="https://github.com/BradDenver/react-static-site" target="_blank" rel="noopener">React Static Site</a></li>
+<li><a href="http://jxnblk.com/writing/posts/static-site-generation-with-react-and-webpack/" target="_blank" rel="noopener">React + Webpack</a></li>
+<li><a href="https://github.com/felixge/node-romulus" target="_blank" rel="noopener">romulus</a></li>
+<li><a href="http://roots.cx/" target="_blank" rel="noopener">roots</a></li>
+<li><a href="https://github.com/wesleytodd/rufio" target="_blank" rel="noopener">Rufio</a></li>
+<li><a href="https://surge.sh/" target="_blank" rel="noopener">Surge</a></li>
+<li><a href="https://github.com/techwraith/scotch" target="_blank" rel="noopener">Scotch</a></li>
+<li><a href="https://github.com/fians/situs" target="_blank" rel="noopener">Situs</a></li>
+<li><a href="https://github.com/harsha-mudi/squareboy" target="_blank" rel="noopener">squareboy</a></li>
+<li><a href="https://github.com/kriasoft/static-site-starter" target="_blank" rel="noopener">Static Site Starter Kit</a></li>
+<li><a href="https://github.com/ff0000/statix" target="_blank" rel="noopener">Statix</a></li>
+<li><a href="https://github.com/AVGP/susi" target="_blank" rel="noopener">SuSi</a></li>
+<li><a href="https://github.com/ido50/Szyslak" target="_blank" rel="noopener">Szyslak</a></li>
+<li><a href="http://krasimir.github.io/techy/" target="_blank" rel="noopener">Techy</a></li>
+<li><a href="https://github.com/rprieto/thumbsup" target="_blank" rel="noopener">thumbsup</a></li>
+<li><a href="http://volojs.org/" target="_blank" rel="noopener">volo</a></li>
+<li><a href="https://github.com/wprl/wainwright" target="_blank" rel="noopener">wainwright</a></li>
+<li><a href="https://github.com/shaoshuai0102/wanna" target="_blank" rel="noopener">Wanna</a></li>
+<li><a href="https://github.com/creationix/wheat" target="_blank" rel="noopener">Wheat</a></li>
+<li><a href="http://www.wikismith.com/" target="_blank" rel="noopener">Wikismith</a></li>
+<li><a href="http://jnordberg.github.io/wintersmith/" target="_blank" rel="noopener">Wintersmith</a></li>
+<li><a href="https://github.com/studiomoniker/woods" target="_blank" rel="noopener">Woods</a></li>
+<li><a href="https://npmjs.org/package/yassg" target="_blank" rel="noopener">yassg</a></li>
+<li><a href="http://yeoman.io/" target="_blank" rel="noopener">Yeoman</a></li>
+</ul>
+<p>##1.20  OCaml</p>
+<ul>
+<li><a href="http://zoggy.github.io/stog/" target="_blank" rel="noopener">Stog</a></li>
+<li><a href="http://loup-vaillant.fr/projects/ussm/" target="_blank" rel="noopener">Ultra Simple Site Maker</a></li>
+</ul>
+<p>##1.21  PHP</p>
+<ul>
+<li><a href="https://github.com/billpatrianakos/animal-f" target="_blank" rel="noopener">Animal</a></li>
+<li><a href="https://github.com/sarfraznawaz2005/BloggerCMS" target="_blank" rel="noopener">BloggerCMS</a></li>
+<li><a href="http://carew.github.io/" target="_blank" rel="noopener">Carew</a></li>
+<li><a href="http://couscous.io/" target="_blank" rel="noopener">Couscous</a></li>
+<li><a href="https://github.com/Circa75/dropplets" target="_blank" rel="noopener">Dropplets</a></li>
+<li><a href="http://fansoro.org/" target="_blank" rel="noopener">Fansoro</a></li>
+<li><a href="http://getgrav.org/" target="_blank" rel="noopener">Grav</a></li>
+<li><a href="http://gumdropapp.com/" target="_blank" rel="noopener">Gumdrop</a></li>
+<li><a href="http://www.phrozn.info/en/" target="_blank" rel="noopener">Phrozn</a></li>
+<li><a href="http://bolt80.com/piecrust/" target="_blank" rel="noopener">PieCrust</a></li>
+<li><a href="https://github.com/megakote/purepress" target="_blank" rel="noopener">Purepress</a></li>
+<li><a href="http://sculpin.io/" target="_blank" rel="noopener">Sculpin</a></li>
+<li><a href="https://github.com/marcoarment/secondcrack" target="_blank" rel="noopener">Second Crack</a></li>
+<li><a href="https://github.com/maxailloud/SG" target="_blank" rel="noopener">SG</a></li>
+<li><a href="https://github.com/inanimatt/site-builder" target="_blank" rel="noopener">Site-builder</a></li>
+<li><a href="https://github.com/yqtaku/site-maker" target="_blank" rel="noopener">SiteMaker</a></li>
+<li><a href="https://github.com/edvanbeinum/snowshoe" target="_blank" rel="noopener">Snowshoe</a></li>
+<li><a href="https://github.com/yosymfony/Spress" target="_blank" rel="noopener">Spress</a></li>
+<li><a href="https://github.com/kolber/stacey" target="_blank" rel="noopener">Stacey</a></li>
+<li><a href="http://www.statamic.com/" target="_blank" rel="noopener">Statamic</a></li>
+<li><a href="https://github.com/catnapgames/Tempo" target="_blank" rel="noopener">Tempo</a></li>
+<li><a href="http://about.asika.tw/vaseman/" target="_blank" rel="noopener">Vaseman</a></li>
+<li><a href="http://github.com/datenstrom/yellow" target="_blank" rel="noopener">Yellow</a></li>
+<li><a href="https://github.com/alpacaaa/wadoo" target="_blank" rel="noopener">Wadoo</a></li>
+</ul>
+<p>##1.22  Python</p>
+<ul>
+<li><a href="https://github.com/posativ/acrylamid" target="_blank" rel="noopener">Acrylamid</a></li>
+<li><a href="https://bitbucket.org/jek/blatter/" target="_blank" rel="noopener">Blatter</a></li>
+<li><a href="http://www.blogofile.com/" target="_blank" rel="noopener">Blogofile</a></li>
+<li><a href="https://github.com/ipconfiger/blogen" target="_blank" rel="noopener">Blogen</a></li>
+<li><a href="https://github.com/axitkhurana/buster" target="_blank" rel="noopener">buster</a></li>
+<li><a href="http://cactusformac.com/" target="_blank" rel="noopener">Cactus</a></li>
+<li><a href="https://github.com/dz/chisel" target="_blank" rel="noopener">Chisel</a></li>
+<li><a href="https://github.com/lejonet/Cipherpress" target="_blank" rel="noopener">Cipherpress</a></li>
+<li><a href="https://github.com/shazow/composer" target="_blank" rel="noopener">Composer</a></li>
+<li><a href="https://pypi.python.org/pypi/cyrax" target="_blank" rel="noopener">cyrax</a></li>
+<li><a href="https://github.com/mtigas/django-medusa/" target="_blank" rel="noopener">django-medusa</a></li>
+<li><a href="https://github.com/amitu/djangothis/" target="_blank" rel="noopener">djangothis</a></li>
+<li><a href="https://github.com/fallenhitokiri/drupan" target="_blank" rel="noopener">drupan</a></li>
+<li><a href="https://github.com/FSX/elyse" target="_blank" rel="noopener">Elyse</a></li>
+<li><a href="https://github.com/tylerbutler/engineer" target="_blank" rel="noopener">Engineer</a></li>
+<li><a href="http://www.voidspace.org.uk/python/firedrop2/" target="_blank" rel="noopener">Firedrop2</a></li>
+<li><a href="http://dkuntz2.github.io/fjord/" target="_blank" rel="noopener">fjord</a></li>
+<li><a href="https://github.com/nikcub/floyd" target="_blank" rel="noopener">Floyd</a></li>
+<li><a href="http://glyphobet.github.io/fragments/" target="_blank" rel="noopener">Fragments</a></li>
+<li><a href="http://pythonhosted.org/Frozen-Flask/" target="_blank" rel="noopener">Frozen-Flask</a></li>
+<li><a href="https://github.com/teiko/glynn" target="_blank" rel="noopener">Glynn</a></li>
+<li><a href="https://github.com/xfire/growl/" target="_blank" rel="noopener">growl</a></li>
+<li><a href="https://github.com/mhlakhani/halwa" target="_blank" rel="noopener">Halwa</a></li>
+<li><a href="https://pypi.python.org/pypi/handcrank" target="_blank" rel="noopener">handcrank</a></li>
+<li><a href="https://github.com/lakshmivyas/hyde" target="_blank" rel="noopener">Hyde</a></li>
+<li><a href="https://github.com/aconbere/igor" target="_blank" rel="noopener">Igor</a></li>
+<li><a href="http://jinja.pocoo.org/" target="_blank" rel="noopener">Jinja</a></li>
+<li><a href="https://github.com/jokull/jinjet" target="_blank" rel="noopener">jinjet</a></li>
+<li><a href="https://www.getlektor.com/" target="_blank" rel="noopener">Lektor</a></li>
+<li><a href="https://github.com/an0/Letterpress" target="_blank" rel="noopener">Letterpress</a></li>
+<li><a href="https://github.com/borismus/lightning" target="_blank" rel="noopener">Lightning</a></li>
+<li><a href="https://lilac.readthedocs.org/en/latest/index.html" target="_blank" rel="noopener">lilac</a></li>
+<li><a href="https://github.com/yaph/logya" target="_blank" rel="noopener">Logya</a></li>
+<li><a href="http://www.makotemplates.org/" target="_blank" rel="noopener">Mako</a></li>
+<li><a href="https://github.com/myfreeweb/markbox" target="_blank" rel="noopener">Markbox</a></li>
+<li><a href="http://markdoc.org/" target="_blank" rel="noopener">Markdoc</a></li>
+<li><a href="http://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a></li>
+<li><a href="http://mynt.mirroredwhite.com/" target="_blank" rel="noopener">mynt</a></li>
+<li><a href="https://github.com/jreese/nib" target="_blank" rel="noopener">Nib</a></li>
+<li><a href="http://nikola.ralsina.com.ar/" target="_blank" rel="noopener">Nikola</a></li>
+<li><a href="http://obraz.pirx.ru/" target="_blank" rel="noopener">Obraz</a></li>
+<li><a href="https://github.com/getpelican/pelican/" target="_blank" rel="noopener">Pelican</a></li>
+<li><a href="http://inky.github.io/pilcrow/" target="_blank" rel="noopener">PILCROW</a></li>
+<li><a href="https://bitbucket.org/obensonne/poole" target="_blank" rel="noopener">Poole</a></li>
+<li><a href="http://pyblosxom.github.io/" target="_blank" rel="noopener">PyBlosxom</a></li>
+<li><a href="http://pykwiki.nullism.com/" target="_blank" rel="noopener">PyKwiki</a></li>
+<li><a href="https://github.com/arthurk/pyll" target="_blank" rel="noopener">Pyll</a></li>
+<li><a href="https://github.com/mitsuhiko/rstblog" target="_blank" rel="noopener">rstblog</a></li>
+<li><a href="http://rtorr.github.io/serious-chicken/" target="_blank" rel="noopener">Serious Chicken</a></li>
+<li><a href="https://github.com/venthur/sg" target="_blank" rel="noopener">sg</a></li>
+<li><a href="http://honza.ca/socrates/" target="_blank" rel="noopener">Socrates</a></li>
+<li><a href="https://github.com/alvesjnr/speechhub" target="_blank" rel="noopener">Speech Hub</a></li>
+<li><a href="http://sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a></li>
+<li><a href="https://github.com/nickpetty/squirrel" target="_blank" rel="noopener">Squirrel</a></li>
+<li><a href="http://stadoproject.org/" target="_blank" rel="noopener">Stadø</a></li>
+<li><a href="https://github.com/Ceasar/staticjinja" target="_blank" rel="noopener">staticjinja</a></li>
+<li><a href="https://github.com/colinta/StrangeCase" target="_blank" rel="noopener">StrangeCase</a></li>
+<li><a href="https://github.com/rigoneri/syte" target="_blank" rel="noopener">Syte</a></li>
+<li><a href="http://tags.brace.io/" target="_blank" rel="noopener">Tags</a></li>
+<li><a href="https://github.com/sebastien/tahchee" target="_blank" rel="noopener">tahchee</a></li>
+<li><a href="http://tinkerer.me/" target="_blank" rel="noopener">Tinkerer</a></li>
+<li><a href="https://github.com/semk/voldemort" target="_blank" rel="noopener">Voldemort</a></li>
+<li><a href="https://github.com/bow/volt/" target="_blank" rel="noopener">Volt</a></li>
+<li><a href="http://gitorious.org/webber" target="_blank" rel="noopener">Webber</a></li>
+<li><a href="https://github.com/mythmon/wok" target="_blank" rel="noopener">Wok</a></li>
+</ul>
+<p>##1.23  Racket</p>
+<ul>
+<li><a href="https://github.com/greghendershott/frog" target="_blank" rel="noopener">Frog</a></li>
+</ul>
+<p>##1.24  Ruby</p>
+<ul>
+<li><a href="https://github.com/botanicus/ace" target="_blank" rel="noopener">Ace</a></li>
+<li><a href="http://tinytree.info/" target="_blank" rel="noopener">Bonsai</a></li>
+<li><a href="https://github.com/sstephenson/brochure" target="_blank" rel="noopener">Brochure</a></li>
+<li><a href="https://github.com/cdn64/deplot" target="_blank" rel="noopener">deplot</a></li>
+<li><a href="https://github.com/nex3/dynamicmatic" target="_blank" rel="noopener">DynamicMatic</a></li>
+<li><a href="https://github.com/46Bit/fairytale" target="_blank" rel="noopener">Fairytale</a></li>
+<li><a href="https://github.com/blahed/frank" target="_blank" rel="noopener">Frank</a></li>
+<li><a href="https://github.com/dreverri/gollum-site" target="_blank" rel="noopener">gollum-site</a></li>
+<li><a href="https://github.com/owainlewis/gravity" target="_blank" rel="noopener">Gravity</a></li>
+<li><a href="https://github.com/thoughtbot/high_voltage" target="_blank" rel="noopener">High Voltage</a></li>
+<li><a href="http://hobix.github.io/hobix/" target="_blank" rel="noopener">hobix</a></li>
+<li><a href="https://github.com/hobix/hobix/" target="_blank" rel="noopener">Hobix</a></li>
+<li><a href="https://github.com/mojombo/jekyll" target="_blank" rel="noopener">Jekyll</a></li>
+<li><a href="https://github.com/sandal/korma" target="_blank" rel="noopener">korma</a></li>
+<li><a href="http://avdgaag.github.io/laze/" target="_blank" rel="noopener">Laze</a></li>
+<li><a href="https://github.com/petebrowne/machined" target="_blank" rel="noopener">Machined</a></li>
+<li><a href="https://github.com/donmelton/magneto" target="_blank" rel="noopener">Magneto</a></li>
+<li><a href="https://github.com/petebrowne/massimo" target="_blank" rel="noopener">Massimo</a></li>
+<li><a href="http://middlemanapp.com/" target="_blank" rel="noopener">Middleman</a></li>
+<li><a href="https://github.com/lucaong/Moka" target="_blank" rel="noopener">Moka</a></li>
+<li><a href="http://nanoc.ws/" target="_blank" rel="noopener">Nanoc</a></li>
+<li><a href="http://nestacms.com/" target="_blank" rel="noopener">NestaCMS</a></li>
+<li><a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a></li>
+<li><a href="https://github.com/mdub/pith" target="_blank" rel="noopener">Pith</a></li>
+<li><a href="http://rubyforge.org/projects/rakeweb/" target="_blank" rel="noopener">Rakeweb</a></li>
+<li><a href="http://snk.tuxfamily.org/lib/rassmalog/doc/guide.html" target="_blank" rel="noopener">Rassmalog</a></li>
+<li><a href="http://rog.rubyforge.org/" target="_blank" rel="noopener">Rog</a></li>
+<li><a href="http://rote.rubyforge.org/" target="_blank" rel="noopener">rote</a></li>
+<li><a href="http://www.apeth.com/RubyFrontierDocs/default.html" target="_blank" rel="noopener">RubyFrontier</a></li>
+<li><a href="http://ruhoh.com/" target="_blank" rel="noopener">Ruhoh</a></li>
+<li><a href="https://github.com/aprescott/serif" target="_blank" rel="noopener">Serif</a></li>
+<li><a href="http://get-serve.com/" target="_blank" rel="noopener">Serve</a></li>
+<li><a href="https://github.com/rubyworks/shelob" target="_blank" rel="noopener">Shelob</a></li>
+<li><a href="http://stasis.me/" target="_blank" rel="noopener">stasis</a></li>
+<li><a href="https://github.com/mindeavor/staticmatic2" target="_blank" rel="noopener">StaticMatic 2</a></li>
+<li><a href="http://rubyforge.org/projects/staticmatic/" target="_blank" rel="noopener">StaticMatic</a></li>
+<li><a href="http://staticweb.rubyforge.org/" target="_blank" rel="noopener">StaticWeb</a></li>
+<li><a href="https://github.com/swaroopsm/striker" target="_blank" rel="noopener">Striker</a></li>
+<li><a href="https://github.com/cloudhead/toto" target="_blank" rel="noopener">toto</a></li>
+<li><a href="http://webby.rubyforge.org/" target="_blank" rel="noopener">Webby</a></li>
+<li><a href="http://webgen.rubyforge.org/" target="_blank" rel="noopener">webgen</a></li>
+<li><a href="http://yurtcms.roberthahn.ca/" target="_blank" rel="noopener">Yurt CMS</a></li>
+<li><a href="http://www.zenspider.com/projects/zenweb.html" target="_blank" rel="noopener">zenweb</a></li>
+<li><a href="http://awestruct.org/" target="_blank" rel="noopener">{ :awestruct }</a></li>
+</ul>
+<p>##1.25  Scala</p>
+<ul>
+<li><a href="https://github.com/wspringer/monkeyman" target="_blank" rel="noopener">monkeyman</a></li>
+<li><a href="https://github.com/scalate/scalate" target="_blank" rel="noopener">Scalate</a></li>
+</ul>
+<p>##1.26  Scheme</p>
+<ul>
+<li><a href="http://wiki.call-cc.org/eggref/4/hyde" target="_blank" rel="noopener">Hyde</a></li>
+</ul>
+<p>##1.27  Shell</p>
+<ul>
+<li><a href="https://github.com/Jack000/Expose" target="_blank" rel="noopener">Exposé</a></li>
+<li><a href="https://gitorious.org/fugitive" target="_blank" rel="noopener">fugitive</a></li>
+<li><a href="https://github.com/wlangstroth/simple-static" target="_blank" rel="noopener">simple-static</a></li>
+<li><a href="https://github.com/jroimartin/sw" target="_blank" rel="noopener">sw</a></li>
+<li><a href="https://github.com/stef/utterson" target="_blank" rel="noopener">Utterson</a></li>
+<li><a href="http://www.0x743.com/vee/" target="_blank" rel="noopener">Vee</a></li>
+<li><a href="http://werc.cat-v.org/" target="_blank" rel="noopener">werc</a></li>
+</ul>
+<p>##1.28  Tcl</p>
+<ul>
+<li><a href="https://github.com/dbohdan/tclssg" target="_blank" rel="noopener">Tclssg</a></li>
+</ul>
+<p>#2  For Help</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">WebSite</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://staticsitegenerators.net" target="_blank" rel="noopener">Static Site Generators</a></td>
+<td style="text-align:center">Static Site Generators<br><br>The definitive listing of Static Site Generators — all 437 of them!</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://disqus.com/admin/signup" target="_blank" rel="noopener">Disqus</a></td>
+<td style="text-align:center">The #1 way to build your audience<br><br>Disqus offers the best add-on tools for site owners to power discussions, increase engagement, and earn revenue.<br> Please don’t forget your Shortname</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.google.com/analytics" target="_blank" rel="noopener">Google Analytics</a></td>
+<td style="text-align:center">Get stronger results across all your sites, apps and offline channels. Google’s analytics solutions help you turn customer insights into real gains.</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.google.com/webmasters" target="_blank" rel="noopener">Google Webmasters</a></td>
+<td style="text-align:center">Track your site’s search performance with Google Search Console and browse around for more webmaster resources.</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://www.godaddy.com/" target="_blank" rel="noopener">Godaddy</a></td>
+<td style="text-align:center">Get a free domain with a website from GoDaddy.</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://www.dnspod.cn/" target="_blank" rel="noopener">Dnspod</a></td>
+<td style="text-align:center">DNS resolution service, add a new domain name, and apply a Github Pages A record points to the ip: 207.97.227.245</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-About-This-Site"><a href="#3-About-This-Site" class="headerlink" title="#3    About This Site"></a>#3    About This Site</h2><p>Our Site is based on Pelican(Python)</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/linux/">linux</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/linux/" title="linux">linux</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Gatieme个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2018/08/05/2018/08/0002_cmatrix/">
+            
+                cmatrix
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="javascript: void(0);">没有下一篇了</a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/gatieme.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/gatieme.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/gatieme.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: '2018/08/0001_static-site-generators' || '2018/08/05/2018/08/0001_static-site-generators/',
+    owner: 'gatieme',
+    repo: 'blog_comments',
+    clientId: 'cf796c25fcf4369b9295',
+    clientSecret: 'c2ecfa50b9914a8fc9655ede7c9e6cf2ff84a70c'
+  });
+  </script>
+
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/qemu/">qemu</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/debug/">debug</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (3)</a>
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
+  
+    <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://blog.csdn.net/gatieme" target="_blank" title="我的 CSDN 博客">AderStep--紫夜阑珊-青伶巷草</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">紫夜阑珊-青伶巷草</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
