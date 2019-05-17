@@ -1,0 +1,3 @@
+[submodule "themes/hexo-theme-xups"]
+	path = themes/hexo-theme-xups
+	url = git@github.com:gatieme/hexo-theme-xups
