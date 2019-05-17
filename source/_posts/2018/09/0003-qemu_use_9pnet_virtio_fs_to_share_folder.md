@@ -136,7 +136,7 @@ CONFIG_NET_9P_DEBUG=y (Optional可选)
 
 host 机器的共享目录
 
-![host 机器的共享目录](001-9p_virtio_host.png)
+![host 机器的共享目录](https://github.com/gatieme/AderXCoding/blob/master/system/tools/qemu/0001-9p_virtio/001-9p_virtio_host.png)
 
 guest 机器的挂载点
 
