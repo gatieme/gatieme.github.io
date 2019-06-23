@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
-    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
     <title>cmatrix | KernelShow</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
-    <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel" >
-    <meta name="description" content="内核杂谈" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel">
+    <meta name="description" content="内核杂谈">
 
     
-    <link rel="alternative" href="/atom.xml" title="KernelShow" type="application/atom+xml" >
+    <link rel="alternative" href="/atom.xml" title="KernelShow" type="application/atom+xml">
     
     
-    <link rel="shortcut icon" href="/favicon.ico" >
+    <link rel="shortcut icon" href="/favicon.ico">
     
     <link rel="stylesheet" href="/css/style.css">
     <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
 
 
 </head>
-
+</html>
 <body class="home">
     <!--[if lt IE 9]>
     <div class="browsehappy">
@@ -108,7 +108,7 @@
                 
             </div>
             <div class="avatar fr">
-                <img src="/img/gatieme.jpg" alt="avatar" title="Gatieme-(绊铖)" >
+                <img src="/img/gatieme.jpg" alt="avatar" title="Gatieme-(绊铖)">
             </div>
         </div>
     </section>
@@ -130,8 +130,92 @@
         <time datetime="2018-08-05T06:38:00.000Z">2018-08-05</time>
     </p>
     <div class="post-content">
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cmatrix</span><br></pre></td></tr></table></figure>
-<p><img src="images/2018/08/002-cmatrix.jpg" alt="cmatrix"></p>
+        <table>
+<thead>
+<tr>
+<th style="text-align:center">CSDN</th>
+<th style="text-align:center">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">Aderstep–紫夜阑珊-青伶巷草</a></td>
+<td style="text-align:center"><a href="https://github.com/gatieme/AderXCoding/tree/master/system/tools" target="_blank" rel="noopener"><code>AderXCoding/system/tools</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><br><br><a rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>本作品采用<a rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可, 转载请注明出处<br><br></p>
+<h2 id="1-Cmatrix-简介"><a href="#1-Cmatrix-简介" class="headerlink" title="#1    Cmatrix 简介"></a>#1    Cmatrix 简介</h2><p>还记得 黑客帝国 中的代码雨么, cmatrix 就是Linux 终端下的代码雨, 虽然没有黑客帝国里面那么酷炫, 但是这条命令运行起来充满了未来的科技感.</p>
+<p>主页 : <a href="https://github.com/abishekvashok/cmatrix" target="_blank" rel="noopener">https://github.com/abishekvashok/cmatrix</a></p>
+<h2 id="2-Cmatrix-使用"><a href="#2-Cmatrix-使用" class="headerlink" title="#2    Cmatrix 使用"></a>#2    Cmatrix 使用</h2><h2 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="##2.1    安装"></a>##2.1    安装</h2><p><code>cpp
+sudo apt-get install cmatrix</code></p>
+<h2 id="2-2-使用"><a href="#2-2-使用" class="headerlink" title="##2.2    使用"></a>##2.2    使用</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-a</td>
+<td style="text-align:center">异步滚动效果(默认效果) Asynchronous scroll</td>
+</tr>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:center">随机粗体  Bold characters on</td>
+</tr>
+<tr>
+<td style="text-align:center">-B</td>
+<td style="text-align:center">全部粗体 All bold characters (overrides -b)</td>
+</tr>
+<tr>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">强制使用当前终端的样式 Force the linux $TERM type to be on</td>
+</tr>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">使用 matrix 字体 Linux mode (uses matrix console font)</td>
+</tr>
+<tr>
+<td style="text-align:center">-o</td>
+<td style="text-align:center">使用旧的滚动方式 Use old-style scrolling</td>
+</tr>
+<tr>
+<td style="text-align:center">-h</td>
+<td style="text-align:center">帮助菜单 Print usage and exit</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">不使用粗体 No bold characters (overrides -b and -B, default)</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">屏幕保护模式, 按任意键即退出 “Screensaver” mode, exits on first keystroke</td>
+</tr>
+<tr>
+<td style="text-align:center">-x</td>
+<td style="text-align:center">X window 模式 X window mode, use if your xterm is using mtx.pcf</td>
+</tr>
+<tr>
+<td style="text-align:center">-V</td>
+<td style="text-align:center">显示版本号 Print version information and exit</td>
+</tr>
+<tr>
+<td style="text-align:center">-u</td>
+<td style="text-align:center">刷新频率, 0-9, 也就是滚动的快慢（值越小越快）delay (0 - 10, default 4): Screen update delay</td>
+</tr>
+<tr>
+<td style="text-align:center">-C</td>
+<td style="text-align:center">指定字体的显示颜色 [color]: Use this color for matrix (default green)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-3-使用"><a href="#2-3-使用" class="headerlink" title="##2.3    使用"></a>##2.3    使用</h2><p><code>cpp
+cmatrix -s -b -C cyan</code><br><img src="https://github.com/gatieme/AderXCoding/blob/master/system/tools/cmatrix/cmatrix.png" alt="cmatrix"></p>
+<p>*本作品/博文 ( <a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">AderStep-紫夜阑珊-青伶巷草 Copyright ©2013-2017</a> ), 由 <a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">成坚(gatieme)</a> 创作,</p>
+<p>*采用<a rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><a rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可. 欢迎转载、使用、重新发布, 但务必保留文章署名<a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">成坚gatieme</a> ( 包含链接: <a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">http://blog.csdn.net/gatieme</a> ), 不得用于商业目的,</p>
+<p>*基于本文修改后的作品务必以相同的许可发布. 如有任何疑问，请与我联系.</p>
 
     </div>
     <p class="post-meta">
@@ -168,7 +252,7 @@
 <div class="article-nav clearfix">
     
     <span class="prev fl">
-        上一篇<br >
+        上一篇<br>
         <a href="/2018/09/02/2018/09/0001-use_hexo_to_build_your_github_page_blog/">
             
                 使用 Hexo 搭建 GitHub Page 博客(一)
@@ -179,7 +263,7 @@
 
     
     <span class="next fr">
-        下一篇<br >
+        下一篇<br>
         <a href="/2018/08/05/2018/08/0001_static-site-generators/">
             
                 Static site generators
