@@ -36,9 +36,9 @@ blogexcerpt: cmatrix
 ##2.1    安装
 -------
 
-``cpp
+```cpp
 sudo apt-get install cmatrix
-``
+```
 
 ##2.2    使用
 -------
@@ -64,12 +64,12 @@ sudo apt-get install cmatrix
 ##2.3    使用
 -------
 
-``cpp
+```cpp
 cmatrix -s -b -C cyan
-``
+```
+
 
 ![cmatrix](https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/cmatrix/cmatrix.png)
-
 
 
 
