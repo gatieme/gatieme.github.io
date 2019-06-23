@@ -68,7 +68,7 @@ sudo apt-get install cmatrix
 cmatrix -s -b -C cyan
 ``
 
-![cmatrix](https://github.com/gatieme/AderXCoding/blob/master/system/tools/cmatrix/cmatrix.png)
+![cmatrix](https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/cmatrix/cmatrix.png)
 
 
 
