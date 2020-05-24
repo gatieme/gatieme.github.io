@@ -3,11 +3,13 @@ date: 2020-05-24 15:58
 author: gatieme
 tags: scheduler
 categories:
--linux
--kernel
--scheduler
+	-linux
+	-kernel
+	-scheduler
 thumbnail:
-blogexcerpt: 在进程唤醒的过程中为进程选核时, wake_affine 倾向于将被唤醒进程尽可能安排在 waking CPU 上, 这样考虑的原因是: 有唤醒关系的进程是相互关联的, 尽可能地运行在具有 cache 共享的调度域中, 这样可以获得一些 chache-hit 带来的性能提升. 这时 wake_affine 的初衷, 但是这也是一把双刃剑.
+blogexcerpt: 在进程唤醒的过程中为进程选核时, wake_affine 倾向于将被唤醒进程尽可能安排在 waking CPU 上, 这样考虑的原因是, 有唤醒关系的进程是相互关联的, 尽可能地运行在具有 cache 共享的调度域中, 这样可以获得一些 chache-hit 带来的性能提升. 这时 wake_affine 的初衷, 但是这也是一把双刃剑.
+
+---
 
 | 日期 | 内核版本 | 架构| 作者 | GitHub| CSDN |
 | ------- |:-------:|:-------:|:-------:|:-------:|:-------:|
