@@ -19,15 +19,20 @@ blogexcerpt: 在进程唤醒的过程中为进程选核时, wake_affine 倾向�
 
 
 
+
+#1 wake_affine 机制
+-------
+
+##1.1    引入 WAKE_AFFINE 的背景
+-------
+
+
 当进程被唤醒的时候（try_to_wake_up），需要用 select_task_rq_fair为该 task 选择一个合适的CPU(runqueue), 接着会通过 check_preempt_wakeup 去看被唤醒的进程是否要抢占所在 CPU 的当前进程.
 
 
 > 关于唤醒抢占的内容, 请参考 [Linux唤醒抢占----Linux进程的管理与调度(二十三）](https://blog.csdn.net/gatieme/article/details/51872831)
 >
 > 调度器对之前 SLEEP 的进程唤醒后重新入 RUNQ 的时候, 会对进程做一些补偿, 请参考 [Linux CFS调度器之唤醒补偿--Linux进程的管理与调度(三十）](https://blog.csdn.net/gatieme/article/details/52068061)
-
-
-
 
 
 这个选核的过程我们一般称之为 BALANCE_WAKE. 为了能清楚的描述这个场景，我们定义
@@ -71,7 +76,7 @@ SMP情况下，由于系统的CPU资源比较多，waker和wakee没有必要争�
 内核需要一个简单有效的机制去做这个事情, 因此 WAKE_AFFINE 出现在内核中.
 
 
-#1 wake_affine 机制
+##1.2	WAKE_AFFINE 机制简介
 -------
 
 [`select_task_rq_fair`]() 选核其实是一个优选的过程, 通常会有限选择一个 cache-miss 等开销最小的一个
