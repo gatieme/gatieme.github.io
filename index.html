@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>KernelShow</title>
+    <title>OSKernelLAB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel">
     <meta name="description" content="内核杂谈">
 
     
-    <link rel="alternative" href="/atom.xml" title="KernelShow" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="OSKernelLAB" type="application/atom+xml">
     
     
     <link rel="shortcut icon" href="/favicon.ico">
@@ -48,8 +48,8 @@
         <div class="logo">
             <a href="/">
                 <div class="cover">
-                    <span class="name">KernelShow</span>
-                    <span class="description">内核杂谈</span>
+                    <span class="name">OSKernelLAB</span>
+                    <span class="description">OS内核实验室</span>
                 </div>
             </a>
         </div>
@@ -140,7 +140,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/">
+    	<a href="https://oskernellab.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/">
     		Cmder 中文乱码设置
     	</a>
     </h3>
@@ -166,11 +166,11 @@
                 Cmder 是 Windows 下替换原有 cmd 的绝佳工具, 但是与默认的 cmd 一样, 都与 git 等工具命令行存在一些兼容性问题, 比如中文乱码问题.
             
             <p class="more">
-                <a href="https://kernelshow.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/" title="Cmder 中文乱码设置">
+            <a href="https://oskernellab.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/" title="Cmder 中文乱码设置">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图">
                 
@@ -190,7 +190,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/">
+    	<a href="https://oskernellab.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/">
     		Linux CFS调度器之唤醒WAKE_AFFINE 机制--Linux进程的管理与调度(三十一)
     	</a>
     </h3>
@@ -216,11 +216,11 @@
                 在进程唤醒的过程中为进程选核时, wake_affine 倾向于将被唤醒进程尽可能安排在 waking CPU 上, 这样考虑的原因是, 有唤醒关系的进程是相互关联的, 尽可能地运行在具有 cache 共享的调度域中, 这样可以获得一些 chache-hit 带来的性能提升. 这时 wake_affine 的初衷, 但是这也是一把双刃剑.
             
             <p class="more">
-                <a href="https://kernelshow.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/" title="Linux CFS调度器之唤醒WAKE_AFFINE 机制--Linux进程的管理与调度(三十一)">
+            <a href="https://oskernellab.com/2020/05/24/2020/0524-0001-linux_cfs_scheduler_31_wake_affine/" title="Linux CFS调度器之唤醒WAKE_AFFINE 机制--Linux进程的管理与调度(三十一)">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/4.jpg" alt="默认配图">
                 
@@ -240,7 +240,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">
+    	<a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">
     		用户态使用 glibc/backtrace 追踪函数调用堆栈定位段错误
     	</a>
     </h3>
@@ -266,11 +266,11 @@
                 一般用户态程序出现段错误, 而我们想要察看函数运行时堆栈, 常用的方法是使用GDB(bt命令)之类的外部调试器,但是有些时候为了分析程序的BUG,(主要针对长时间运行程序的分析),在程序出错时打印出函数的调用堆栈是非常有用的. C 库中提供了一些堆栈 backtrace 的函数用于跟踪函数的堆栈信息, 我们也可以通过注册异常处理函数来实现函数异常时自动打印调用栈.
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/" title="用户态使用 glibc/backtrace 追踪函数调用堆栈定位段错误">
+            <a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/" title="用户态使用 glibc/backtrace 追踪函数调用堆栈定位段错误">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图">
                 
@@ -290,7 +290,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">
+    	<a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">
     		qemu中使用 9p virtio, 支持 host 和 guest 中共享目录
     	</a>
     </h3>
@@ -316,11 +316,11 @@
                 在使用qemu调试内核的时候, 如果没有网络，想要部署点驱动或者程序上去都需要重新制作文件系统，本文讲解了如何通过 9p virtio fs 实现在 qemu 和 host 机器上共享文件和目录。
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/" title="qemu中使用 9p virtio, 支持 host 和 guest 中共享目录">
+            <a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/" title="qemu中使用 9p virtio, 支持 host 和 guest 中共享目录">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图">
                 
@@ -340,7 +340,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/">
+    	<a href="https://oskernellab.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/">
     		使用 Hexo 搭建 GitHub Page 博客(二)--备份至 GitHub 过程
     	</a>
     </h3>
@@ -366,11 +366,11 @@
                 Hexo 是一个快速、简洁且高效的博客框架. 支持使用 Markdown (或其他渲染引擎)解析文章. Hexo 生成静态网页的素服非常快, 在几秒内，即可利用靓丽的主题生成静态网页. 本文将介绍如果使用 Hexo 来搭建属于你自己的 Github Page 博客
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/" title="使用 Hexo 搭建 GitHub Page 博客(二)--备份至 GitHub 过程">
+            <a href="https://oskernellab.com/2018/09/02/2018/0902-0002-hexo_use_branch_to_backup_your_hexo_environment_and_blogs/" title="使用 Hexo 搭建 GitHub Page 博客(二)--备份至 GitHub 过程">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
                 
@@ -390,7 +390,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/">
+    	<a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/">
     		使用 Hexo 搭建 GitHub Page 博客(一)
     	</a>
     </h3>
@@ -416,11 +416,11 @@
                 Hexo 是一个快速、简洁且高效的博客框架. 支持使用 Markdown (或其他渲染引擎)解析文章. Hexo 生成静态网页的素服非常快, 在几秒内，即可利用靓丽的主题生成静态网页. 本文将介绍如果使用 Hexo 来搭建属于你自己的 Github Page 博客
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
+            <a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
                 
@@ -440,7 +440,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/08/05/2018/0805-0002_cmatrix/">
+    	<a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/">
     		cmatrix 炫酷的终端代码雨
     	</a>
     </h3>
@@ -466,11 +466,11 @@
                 cmatrix
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/08/05/2018/0805-0002_cmatrix/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/08/05/2018/0805-0002_cmatrix/" title="cmatrix 炫酷的终端代码雨">
+            <a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/" title="cmatrix 炫酷的终端代码雨">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图">
                 
@@ -490,7 +490,7 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://kernelshow.com/2018/08/05/2018/0805-0001_static-site-generators/">
+    	<a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/">
     		Static site generators
     	</a>
     </h3>
@@ -516,11 +516,11 @@
                 With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
             
             <p class="more">
-                <a href="https://kernelshow.com/2018/08/05/2018/0805-0001_static-site-generators/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://kernelshow.com/2018/08/05/2018/0805-0001_static-site-generators/" title="Static site generators">
+            <a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/" title="Static site generators">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图">
                 
@@ -551,11 +551,6 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/linux/">linux</a>
-        <span class="badge">(3)</span>
-    </li>
-    
-    <li>
         <a href="/categories/hexo/">hexo</a>
         <span class="badge">(2)</span>
     </li>
@@ -563,6 +558,11 @@
     <li>
         <a href="/categories/qemu/">qemu</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(3)</span>
     </li>
     
     <li>
@@ -584,11 +584,11 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/linux/" title="linux">linux (4)</a>
-  
     <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (4)</a>
   
     <a class="tag-item" href="/tags/kernel/" title="kernel">kernel (1)</a>
   
