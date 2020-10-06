@@ -145,8 +145,8 @@
 <td>2020-10-06</td>
 <td style="text-align:center"><a href="https://blog.csdn.net/gatieme" target="_blank" rel="noopener">gatieme</a></td>
 <td style="text-align:center"><a href="https://github.com/gatieme/AderXCoding/tree/master/system/tools/glibc/001-version" target="_blank" rel="noopener">AderXCoding</a></td>
-<td style="text-align:center"><a href="https://blog.csdn.net/gatieme/article/details/107433834" target="_blank" rel="noopener">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
-<td style="text-align:center"><a href="https://oskernellab.com/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
+<td style="text-align:center"><a href="https://blog.csdn.net/gatieme/article/details/108945425" target="_blank" rel="noopener">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
+<td style="text-align:center"><a href="https://oskernellab.com/2020/10/06/2020/1006-0001-Linux_get_glibc_version/">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
 </tr>
 </tbody>
 </table>
@@ -211,7 +211,12 @@
 <p>GLIBC 中内置了一些信息标记版本号, 用来在程序中可以获取到 GLIBC 的版本号. 这是一个字符串, 因为一些高级的特性是 GLIBC 高版本才支持的, 因此用户的程序可能经常要看版本号来执行不同的操作和处理.<br>gnu_get_libc_version 和 gnu_get_libc_release 就是这样的内置信息, 我们可以通过  man 手册来获取详细信息.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cat get_glibc_version.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gnu/libc-version.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"GNU libc version: %s\n"</span>, gnu_get_libc_version());</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"GNU libc release: %s\n"</span>, gnu_get_libc_release());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/004-gnu_get_libc_version.png" alt="004-gnu_get_libc_version.png"></p>
-<h1 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5 参考资料"></a>5 参考资料</h1><hr>
+<h1 id="5-查看发行版安装的软件包版本"><a href="#5-查看发行版安装的软件包版本" class="headerlink" title="5 查看发行版安装的软件包版本"></a>5 查看发行版安装的软件包版本</h1><hr>
+<p>发行版打包的软件包一般都是有版本号后缀的, 因此查看我们发行版安装的 GLIBC 包的名字, 就可以知道版本号.</p>
+<p>比如 <code>Ubuntu</code> 可以使用 <code>dpkg -l</code> 查看安装的软件版本<br><img src="https://img-blog.csdnimg.cn/20201007000719559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhdGllbWU=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/005-ubuntu_dpkg.png" alt="005-ubuntu_dpkg.png"></p>
+<p>同样 Centos 也可以使用 rpm -q glibc 查看对应软件包的名称及版本.</p>
+<h1 id="6-参考资料"><a href="#6-参考资料" class="headerlink" title="6 参考资料"></a>6 参考资料</h1><hr>
 <p><a href="https://benohead.com/blog/2015/01/28/linux-check-glibc-version" target="_blank" rel="noopener">Linux: Check the glibc version</a></p>
 <p><br></p>
 <ul>
