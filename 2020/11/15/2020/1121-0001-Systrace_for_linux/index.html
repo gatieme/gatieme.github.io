@@ -157,7 +157,7 @@
 <p><strong>转载请务必注明出处, 谢谢, 不胜感激</strong></p>
 <p><br></p>
 <h1 id="1-问题来源"><a href="#1-问题来源" class="headerlink" title="1 问题来源"></a>1 问题来源</h1><hr>
-<p>笔者在日常内核性能优化的工作中, 主要涉及 终端(Android) 和 服务器(Server) 和 嵌入式 (RTOS) 等多个场景, 在终端场景下做内核开发和调度优化的时候, 经常会使用 atrace、systrace 等工具, 在惊叹于 google 的技术能力, 也时长在想这些工具是否可以用于服务器以及嵌入式领域. </p>
+<p>笔者在日常内核性能优化的工作中, 主要涉及 终端(Android) 和 服务器(Server) 和 嵌入式 (RTOS) 等多个场景, 在终端场景下做内核开发和调度优化的时候, 经常会使用 atrace、systrace 等工具, 在惊叹于 google 的技术能力, 也时长在想这些工具是否可以用于服务器以及嵌入式领域.</p>
 <p>使用 systrace 可以抓取到 sched、irq 以及帧的信息, 帧的信息我们服务器和嵌入式领域肯定是不会有的, 但是 sched、irq 等信息, 对于服务器领域也同样有意义. 如果能够在这些场景使用 systrace, 对于我们性能调优是有重大意义的.</p>
 <p>systrace 的一些信息如下图所示:</p>
 <p>Systrace 报告的屏幕截图</p>
@@ -203,20 +203,20 @@
 </li>
 <li><p>基于本文修改后的作品务必以相同的许可发布. 如有任何疑问，请与我联系.</p>
 </li>
-<li><p><strong>转载请务必注明出处, 谢谢, 不胜感激</strong><br><br>%                                                            </p>
+<li><p><strong>转载请务必注明出处, 谢谢, 不胜感激</strong><br><br></p>
 </li>
 </ul>
 
     </div>
     <p class="post-meta">
         <span class="post-cat">分类：
-            <a class="cat-link" href="/categories/linux/">linux</a>
+            <a class="cat-link" href="/categories/debug/">debug</a>|<a class="cat-link" href="/categories/debug/linux/">linux</a>|<a class="cat-link" href="/categories/debug/linux/scheduler/">scheduler</a>
         </span>
         <span class="post-tags">
             标签：
             
     
-        <a href="/tags/linux/" title="linux">linux</a>
+        <a href="/tags/debug/" title="debug">debug</a>
     
 
         </span>
@@ -351,7 +351,7 @@
     
     <li>
         <a href="/categories/linux/">linux</a>
-        <span class="badge">(5)</span>
+        <span class="badge">(4)</span>
     </li>
     
     <li>
@@ -366,6 +366,16 @@
     
     <li>
         <a href="/categories/debug/">debug</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/debug/linux/">linux</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/debug/linux/scheduler/">scheduler</a>
         <span class="badge">(1)</span>
     </li>
     
@@ -383,11 +393,13 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/linux/" title="linux">linux (6)</a>
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (5)</a>
   
     <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (3)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
+  
+    <a class="tag-item" href="/tags/debug/" title="debug">debug (1)</a>
   
     <a class="tag-item" href="/tags/kernel/" title="kernel">kernel (1)</a>
   
