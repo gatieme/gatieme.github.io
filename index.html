@@ -135,73 +135,44 @@
     <header>
         <!-- 标签这有且只能显示一个 -->
         
-            <a href="javascript: void(0);" class="cat">未分类</a>
+        <a class="cat-link" href="/categories/linux/">linux</a>
         
         <!-- 文章标题 -->
         
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2020/11/15/2020/1121-0001-Systrace_for_linux/">
+    		Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题
+    	</a>
+    </h3>
+
     </header>
     <p class="post-meta">
-        Gatieme 发表于
-        <time datetime="2020-11-07T08:39:16.060Z">2020-11-07</time>
+        gatieme 发表于
+        <time datetime="2020-11-15T12:22:00.000Z">2020-11-15</time>
         &nbsp;&nbsp;
         <span class="post-tags">
             标签：
             
+    
+        <a href="/tags/linux/" title="linux">linux</a>
+    
+
         </span>
     </p>
 
     <div class="post-content">
         <div class="post-excerpt">
             
-                <h1 id="1-问题来源"><a href="#1-问题来源" class="headerlink" title="1 问题来源"></a>1 问题来源</h1><hr>
-<p>笔者在日常内核性能优化的工作中, 主要涉及 终端(Android) 和 服务器(Server) 和 嵌入式 (RTOS) 等多个场景, 在终端场景下做内核开发和调度优化的时候, 经常会使用 atrace、systrace 等工具, 在惊叹于 google 的技术能力, 也时长在想这些工具是否可以用于服务器以及嵌入式领域. </p>
-<p>使用 systrace 可以抓取到 sched、irq 以及帧的信息, 帧的信息我们服务器和嵌入式领域肯定是不会有的, 但是 sched、irq 等信息, 对于服务器领域也同样有意义. 如果能够在这些场景使用 systrace, 对于我们性能调优是有重大意义的.</p>
-<p>systrace 的一些信息如下图所示:</p>
-<p>Systrace 报告的屏幕截图</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/chrome_tracing.png" alt="android_tracing.png"></p>
-<h1 id="2-systrace-简介-amp-原理"><a href="#2-systrace-简介-amp-原理" class="headerlink" title="2 systrace 简介 &amp; 原理"></a>2 systrace 简介 &amp; 原理</h1><hr>
-<p>Android 开发者官网中对 systrace(Android System Trace) 有<a href="https://developer.android.google.cn/studio/command-line/systrace" target="_blank" rel="noopener">专门的文档介绍</a>, 或者在进入到官网的首页后，按照 Android Developers &gt; Android Studio &gt; USER GUIDE &gt; Command line tools &gt; systrace的路径访问该文档.</p>
-<p>systrace 的原理我们这里不啰嗦了, 可以网上自行搜索:</p>
-<p>其主要工作就是使用了 linux kernel 的 ftrace 来完成的<br>1、systrace调用 atrace 抓取 Android 的 ftrace buffer 数据, atrace 会根据用户指定的参数, 使能 framework 层和 kernel 中对应的 trace events, 同时使能 ftrace.<br>2、systrace把 trace buffer 的数据和 prefix.html、suffix.html、systrace_trace_viewer.html 合成一个可供 chrome(Trace-Viewer) 直接解析的 <code>trace.html</code> 文件；<br>3、使用chrome浏览器打开 <code>trace.html</code> 就可以非常方便的以图形化的形式来查看和分析 <code>trace</code> 数据。背后是 <a href="https://google.github.io/trace-viewer/" target="_blank" rel="noopener"><code>Trace-Viewer</code> 的脚本</a> 在运行；</p>
-<p>systrace 中除了解析 sched、irq 等原生 trace events 的信息, 还需要对帧信息做识别, 因此内核态和用户态的存储trace数据的按照一定格式来输出, 才能被 systrace 解析.</p>
-<p>1、对内核 trace 信息不需要任何格式化处理, Trace-Viewer 会对内核原生的 trace format 格式的数据进行解析, 并绘制. 不过只支持几种类型的数据, 比如 sched_switch、sched_wakeup 等可以帮助绘制 CPU 的运行图谱, IRQ 等信息可以用来绘制各个 CPU 中断和软中断的图谱.</p>
-<p>2、用户态(app/java framework/native)是通过使用 Trace 类来记录trace信息的, 得益于 ftrace 的 trace marker 机制, 允许用户态向内核的 ftrace buffer 中追加数据, 用户态只需要使用 /sys/kernel/debug/tracing/trace_marker” 接口, 就可以轻松的将格式化的 trace 数据写入到内核的 buffer 中. 因此 Android systrace 约定了一系列的 trace 格式, 这些 Trace 类按照约定的格式 mark 到 ftrace buffer 中, 从而能够被解析并绘制到 Trace-Viewer.</p>
-<p>systrace trace event format 请参照 <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU" target="_blank" rel="noopener">systrace trace event format</a></p>
-<h1 id="3-systrace-for-Linux-Desktop-Server"><a href="#3-systrace-for-Linux-Desktop-Server" class="headerlink" title="3 systrace for Linux Desktop/Server"></a>3 systrace for Linux Desktop/Server</h1><hr>
-<h2 id="3-1-systrce-for-linux-简介"><a href="#3-1-systrce-for-linux-简介" class="headerlink" title="3.1 systrce for linux 简介"></a>3.1 systrce for linux 简介</h2><hr>
-<p>分析了 systrace 的原理我们就知道, 如果要在服务器上使用 systrace 是可以的. 因为 chrome 支持解析原生内核的 sched、irq 的 trace, 那么我们直接使用这些来分析调度的性能, 基本是满足要求的.<br>那是否需要追加 trace_view 的头才能解析呢?<br>这个我最早也是以为是需要的, 但是后来尝试了下, 原生的 trace buffer 扔给 chrome://tracing 就可以解析. 但是如果你想要直接双击或者右键用 chrome 打开就能解析, 是需要追加 HTML 头的.  systrace 追加的 HTML 头中包含了一些标记, 告诉 chrome 这个 html 其实是一个 systrace 文件, 要用 <code>trace-viewer</code> 来解析.</p>
-<p>那么我们现在我们要做的就只需要把我们需要的 trace event 打开, 然后把待测试完成后, 把 trace buffer dump 出来, 我们可以借助于 google systrace 工具来完成这个事情, 当然也可以选择手动写一些脚本来辅助我们工作.<br>我从 github 上找到了<a href="https://github.com/ganadist/systrace" target="_blank" rel="noopener">这个</a> (感谢 <a href="https://github.com/ganadist" target="_blank" rel="noopener">YOUNG HO CHA (aka ganachoco)/ganadist</a> 所做的工作, 他是我们的先行者, 没有他这个工作, 我可能会走很多弯路), 并做了一些改进, 我将最终的成品发布在 <a href="https://github.com/gatieme/systrace" target="_blank" rel="noopener">systrace for Linux Desktop/Server</a>, 并把他推荐给了同事, 借助这个工具, 为我们在 MYSQL 等场景, 提供了一些调优的输入.</p>
-<p>github 地址如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github https:<span class="comment">//github.com/gatieme/systrace</span></span><br></pre></td></tr></table></figure></p>
-<p>第一版做的比较简陋, 后期会不断更新和优化的.</p>
-<h2 id="3-2-systrace-py-使用"><a href="#3-2-systrace-py-使用" class="headerlink" title="3.2 systrace.py 使用"></a>3.2 systrace.py 使用</h2><hr>
-<p>systrace.py 脚本比较简单, 是我们提供的用来抓取 trace 的脚本, 它做的事情就是把我们制定的 tracepoint 打开, 然后抓取指定时间的 trace buffer 出来.</p>
-<p>比如使用如下命令, 就可以抓取当前开始 1s 内调度和中断的 trace 信息</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># -t <span class="number">1</span> 抓取 <span class="number">1</span>s</span><br><span class="line"># -v 表示输出详细信息</span><br><span class="line"># -e <span class="string">"sched,irq"</span> 表示抓取 调度 和 中断 的信息</span><br><span class="line">python systrace.py -t <span class="number">1</span> -v -e <span class="string">"sched,irq"</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/run_systrace.png" alt="run_systrace.png"></p>
-<p>在 chrome://tracing 中打开这个抓到的 trace 文件, 如下所示.</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/chrome_tracing.png" alt="chrome_tracing.png"></p>
-<h2 id="3-3-fix-time-脚本使用"><a href="#3-3-fix-time-脚本使用" class="headerlink" title="3.3 fix_time 脚本使用"></a>3.3 fix_time 脚本使用</h2><hr>
-<p>systrace 能解析并图形化显示的信息有限, 因此在实际开发过程中, 我们经常会手动再开一些 tracepoint, 这些 systrace 没法图形化展示, 但是却能帮助我们分析问题.<br>一般我们在 systrace 图上找到或者发现了一些问题之后, 再打开 systrace 日志, 找到出问题的时间点, 然后去分析详细的 trace 去探求原因.<br>但是这里有一些不便的地方, chrome systrace 上显示的时间是是以抓取的时间点为基准( 0MS )的相对时间, 而 trace 日志中的时间是系统的绝对时间.</p>
-<p>trace-viewer 上显示的是日志中以抓取开始时间点为基准的相对时间戳</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/relative_time.png" alt="relative_time.png"></p>
-<p>但是 trace 日志文本中显示的是系统的时间(绝对时间)戳</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/absolute_time.png" alt="absolute_time.png"></p>
-<p>这样我们每次去找出问题的时间点的时候, 都需要再加上抓取时间点的, 然后找到出问题的实际的系统时间点. 这样每次总是很不方便.<br>因此我们提供了一个 perl 的脚本 fix_time.pl, 用来自动化完成这个工作.</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/fix_time.png" alt="fix_time.png"></p>
-<h1 id="4-参考资料"><a href="#4-参考资料" class="headerlink" title="4 参考资料"></a>4 参考资料</h1><hr>
-<p><a href="https://www.cnblogs.com/andy-songwei/p/10659564.html" target="_blank" rel="noopener">工利其器】必会工具之（三）systrace篇（1）官网翻译</a><br><a href="https://blog.csdn.net/pwl999/article/details/83510943" target="_blank" rel="noopener">systrace 解析</a></p>
-<p><a href="https://google-developer-training.github.io/android-developer-advanced-course-practicals/unit-2-make-your-apps-fast-and-small/lesson-4-performance/4-1c-p-systrace-and-dumpsys/4-1c-p-systrace-and-dumpsys.html" target="_blank" rel="noopener">4.1C: Using the Systrace and dumpsys tools</a></p>
-<p><a href="http://tinylab.org/ftrace-principle-and-practice" target="_blank" rel="noopener">Ftrace 实现原理与开发实践</a></p>
-
+                笔者在日常内核性能优化的工作中, 主要涉及 终端(Android) 和 服务器(Server) 和 嵌入式 (RTOS) 等多个场景, 在终端场景下做内核开发和调度优化的时候, 经常会使用 atrace、systrace 等工具, 在惊叹于 google 的技术能力, 也时长在想这些工具是否可以用于服务器以及嵌入式领域. 使用 systrace 可以抓取到 sched、irq 以及帧的信息, 帧的信息我们服务器和嵌入式领域肯定是不会有的, 但是 sched、irq 等信息, 对于服务器领域也同样有意义. 如果能够在这些场景使用 systrace, 对于我们性能调优是有重大意义的.
             
             <p class="more">
-                <a href="https://oskernellab.com/2020/11/07/2020/1121-0001-Systrace_for_linux/">阅读剩下更多</a>
+                <a href="https://oskernellab.com/2020/11/15/2020/1121-0001-Systrace_for_linux/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="https://oskernellab.com/2020/11/07/2020/1121-0001-Systrace_for_linux/" title="">
+            <a href="https://oskernellab.com/2020/11/15/2020/1121-0001-Systrace_for_linux/" title="Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题">
                 
-                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图">
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图">
                 
             </a>
         </div>
@@ -519,56 +490,6 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/">
-    		使用 Hexo 搭建 GitHub Page 博客(一)
-    	</a>
-    </h3>
-
-    </header>
-    <p class="post-meta">
-        gatieme 发表于
-        <time datetime="2018-09-02T10:40:00.000Z">2018-09-02</time>
-        &nbsp;&nbsp;
-        <span class="post-tags">
-            标签：
-            
-    
-        <a href="/tags/hexo/" title="hexo">hexo</a>
-    
-
-        </span>
-    </p>
-
-    <div class="post-content">
-        <div class="post-excerpt">
-            
-                博文摘要
-            
-            <p class="more">
-                <a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/">阅读剩下更多</a>
-            </p>
-        </div>
-        <div class="post-thumbnail" data-img="">
-            <a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
-                
-                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
-                
-            </a>
-        </div>
-    </div>
-</article>
-
-    
-        <!-- 文章 -->
-<article class="post">
-    <header>
-        <!-- 标签这有且只能显示一个 -->
-        
-        <a class="cat-link" href="/categories/hexo/">hexo</a>
-        
-        <!-- 文章标题 -->
-        
-    <h3 class="post-title">
     	<a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/">
     		使用 Hexo 搭建 GitHub Page 博客(一)
     	</a>
@@ -600,6 +521,56 @@
         </div>
         <div class="post-thumbnail" data-img="">
             <a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/hexo/">hexo</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/">
+    		使用 Hexo 搭建 GitHub Page 博客(一)
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        gatieme 发表于
+        <time datetime="2018-09-02T10:40:00.000Z">2018-09-02</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/hexo/" title="hexo">hexo</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                博文摘要
+            
+            <p class="more">
+                <a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://oskernellab.com/2018/09/02/2020/1121-0002-Perfetto_for_linux/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
                 
@@ -680,13 +651,13 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(3)</span>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(5)</span>
     </li>
     
     <li>
-        <a href="/categories/linux/">linux</a>
-        <span class="badge">(4)</span>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(3)</span>
     </li>
     
     <li>
@@ -713,9 +684,9 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (3)</a>
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (6)</a>
   
-    <a class="tag-item" href="/tags/linux/" title="linux">linux (5)</a>
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (3)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
   
