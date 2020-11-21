@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>Linux(Ubuntu/CentOS) 下查看 GLIBC 版本 | OSKernelLAB</title>
+    <title>Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题 | OSKernelLAB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel">
     <meta name="description" content="内核杂谈">
@@ -56,23 +56,23 @@
         <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
         <ul class="menu hidden" id="JELON__menu">
             
-            <li rel="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/index.html" class="item ">
+            <li rel="/2020/11/21/2020/1121-0001-Systrace_for_linux/index.html" class="item ">
                 <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
             </li>
             
-            <li rel="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/index.html" class="item ">
+            <li rel="/2020/11/21/2020/1121-0001-Systrace_for_linux/index.html" class="item ">
                 <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
             </li>
             
-            <li rel="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/index.html" class="item ">
+            <li rel="/2020/11/21/2020/1121-0001-Systrace_for_linux/index.html" class="item ">
                 <a href="/navigation/" title="网址导航" class="icon-lab">&nbsp;网址导航</a>
             </li>
             
-            <li rel="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/index.html" class="item ">
+            <li rel="/2020/11/21/2020/1121-0001-Systrace_for_linux/index.html" class="item ">
                 <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
             </li>
             
-            <li rel="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/index.html" class="item ">
+            <li rel="/2020/11/21/2020/1121-0001-Systrace_for_linux/index.html" class="item ">
                 <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
             </li>
             
@@ -123,11 +123,11 @@
 <!-- 文章 -->
 <article class="post article">
     <header class="text-center">
-        <h3 class="post-title"><span>Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</span></h3>
+        <h3 class="post-title"><span>Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题</span></h3>
     </header>
     <p class="post-meta text-center">
         gatieme 发表于
-        <time datetime="2020-10-06T15:35:00.000Z">2020-10-06</time>
+        <time datetime="2020-11-21T12:22:00.000Z">2020-11-21</time>
     </p>
     <div class="post-content">
         <table>
@@ -142,7 +142,7 @@
 </thead>
 <tbody>
 <tr>
-<td>2020-10-06</td>
+<td>2020-11-21</td>
 <td style="text-align:center"><a href="https://blog.csdn.net/gatieme" target="_blank" rel="noopener">gatieme</a></td>
 <td style="text-align:center"><a href="https://github.com/gatieme/AderXCoding/tree/master/system/tools/glibc/001-version" target="_blank" rel="noopener">AderXCoding</a></td>
 <td style="text-align:center"><a href="https://blog.csdn.net/gatieme/article/details/108945425" target="_blank" rel="noopener">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
@@ -156,68 +156,45 @@
 <p>因本人技术水平和知识面有限, 内容如有纰漏或者需要修正的地方, 欢迎大家指正, 鄙人在此谢谢啦</p>
 <p><strong>转载请务必注明出处, 谢谢, 不胜感激</strong></p>
 <p><br></p>
-<h1 id="1-ldd-–version"><a href="#1-ldd-–version" class="headerlink" title="1 ldd –version"></a>1 ldd –version</h1><hr>
-<p>最简单直接的方法</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldd --version</span><br></pre></td></tr></table></figure>
-<p>其输出如下:</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/001-ldd_version.png" alt="001-ldd_version.png"></p>
-<h1 id="2-通过-libc-so-获取版本号"><a href="#2-通过-libc-so-获取版本号" class="headerlink" title="2 通过 libc.so 获取版本号"></a>2 通过 libc.so 获取版本号</h1><hr>
-<p>GLIBC 库已经为了我们考虑到这点了, 因此从 libc.so 我们可以获取到版本信息.</p>
-<h2 id="2-1-首先查找到-libc-库的位置"><a href="#2-1-首先查找到-libc-库的位置" class="headerlink" title="2.1 首先查找到 libc 库的位置"></a>2.1 首先查找到 libc 库的位置</h2><hr>
-<p>关于如何找到 GLIBC 库, 有多种方法</p>
-<ol>
-<li>ldd 一个当前系统中 C 库编写的动态可执行程序</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ldd `which top` | grep <span class="string">"libc.so"</span></span><br><span class="line">        libc.so<span class="number">.6</span> =&gt; /lib/x86_64-linux-gnu/libc.so<span class="number">.6</span> (<span class="number">0x00007f6e32226000</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-01-libc_ldd.png" alt="002-01-libc_ldd.png"></p>
-<ol start="2">
-<li>原理同 2, 只不过是从正在运行的程序的动态库中获取</li>
-</ol>
-<p>当前进程 shell 一般是一个 C 库的程序, lsof 查看它运行时加载的 libc 库是哪个</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -p $$ <span class="number">2</span>&gt;&amp;<span class="number">1</span> | grep <span class="string">"libc-"</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-02-libc_lsof.png" alt="002-02-libc_lsof.png"></p>
-<ol start="3">
-<li>通过 gcc 获取到 libc 库的位置</li>
-</ol>
-<p>cat <code>gcc -print-file-name=libc.so</code></p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-03-libc_gcc.png" alt="002-03-libc_gcc.png"></p>
-<h2 id="2-2-从-libc-库上获取版本号"><a href="#2-2-从-libc-库上获取版本号" class="headerlink" title="2.2 从 libc 库上获取版本号"></a>2.2 从 libc 库上获取版本号</h2><hr>
-<ol>
-<li>直接看 libc.so 的后缀版本号</li>
-</ol>
-<p>很明显, libc-2.27.so 后缀为 2.27, 因此 GLIBC 版本号为 2.27</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-11-libc_str.png" alt="002-11-libc_str.png"></p>
-<ol start="2">
-<li>直接运行 libc.so</li>
-</ol>
-<p>GLIBC 的动态库是可以执行运行的, 运行将显示版本号以及版权信息, 可以看到 版本号也是  2.27</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-12-libc_run.png" alt="002-12-libc_run.png"></p>
-<ol start="3">
-<li>同 2, 获取版本号</li>
-</ol>
-<p>GLIBC 库加上 –version 同样显示版本号, 我们可以看到打印的信息和直接运行的信息是一致的.</p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/002-13-libc_version.png" alt="002-13-libc_version.png"></p>
-<h1 id="3-GNU-LIBC-VERSION"><a href="#3-GNU-LIBC-VERSION" class="headerlink" title="3 GNU_LIBC_VERSION"></a>3 GNU_LIBC_VERSION</h1><hr>
-<p>标记 GLIBC 版本号的变量为 GNU_LIBC_VERSION, 直接查看它即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getconf GNU_LIBC_VERSION</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/003-GNU_LIBC_VERSION.png" alt="003-GNU_LIBC_VERSION.png"></p>
-<p>注意我们还有另外一个变量, 也可以类似的获取到 GLIBC PTHREAD 版本号, GNU_LIBPTHREAD_VERSION, 不过多数情况下, 他与 GLIBC 版本号是一致的.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getconf GNU_LIBPTHREAD_VERSION</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/003-GNU_LIBPTHREAD_VERSION.png" alt="003-GNU_LIBPTHREAD_VERSION.png"></p>
-<blockquote>
-<p>在 Linux 上实现 pThreads 的 NPTL 项目是一个单独的项目, 最初添加内核支持并提供自己的库. 当它足够稳定时, 就会合并为glibc.<br>我们发行版一般使用的 GLIBC 都是 stable 版本, 因此我认为这两个版本在所有合理的最新安装上都是相同的.</p>
-</blockquote>
-<h1 id="4-gnu-get-libc-version"><a href="#4-gnu-get-libc-version" class="headerlink" title="4 gnu_get_libc_version"></a>4 gnu_get_libc_version</h1><hr>
-<p>GLIBC 中内置了一些信息标记版本号, 用来在程序中可以获取到 GLIBC 的版本号. 这是一个字符串, 因为一些高级的特性是 GLIBC 高版本才支持的, 因此用户的程序可能经常要看版本号来执行不同的操作和处理.<br>gnu_get_libc_version 和 gnu_get_libc_release 就是这样的内置信息, 我们可以通过  man 手册来获取详细信息.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cat get_glibc_version.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gnu/libc-version.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"GNU libc version: %s\n"</span>, gnu_get_libc_version());</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"GNU libc release: %s\n"</span>, gnu_get_libc_release());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/004-gnu_get_libc_version.png" alt="004-gnu_get_libc_version.png"></p>
-<h1 id="5-查看发行版安装的软件包版本"><a href="#5-查看发行版安装的软件包版本" class="headerlink" title="5 查看发行版安装的软件包版本"></a>5 查看发行版安装的软件包版本</h1><hr>
-<p>发行版打包的软件包一般都是有版本号后缀的, 因此查看我们发行版安装的 GLIBC 包的名字, 就可以知道版本号.</p>
-<p>比如 <code>Ubuntu</code> 可以使用 <code>dpkg -l</code> 查看安装的软件版本<br><img src="https://img-blog.csdnimg.cn/20201007000719559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhdGllbWU=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><img src="https://raw.githubusercontent.com/gatieme/AderXCoding/master/system/tools/glibc/001-version/005-ubuntu_dpkg.png" alt="005-ubuntu_dpkg.png"></p>
-<p>同样 Centos 也可以使用 rpm -q glibc 查看对应软件包的名称及版本.</p>
-<h1 id="6-参考资料"><a href="#6-参考资料" class="headerlink" title="6 参考资料"></a>6 参考资料</h1><hr>
-<p><a href="https://benohead.com/blog/2015/01/28/linux-check-glibc-version" target="_blank" rel="noopener">Linux: Check the glibc version</a></p>
+<h1 id="1-问题来源"><a href="#1-问题来源" class="headerlink" title="1 问题来源"></a>1 问题来源</h1><hr>
+<p>笔者在日常内核性能优化的工作中, 主要涉及 终端(Android) 和 服务器(Server) 和 嵌入式 (RTOS) 等多个场景, 在终端场景下做内核开发和调度优化的时候, 经常会使用 atrace、systrace 等工具, 在惊叹于 google 的技术能力, 也时长在想这些工具是否可以用于服务器以及嵌入式领域.</p>
+<p>使用 systrace 可以抓取到 sched、irq 以及帧的信息, 帧的信息我们服务器和嵌入式领域肯定是不会有的, 但是 sched、irq 等信息, 对于服务器领域也同样有意义. 如果能够在这些场景使用 systrace, 对于我们性能调优是有重大意义的.</p>
+<p>systrace 的一些信息如下图所示:</p>
+<p>Systrace 报告的屏幕截图</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/chrome_tracing.png" alt="android_tracing.png"></p>
+<h1 id="2-systrace-简介-amp-原理"><a href="#2-systrace-简介-amp-原理" class="headerlink" title="2 systrace 简介 &amp; 原理"></a>2 systrace 简介 &amp; 原理</h1><hr>
+<p>Android 开发者官网中对 systrace(Android System Trace) 有<a href="https://developer.android.google.cn/studio/command-line/systrace" target="_blank" rel="noopener">专门的文档介绍</a>, 或者在进入到官网的首页后，按照 Android Developers &gt; Android Studio &gt; USER GUIDE &gt; Command line tools &gt; systrace的路径访问该文档.</p>
+<p>systrace 的原理我们这里不啰嗦了, 可以网上自行搜索:</p>
+<p>其主要工作就是使用了 linux kernel 的 ftrace 来完成的<br>1、systrace调用 atrace 抓取 Android 的 ftrace buffer 数据, atrace 会根据用户指定的参数, 使能 framework 层和 kernel 中对应的 trace events, 同时使能 ftrace.<br>2、systrace把 trace buffer 的数据和 prefix.html、suffix.html、systrace_trace_viewer.html 合成一个可供 chrome(Trace-Viewer) 直接解析的 <code>trace.html</code> 文件；<br>3、使用chrome浏览器打开 <code>trace.html</code> 就可以非常方便的以图形化的形式来查看和分析 <code>trace</code> 数据。背后是 <a href="https://google.github.io/trace-viewer/" target="_blank" rel="noopener"><code>Trace-Viewer</code> 的脚本</a> 在运行；</p>
+<p>systrace 中除了解析 sched、irq 等原生 trace events 的信息, 还需要对帧信息做识别, 因此内核态和用户态的存储trace数据的按照一定格式来输出, 才能被 systrace 解析.</p>
+<p>1、对内核 trace 信息不需要任何格式化处理, Trace-Viewer 会对内核原生的 trace format 格式的数据进行解析, 并绘制. 不过只支持几种类型的数据, 比如 sched_switch、sched_wakeup 等可以帮助绘制 CPU 的运行图谱, IRQ 等信息可以用来绘制各个 CPU 中断和软中断的图谱.</p>
+<p>2、用户态(app/java framework/native)是通过使用 Trace 类来记录trace信息的, 得益于 ftrace 的 trace marker 机制, 允许用户态向内核的 ftrace buffer 中追加数据, 用户态只需要使用 /sys/kernel/debug/tracing/trace_marker” 接口, 就可以轻松的将格式化的 trace 数据写入到内核的 buffer 中. 因此 Android systrace 约定了一系列的 trace 格式, 这些 Trace 类按照约定的格式 mark 到 ftrace buffer 中, 从而能够被解析并绘制到 Trace-Viewer.</p>
+<p>systrace trace event format 请参照 <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU" target="_blank" rel="noopener">systrace trace event format</a></p>
+<h1 id="3-systrace-for-Linux-Desktop-Server"><a href="#3-systrace-for-Linux-Desktop-Server" class="headerlink" title="3 systrace for Linux Desktop/Server"></a>3 systrace for Linux Desktop/Server</h1><hr>
+<h2 id="3-1-systrce-for-linux-简介"><a href="#3-1-systrce-for-linux-简介" class="headerlink" title="3.1 systrce for linux 简介"></a>3.1 systrce for linux 简介</h2><hr>
+<p>分析了 systrace 的原理我们就知道, 如果要在服务器上使用 systrace 是可以的. 因为 chrome 支持解析原生内核的 sched、irq 的 trace, 那么我们直接使用这些来分析调度的性能, 基本是满足要求的.<br>那是否需要追加 trace_view 的头才能解析呢?<br>这个我最早也是以为是需要的, 但是后来尝试了下, 原生的 trace buffer 扔给 chrome://tracing 就可以解析. 但是如果你想要直接双击或者右键用 chrome 打开就能解析, 是需要追加 HTML 头的.  systrace 追加的 HTML 头中包含了一些标记, 告诉 chrome 这个 html 其实是一个 systrace 文件, 要用 <code>trace-viewer</code> 来解析.</p>
+<p>那么我们现在我们要做的就只需要把我们需要的 trace event 打开, 然后把待测试完成后, 把 trace buffer dump 出来, 我们可以借助于 google systrace 工具来完成这个事情, 当然也可以选择手动写一些脚本来辅助我们工作.<br>我从 github 上找到了<a href="https://github.com/ganadist/systrace" target="_blank" rel="noopener">这个</a> (感谢 <a href="https://github.com/ganadist" target="_blank" rel="noopener">YOUNG HO CHA (aka ganachoco)/ganadist</a> 所做的工作, 他是我们的先行者, 没有他这个工作, 我可能会走很多弯路), 并做了一些改进, 我将最终的成品发布在 <a href="https://github.com/gatieme/systrace" target="_blank" rel="noopener">systrace for Linux Desktop/Server</a>, 并把他推荐给了同事, 借助这个工具, 为我们在 MYSQL 等场景, 提供了一些调优的输入.</p>
+<p>github 地址如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github https:<span class="comment">//github.com/gatieme/systrace</span></span><br></pre></td></tr></table></figure></p>
+<p>第一版做的比较简陋, 后期会不断更新和优化的.</p>
+<h2 id="3-2-systrace-py-使用"><a href="#3-2-systrace-py-使用" class="headerlink" title="3.2 systrace.py 使用"></a>3.2 systrace.py 使用</h2><hr>
+<p>systrace.py 脚本比较简单, 是我们提供的用来抓取 trace 的脚本, 它做的事情就是把我们制定的 tracepoint 打开, 然后抓取指定时间的 trace buffer 出来.</p>
+<p>比如使用如下命令, 就可以抓取当前开始 1s 内调度和中断的 trace 信息</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># -t <span class="number">1</span> 抓取 <span class="number">1</span>s</span><br><span class="line"># -v 表示输出详细信息</span><br><span class="line"># -e <span class="string">"sched,irq"</span> 表示抓取 调度 和 中断 的信息</span><br><span class="line">python systrace.py -t <span class="number">1</span> -v -e <span class="string">"sched,irq"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/run_systrace.png" alt="run_systrace.png"></p>
+<p>在 chrome://tracing 中打开这个抓到的 trace 文件, 如下所示.</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/chrome_tracing.png" alt="chrome_tracing.png"></p>
+<h2 id="3-3-fix-time-脚本使用"><a href="#3-3-fix-time-脚本使用" class="headerlink" title="3.3 fix_time 脚本使用"></a>3.3 fix_time 脚本使用</h2><hr>
+<p>systrace 能解析并图形化显示的信息有限, 因此在实际开发过程中, 我们经常会手动再开一些 tracepoint, 这些 systrace 没法图形化展示, 但是却能帮助我们分析问题.<br>一般我们在 systrace 图上找到或者发现了一些问题之后, 再打开 systrace 日志, 找到出问题的时间点, 然后去分析详细的 trace 去探求原因.<br>但是这里有一些不便的地方, chrome systrace 上显示的时间是是以抓取的时间点为基准( 0MS )的相对时间, 而 trace 日志中的时间是系统的绝对时间.</p>
+<p>trace-viewer 上显示的是日志中以抓取开始时间点为基准的相对时间戳</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/relative_time.png" alt="relative_time.png"></p>
+<p>但是 trace 日志文本中显示的是系统的时间(绝对时间)戳</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/absolute_time.png" alt="absolute_time.png"></p>
+<p>这样我们每次去找出问题的时间点的时候, 都需要再加上抓取时间点的, 然后找到出问题的实际的系统时间点. 这样每次总是很不方便.<br>因此我们提供了一个 perl 的脚本 fix_time.pl, 用来自动化完成这个工作.</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/systrace/master/doc/fix_time.png" alt="fix_time.png"></p>
+<h1 id="4-参考资料"><a href="#4-参考资料" class="headerlink" title="4 参考资料"></a>4 参考资料</h1><hr>
+<p><a href="https://www.cnblogs.com/andy-songwei/p/10659564.html" target="_blank" rel="noopener">工利其器】必会工具之（三）systrace篇（1）官网翻译</a><br><a href="https://blog.csdn.net/pwl999/article/details/83510943" target="_blank" rel="noopener">systrace 解析</a></p>
+<p><a href="https://google-developer-training.github.io/android-developer-advanced-course-practicals/unit-2-make-your-apps-fast-and-small/lesson-4-performance/4-1c-p-systrace-and-dumpsys/4-1c-p-systrace-and-dumpsys.html" target="_blank" rel="noopener">4.1C: Using the Systrace and dumpsys tools</a></p>
+<p><a href="http://tinylab.org/ftrace-principle-and-practice" target="_blank" rel="noopener">Ftrace 实现原理与开发实践</a></p>
 <p><br></p>
 <ul>
 <li><p>本作品/博文 ( <a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">AderStep-紫夜阑珊-青伶巷草 Copyright ©2013-2017</a> ), 由 <a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">成坚(gatieme)</a> 创作.</p>
@@ -233,13 +210,13 @@
     </div>
     <p class="post-meta">
         <span class="post-cat">分类：
-            <a class="cat-link" href="/categories/linux/">linux</a>
+            <a class="cat-link" href="/categories/debug/">debug</a>|<a class="cat-link" href="/categories/debug/linux/">linux</a>|<a class="cat-link" href="/categories/debug/linux/scheduler/">scheduler</a>
         </span>
         <span class="post-tags">
             标签：
             
     
-        <a href="/tags/linux/" title="linux">linux</a>
+        <a href="/tags/debug/" title="debug">debug</a>
     
 
         </span>
@@ -266,9 +243,9 @@
     
     <span class="prev fl">
         上一篇<br>
-        <a href="/2020/11/21/2020/1121-0001-Systrace_for_linux/">
+        <a href="/2020/11/21/2020/1121-0002-Perfetto_for_linux/">
             
-                Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题
+                Perfetto for linux-使用 Perfetto 分析调度问题
             
         </a>
     </span>
@@ -277,9 +254,9 @@
     
     <span class="next fr">
         下一篇<br>
-        <a href="/2020/07/18/2020/0718-0001-Cmder_Chinese_garbled_settings/">
+        <a href="/2020/10/06/2020/1006-0001-Linux_get_glibc_version/">
             
-                Cmder 中文乱码设置
+                Linux(Ubuntu/CentOS) 下查看 GLIBC 版本
             
         </a>
     </span>
@@ -356,7 +333,7 @@
   <script>
   JELON.Comment({
     container: 'comments',
-    label: '2020/1006-0001-Linux_get_glibc_version' || '2020/10/06/2020/1006-0001-Linux_get_glibc_version/',
+    label: '2020/1121-0001-Systrace_for_linux' || '2020/11/21/2020/1121-0001-Systrace_for_linux/',
     owner: 'gatieme',
     repo: 'blog_comments',
     clientId: 'cf796c25fcf4369b9295',
