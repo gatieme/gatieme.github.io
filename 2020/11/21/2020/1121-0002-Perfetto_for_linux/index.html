@@ -141,8 +141,8 @@
 <tbody>
 <tr>
 <td style="text-align:center"><a href="http://blog.csdn.net/gatieme" target="_blank" rel="noopener">Aderstep–紫夜阑珊-青伶巷草</a></td>
-<td style="text-align:center"><a href="https://github.com/gatieme/AderXCoding/tree/master/system/tools" target="_blank" rel="noopener"><code>AderXCoding/system/tools</code></a></td>
-<td style="text-align:center"><a href="https://gatieme.github.io" target="_blank" rel="noopener">gatieme.github.io</a></td>
+<td style="text-align:center"><a href="https://github.com/gatieme/LDD-LinuxDeviceDrivers/tree/master/study/debug/tools/perfetto" target="_blank" rel="noopener"><code>DD-LinuxDeviceDrivers/study/debug/tools/perfetto</code></a></td>
+<td style="text-align:center"><a href="">gatieme.github.io</a></td>
 </tr>
 </tbody>
 </table>
@@ -208,7 +208,8 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell perfetto --config :test --out /data/misc/perfetto-traces/trace <span class="comment">//使用内置的test配置, 然后输出到/data/misc/perfetto-traces/trace</span></span><br></pre></td></tr></table></figure>
 <p>另外在 Perfetto 里面默认集成了一个 test 配置, 可以使用如下命令抓取一个使用 test config 的 trace 文件</p>
 <h1 id="3-服务器上使用-perfetto"><a href="#3-服务器上使用-perfetto" class="headerlink" title="3 服务器上使用 perfetto"></a>3 服务器上使用 perfetto</h1><hr>
-<h2 id="3-1-编译-perfetto"><a href="#3-1-编译-perfetto" class="headerlink" title="##3.1 编译 perfetto"></a>##3.1 编译 perfetto</h2><p>下载 perfetto 核心代码</p>
+<h2 id="3-1-编译-perfetto"><a href="#3-1-编译-perfetto" class="headerlink" title="3.1 编译 perfetto"></a>3.1 编译 perfetto</h2><hr>
+<p>下载 perfetto 核心代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//android.googlesource.com/platform/external/perfetto/ &amp;&amp; cd perfetto</span></span><br></pre></td></tr></table></figure>
 <p>下载并提取构建依赖项：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tools/install-build-deps</span><br></pre></td></tr></table></figure>
@@ -221,6 +222,7 @@
 <h2 id="3-2-使用-perfetto"><a href="#3-2-使用-perfetto" class="headerlink" title="3.2 使用 perfetto"></a>3.2 使用 perfetto</h2><hr>
 <p>perfetto 是一个命令行工具, 在shell环境下执行, 他依赖于系统中运行的的两个服务进程 traced 和 traced_probes 来完成工作.</p>
 <p>Android 通过启用 perfetto 服务来自动运行 traced(会话守护程序)和traced_probes(探测和ftrace-interop守护程序).<br>但是 Linux 系统中我们必须手动将这两个服务启动起来.</p>
+<h3 id="3-2-1-一键式-tmux-脚本"><a href="#3-2-1-一键式-tmux-脚本" class="headerlink" title="3.2.1 一键式 tmux 脚本"></a>3.2.1 一键式 tmux 脚本</h3><hr>
 <p>perfetto 为我们提供了 tools/tmux 脚本来完成类似与 Android 上类似的工作, 帮我们启动服务进程, 并设置一个工作面板.</p>
 <p>我们可以使用如下命令通过 tools/tmux 脚本来抓取 10S 调度的日志<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OUT=out/linux_clang_release CONFIG=test/configs/scheduling.cfg tools/tmux -n</span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -232,6 +234,8 @@
 <p>我们可以使用 Ctrl-B D 退出这个tmux会话<br>也可以使用 tmux attach -t demo, 来重新连接大这个 tmux 会话.<br>使用关闭它 tmux kill-session -t demo.<br>更过关于 tmux 的操作, 请参照博主的另外一篇博客 <a href="https://blog.csdn.net/gatieme/article/details/49301037" target="_blank" rel="noopener">linux下的终端利器—-tmux</a>.<br>注意请不要使用 tmux 这篇博客中提供的配置文件, 这篇博客中重新绑定了快捷键, 否则你可能需要重新修改 tmux 脚本或者配置文件.</p>
 </blockquote>
 <p>脚本会将跟踪到的日志信息以二进制的格式存在到的 protobuf 中, 参照 <a href="https://perfetto.dev/docs/reference/trace-packet-proto" target="_blank" rel="noopener">TracePacket</a></p>
+<h3 id="3-2-2-手动运行服务"><a href="#3-2-2-手动运行服务" class="headerlink" title="3.2.2 手动运行服务"></a>3.2.2 手动运行服务</h3><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./traced_probes</span><br><span class="line">./traced</span><br></pre></td></tr></table></figure>
 <h1 id="4-perfetto-的一些技巧"><a href="#4-perfetto-的一些技巧" class="headerlink" title="4 perfetto 的一些技巧"></a>4 perfetto 的一些技巧</h1><hr>
 <h2 id="4-1-自定义Config"><a href="#4-1-自定义Config" class="headerlink" title="4.1 自定义Config"></a>4.1 自定义Config</h2><hr>
 <p>目前最方便的配置文件生成方式是使用Perfetto UI 网站来帮助生成, 点击 Record new trace 会看到有很多的配置界面<br>选择想要的 tracepoints 之后 点击 Trace Command, 将命令内容拷贝出来直接在终端就可以执行.</p>
@@ -412,13 +416,13 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(4)</span>
     </li>
     
     <li>
-        <a href="/categories/linux/">linux</a>
-        <span class="badge">(4)</span>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
     </li>
     
     <li>
@@ -445,9 +449,9 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
-  
     <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
   
