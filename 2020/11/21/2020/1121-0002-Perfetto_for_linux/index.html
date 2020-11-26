@@ -235,7 +235,10 @@
 </blockquote>
 <p>脚本会将跟踪到的日志信息以二进制的格式存在到的 protobuf 中, 参照 <a href="https://perfetto.dev/docs/reference/trace-packet-proto" target="_blank" rel="noopener">TracePacket</a></p>
 <h3 id="3-2-2-手动运行服务"><a href="#3-2-2-手动运行服务" class="headerlink" title="3.2.2 手动运行服务"></a>3.2.2 手动运行服务</h3><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./traced_probes</span><br><span class="line">./traced</span><br></pre></td></tr></table></figure>
+<p>前面使用 tmux 运行了之后, 我们就清楚的知道启动了那些服务, 以及 perfetto 抓取的命令.</p>
+<p>手动将服务后台启起来, 然后运行 perfetto, 指定 config, 抓取 trace 日志.</p>
+<p>如下所示:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd out/linux_clang_release</span><br><span class="line"></span><br><span class="line">./traced_probes &amp;</span><br><span class="line"></span><br><span class="line">./traced &amp;</span><br><span class="line"></span><br><span class="line">./perfetto --txt -c ../../test/configs/scheduling.cfg  -o trace</span><br></pre></td></tr></table></figure>
 <h1 id="4-perfetto-的一些技巧"><a href="#4-perfetto-的一些技巧" class="headerlink" title="4 perfetto 的一些技巧"></a>4 perfetto 的一些技巧</h1><hr>
 <h2 id="4-1-自定义Config"><a href="#4-1-自定义Config" class="headerlink" title="4.1 自定义Config"></a>4.1 自定义Config</h2><hr>
 <p>目前最方便的配置文件生成方式是使用Perfetto UI 网站来帮助生成, 点击 Record new trace 会看到有很多的配置界面<br>选择想要的 tracepoints 之后 点击 Trace Command, 将命令内容拷贝出来直接在终端就可以执行.</p>
@@ -243,7 +246,7 @@
 <h2 id="4-2-使用-SQL-查询和分析日志"><a href="#4-2-使用-SQL-查询和分析日志" class="headerlink" title="4.2 使用 SQL 查询和分析日志"></a>4.2 使用 SQL 查询和分析日志</h2><hr>
 <p>子系统 TraceProcessor 基于 SQLite 为 Perfetto 提供了查询和分析数据的能力.<br>又作为独立的可执行文件提供: trace_processor.</p>
 <p>关于这部分的详细信息可以参照 <a href="https://perfetto.dev/docs/quickstart/trace-analysis" target="_blank" rel="noopener">Quickstart: SQL-based analysis and trace-based metrics</a></p>
-<h2 id="4-2-trace-格式转换工具"><a href="#4-2-trace-格式转换工具" class="headerlink" title="4.2 trace 格式转换工具"></a>4.2 trace 格式转换工具</h2><hr>
+<h2 id="4-3-trace-格式转换工具"><a href="#4-3-trace-格式转换工具" class="headerlink" title="4.3 trace 格式转换工具"></a>4.3 trace 格式转换工具</h2><hr>
 <p>Perfetto 提供了一个兼容的 UI 来打开 原来的 systrace, 参见 <a href="https://ui.perfetto.dev/assets/catapult_trace_viewer.html" target="_blank" rel="noopener">catapult_trace_viewer</a>.<br>不过毕竟是要替代 systrace 的, 因此使用起来有一丢丢问题, 而且也不能打开太的 systrace 文件.</p>
 <p>不过 Perfetto 也提供了一些方法, 让你把你抓到的日志转换成 systrace 格式.</p>
 <ul>
