@@ -224,7 +224,7 @@
 <p>perfetto cli 工具运行时候, 需要制定 config 文件, perfetto 默认为我们提供了多个配置模板, 位于仓库路径下 test/configs 目录下.<br>上面我们使用的是默认提供的 scheduling 的配置, 我们也可以自定义 config 或者用 perfeto ui 生成 config.</p>
 </blockquote>
 <p>脚本首先将我们需要的服务程序和 perfetto CLI 工具及其依赖库都拷贝到了 TMP 目录下 <code>/tmp/perfetto.xxxxxx</code>.<br>然后使用 tmux 帮我们打开了一个有三个面板的 TMUX 窗口, 从上往下分别启动了: traced, traced_probes 和 perfetto 抓取日志的工作台.<br>在最底下的 perfetto 工作面板中, 已经为我们预先填好了抓取 perfetto 的命令, 我们只需要回车就可以抓取 10S 调度日志.</p>
-<p><img src="./perfetto_run_tmux.gif" alt="使用 tmux 运行 perfetto"></p>
+<p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/perfetto/perfetto_run_tmux.gif" alt="使用 tmux 运行 perfetto"></p>
 <blockquote>
 <p>我们可以使用 Ctrl-B D 退出这个tmux会话<br>也可以使用 tmux attach -t demo, 来重新连接大这个 tmux 会话.<br>使用关闭它 tmux kill-session -t demo.<br>更过关于 tmux 的操作, 请参照博主的另外一篇博客 <a href="https://blog.csdn.net/gatieme/article/details/49301037" target="_blank" rel="noopener">linux下的终端利器—-tmux</a>.<br>注意请不要使用 tmux 这篇博客中提供的配置文件, 这篇博客中重新绑定了快捷键, 否则你可能需要重新修改 tmux 脚本或者配置文件.</p>
 </blockquote>
@@ -232,7 +232,7 @@
 <h1 id="4-perfetto-的一些技巧"><a href="#4-perfetto-的一些技巧" class="headerlink" title="4 perfetto 的一些技巧"></a>4 perfetto 的一些技巧</h1><hr>
 <h2 id="4-1-自定义Config"><a href="#4-1-自定义Config" class="headerlink" title="4.1 自定义Config"></a>4.1 自定义Config</h2><hr>
 <p>目前最方便的配置文件生成方式是使用Perfetto UI 网站来帮助生成, 点击 Record new trace 会看到有很多的配置界面<br>选择想要的 tracepoints 之后 点击 Trace Command, 将命令内容拷贝出来直接在终端就可以执行.</p>
-<p><img src="./perfetto_trace_command.png" alt="自定义 config"></p>
+<p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/perfetto/perfetto_trace_command.png" alt="自定义 config"></p>
 <h2 id="4-2-使用-SQL-查询和分析日志"><a href="#4-2-使用-SQL-查询和分析日志" class="headerlink" title="4.2 使用 SQL 查询和分析日志"></a>4.2 使用 SQL 查询和分析日志</h2><hr>
 <p>子系统 TraceProcessor 基于 SQLite 为 Perfetto 提供了查询和分析数据的能力.<br>又作为独立的可执行文件提供: trace_processor.</p>
 <p>关于这部分的详细信息可以参照 <a href="https://perfetto.dev/docs/quickstart/trace-analysis" target="_blank" rel="noopener">Quickstart: SQL-based analysis and trace-based metrics</a></p>
@@ -414,13 +414,13 @@
     </li>
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
+        <a href="/categories/qemu/">qemu</a>
+        <span class="badge">(1)</span>
     </li>
     
     <li>
-        <a href="/categories/qemu/">qemu</a>
-        <span class="badge">(1)</span>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
     </li>
     
     <li>
@@ -444,9 +444,9 @@
   
     <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
   
-    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
-  
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
   
     <a class="tag-item" href="/tags/scheduler/" title="scheduler">scheduler (3)</a>
   
