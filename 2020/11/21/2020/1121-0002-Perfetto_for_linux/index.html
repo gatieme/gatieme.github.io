@@ -153,8 +153,11 @@
 <p><br></p>
 <h1 id="1-Perfetto-概述"><a href="#1-Perfetto-概述" class="headerlink" title="1 Perfetto 概述"></a>1 Perfetto 概述</h1><hr>
 <h2 id="1-1-为什么需要-Perfetto"><a href="#1-1-为什么需要-Perfetto" class="headerlink" title="1.1 为什么需要 Perfetto"></a>1.1 为什么需要 Perfetto</h2><hr>
-<p>Perfetto 工具是 Android 下一代全新的统一的 trace 收集和分析框架, 在 Android 9.0(API级别28)或更高版本的设备上, 可以使用 System Tracing 的 System App 在设备上记录系统跟踪<br>, 可以抓取平台和app的 trace 信息, 是用来取代 systrace 的, 但 systrace 由于历史原因也还会一直存在, 并且 Perfetto 抓取的 trace 文件也可以同样转换成 systrace 视图.</p>
+<p>Perfetto 工具是 Android 下一代全新的统一的 trace 收集和分析框架, 在 Android 9.0(API级别28)或更高版本的设备上, 可以使用 System Tracing 的 System App 在设备上记录系统跟踪, 可以抓取平台和app的 trace 信息</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/perfetto/perfetto_ui_trace.png" alt="使用 prfetto UI 查看 trace 文件"></p>
+<p>虽然 Perfetto 是用来取代 systrace 的, 但 systrace 由于历史原因也还会一直存在, 并且 Perfetto 抓取的 trace 文件也可以同样转换成 systrace 视图.</p>
 <p>如果习惯用 systrace 的, 可以用 Perfetto UI 的 Open with legacy UI 转换成 systrace 视图来看</p>
+<p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/perfetto/perfetto_leggcy_ui.png" alt="使用 prfetto legacy UI 查看 trace 文件"></p>
 <h2 id="1-2-Perfetto-优点"><a href="#1-2-Perfetto-优点" class="headerlink" title="1.2 Perfetto 优点"></a>1.2 Perfetto 优点</h2><hr>
 <ol>
 <li>支持 Android 和 Linux 上的全系统跟踪, 可以在线抓取长时间(可达数小时)的 trace, 子系统<a href="https://perfetto.dev/docs/analysis/trace-processor" target="_blank" rel="noopener">跟踪处理器</a> 专门设计用于将数小时的跟踪数据有效地保存到本地中, 并基于流行的SQLite查询引擎公开SQL查询接口支持 SQL 查询. 这样就可以在后台开启, 让它一直抓取 trace 了, 特别适用于那种复现概率很低, 又比较严重的性能问题.</li>
@@ -409,6 +412,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/linux/">linux</a>
         <span class="badge">(4)</span>
     </li>
@@ -416,11 +424,6 @@
     <li>
         <a href="/categories/qemu/">qemu</a>
         <span class="badge">(1)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
     </li>
     
     <li>
@@ -442,11 +445,11 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
+  
     <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
-  
-    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
   
     <a class="tag-item" href="/tags/scheduler/" title="scheduler">scheduler (3)</a>
   
