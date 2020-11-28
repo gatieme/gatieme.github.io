@@ -158,6 +158,16 @@
 <p>虽然 Perfetto 是用来取代 systrace 的, 但 systrace 由于历史原因也还会一直存在, 并且 Perfetto 抓取的 trace 文件也可以同样转换成 systrace 视图.</p>
 <p>如果习惯用 systrace 的, 可以用 Perfetto UI 的 Open with legacy UI 转换成 systrace 视图来看</p>
 <p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/perfetto/perfetto_leggcy_ui.png" alt="使用 prfetto legacy UI 查看 trace 文件"></p>
+<blockquote>
+<p>注意<br>【请知悉】</p>
+<p>本文虽然是在介绍 perfetto 工具, 但是</p>
+<ol>
+<li>用 perfetto 进行数据分析, 数据是否会被传回 google 服务器, 未经考证;</li>
+<li>perfetto 抓取的日志中的确包含机器的一些信息;</li>
+<li>perfetto 的数据存储格式无法直接解析, 具体涉及的信息也未经剖析;<br>所以如果是涉密的数据(比如你在未发布的机器/服务器/开发板/手机等终端产品上抓取的日志),<br>没有数据证明, 该数据不会被收集分析.<br>因此如果设备或者数据涉及信息安全的相关内容, 请谨慎使用.<br>博主在此提醒, 如果因为不慎使用导致的问题, 本博主不承担任何责任.</li>
+</ol>
+<p>谢谢大家, 小弟在此不甚感激.</p>
+</blockquote>
 <h2 id="1-2-Perfetto-优点"><a href="#1-2-Perfetto-优点" class="headerlink" title="1.2 Perfetto 优点"></a>1.2 Perfetto 优点</h2><hr>
 <ol>
 <li>支持 Android 和 Linux 上的全系统跟踪, 可以在线抓取长时间(可达数小时)的 trace, 子系统<a href="https://perfetto.dev/docs/analysis/trace-processor" target="_blank" rel="noopener">跟踪处理器</a> 专门设计用于将数小时的跟踪数据有效地保存到本地中, 并基于流行的SQLite查询引擎公开SQL查询接口支持 SQL 查询. 这样就可以在后台开启, 让它一直抓取 trace 了, 特别适用于那种复现概率很低, 又比较严重的性能问题.</li>
@@ -433,11 +443,6 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
         <a href="/categories/linux/">linux</a>
         <span class="badge">(4)</span>
     </li>
@@ -445,6 +450,11 @@
     <li>
         <a href="/categories/qemu/">qemu</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
     </li>
     
     <li>
@@ -466,11 +476,11 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
-  
     <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
   
     <a class="tag-item" href="/tags/scheduler/" title="scheduler">scheduler (3)</a>
   
@@ -523,6 +533,6 @@
 
     <!--博客js脚本 -->
     <!-- 这里放网站js脚本 -->
-<script src="/js/main.js?v=1606575264450"></script>
+<script src="/js/main.js?v=1606575938094"></script>
 </body>
 </html>
