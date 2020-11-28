@@ -144,7 +144,7 @@
 <tr>
 <td>2020-11-21</td>
 <td style="text-align:center"><a href="https://blog.csdn.net/gatieme" target="_blank" rel="noopener">gatieme</a></td>
-<td style="text-align:center"><a href="https://github.com/gatieme/AderXCoding/tree/master/system/tools/glibc/001-version" target="_blank" rel="noopener">AderXCoding</a></td>
+<td style="text-align:center"><a href="https://github.com/gatieme/LDD-LinuxDeviceDrivers/tree/master/study/debug/tools/systrace" target="_blank" rel="noopener"><code>LDD-LinuxDeviceDrivers/study/debug/tools/systrace</code></a></td>
 <td style="text-align:center"><a href="https://blog.csdn.net/gatieme/article/details/108945425" target="_blank" rel="noopener">Linux(Ubuntu/CentOS) 下查看 GLIBC 版本</a></td>
 <td style="text-align:center"><a href="https://oskernellab.com/2020/11/21/2020/1121-0001-Systrace_for_linux">Systrace for Linux-使用 systrace 分析 linux &amp; android 的调度问题</a></td>
 </tr>
@@ -200,7 +200,7 @@
 </blockquote>
 <p>最简单的抓取 trace 的脚本如下所示</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">TRACING_PATH=/sys/kernel/debug/tracing</span><br><span class="line"></span><br><span class="line">get_systrace()</span><br><span class="line">&#123;</span><br><span class="line">        local sleepTime=$<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        rm -rf trace.html</span><br><span class="line">        echo &gt; $TRACING_PATH/trace</span><br><span class="line"></span><br><span class="line">        echo <span class="number">1</span> &gt; $TRACING_PATH/events/sched/sched_wakeup/enable</span><br><span class="line">        echo <span class="number">1</span> &gt; $TRACING_PATH/events/sched/sched_wakeup_new/enable</span><br><span class="line">        echo <span class="number">1</span> &gt; $TRACING_PATH/events/sched/sched_switch/enable</span><br><span class="line">        echo <span class="number">1</span> &gt; $TRACING_PATH/events/irq/enable</span><br><span class="line"></span><br><span class="line">        echo <span class="number">1</span> &gt; $TRACING_PATH/tracing_on</span><br><span class="line"></span><br><span class="line">        sleep $sleepTime</span><br><span class="line"></span><br><span class="line">        echo <span class="number">0</span> &gt; $TRACING_PATH/tracing_on</span><br><span class="line">        echo <span class="number">0</span> &gt; $TRACING_PATH/events/enable</span><br><span class="line"></span><br><span class="line">        cat $TRACING_PATH/trace &gt; trace.html</span><br><span class="line">        echo &gt; $TRACING_PATH/trace</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">get_systrace $<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>该脚本同样集成到了 github 仓库中, 可以使用如下命令直接抓取 10S 的日志信息.</p>
+<p>该脚本同样集成到了 <a href="https://github.com/gatieme/systrace/blob/master/scripts/systrace.sh" target="_blank" rel="noopener">github 仓库</a>中, 可以使用如下命令直接抓取 10S 的日志信息.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh ./systrace.sh <span class="number">10</span></span><br></pre></td></tr></table></figure>
 <h1 id="4-参考资料"><a href="#4-参考资料" class="headerlink" title="4 参考资料"></a>4 参考资料</h1><hr>
 <p><a href="https://www.cnblogs.com/andy-songwei/p/10659564.html" target="_blank" rel="noopener">工利其器】必会工具之（三）systrace篇（1）官网翻译</a><br><a href="https://blog.csdn.net/pwl999/article/details/83510943" target="_blank" rel="noopener">systrace 解析</a></p>
@@ -383,13 +383,13 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/linux/">linux</a>
-        <span class="badge">(4)</span>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
     </li>
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(4)</span>
     </li>
     
     <li>
@@ -416,9 +416,9 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
-    <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
-  
     <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (8)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
   
@@ -473,6 +473,6 @@
 
     <!--博客js脚本 -->
     <!-- 这里放网站js脚本 -->
-<script src="/js/main.js?v=1606575078226"></script>
+<script src="/js/main.js?v=1606575264457"></script>
 </body>
 </html>
