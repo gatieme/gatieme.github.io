@@ -82,19 +82,6 @@
 .comment .list-wrap .list .user-comment .user-comment-body abbr {
   border-bottom: 1px dotted;
 }
-.post .post-content ul,
-.comment .box .com-text .main .text-area-preview ul,
-.comment .list-wrap .list .user-comment .user-comment-body ul,
-.post .post-content ol,
-.comment .box .com-text .main .text-area-preview ol,
-.comment .list-wrap .list .user-comment .user-comment-body ol,
-.post .post-content dl,
-.comment .box .com-text .main .text-area-preview dl,
-.comment .list-wrap .list .user-comment .user-comment-body dl {
-  margin: 0 20px;
-  padding: 0;
-  line-height: line-height;
-}
 .post .post-content ul ul,
 .comment .box .com-text .main .text-area-preview ul ul,
 .comment .list-wrap .list .user-comment .user-comment-body ul ul,
@@ -1111,12 +1098,18 @@ pre .javascript .function {
   outline: 0;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.07) inset;
 }
+.search-form .form-control::placeholder {
+  font-size: 14px;
+  color: #999;
+}
 .search-form .btn {
   position: absolute;
   top: 10px;
   right: 0;
   width: 70px;
   padding: 7px 0;
+  text-align: center;
+  outline: 0;
 }
 .search-form .btn:hover {
   opacity: 0.75;
