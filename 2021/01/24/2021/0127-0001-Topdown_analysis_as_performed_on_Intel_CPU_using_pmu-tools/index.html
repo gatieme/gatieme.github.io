@@ -156,7 +156,7 @@
 <p>程序的执行效率是完全依赖与 CPU 执行的, 软件的性能优化, 除了通用的一些优化外, 更重要的是软硬协同优化, 充分发挥 CPU 的硬件特性. 因此我们软件上的一些性能问题, 可以在 CPU 执行流程中的某一环直观的显现出来. 但是由于 CPU 的复杂性, 普通用户和软件开发人员很难也很少有经历去弄懂 CPU 架构, 更不用谈从 CPU 架构上理解软件上那一块出现的问题. </p>
 <p>如果有一套软硬协同的分析方法, 可以帮助用户快速了解/分析/定界/定位 当前应用在 CPU 上的性能瓶颈, 用户就可以针对当前 CPU 有针对性的修改自己的程序, 以充分利用当前的硬件资源.</p>
 <p>因此 Intel 提出了一套软硬协同进行性能分析的更正式的方法. 它称为自上而下的微体系结构分析方法(TMAM) (<a href="https://software.intel.com/sites/default/files/managed/9e/bc/64-ia-32-architectures-optimization-manual.pdf" target="_blank" rel="noopener">&lt;英特尔®64和IA-32架构优化参考手册&gt; 附录B.1</a>). 在这种方法论中, 我们尝试从高层组件(如前端, 后端, 退休, 分支预测器)开始检测导致执行停滞的原因, 并缩小性能低效的根源. </p>
-<p><img src="./TMAM.png" alt="Intel TOPDOWN-自上而下的微体系结构分析方法"></p>
+<p><img src="https://raw.githubusercontent.com/gatieme/LDD-LinuxDeviceDrivers/master/study/debug/tools/topdown/pmu-tools/TMAM.png" alt="Intel TOPDOWN-自上而下的微体系结构分析方法"></p>
 <p>进行 TOPDOWN 分析的过程通过是一个不断迭代优化的过程, 他的通常流程如下</p>
 <ol>
 <li><p>确定性能问题的类型;<br>1.1.    我们可以先从高层次的划分中, 先粗粒度的当前性能问题主要问题是在哪个阶段(类型).<br>1.2.    接着从低层次的划分中, 继续明确具体是哪块出的问题.</p>
@@ -512,6 +512,6 @@
 
     <!--博客js脚本 -->
     <!-- 这里放网站js脚本 -->
-<script src="/js/main.js?v=1611748843927"></script>
+<script src="/js/main.js?v=1611749128990"></script>
 </body>
 </html>
