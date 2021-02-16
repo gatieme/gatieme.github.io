@@ -164,6 +164,7 @@ JELON = deepCopy(JELON, {
       }
     });
     this.initSearch();
+    this.initImgPreviewer();
   },
   $: function(str) {
     return /^(\[object HTML)[a-zA-Z]*(Element\])$/.test(Object.prototype.toString.call(str)) ? str : document.getElementById(str);
@@ -195,7 +196,7 @@ JELON = deepCopy(JELON, {
 
       function GoTop() {
         if (document.documentElement.scrollTop + document.body.scrollTop < 1) {
-          clearInterval(Timer)
+          clearInterval(Timer);
         } else {
           document.documentElement.scrollTop /= 1.1;
           document.body.scrollTop /= 1.1
@@ -207,8 +208,8 @@ JELON = deepCopy(JELON, {
     var _this = this;
     if (document.getElementById('searchKeyword') && document.getElementById('searchButton')) {
       document.getElementById('searchKeyword').onkeyup = function (e) {
-        var e = e || window.event
-        var keyCode = e.keyCode || e.which
+        var e = e || window.event;
+        var keyCode = e.keyCode || e.which || e.key;
         if (keyCode === 13) {
           _this.startSearch();
         }
@@ -220,6 +221,63 @@ JELON = deepCopy(JELON, {
     if (document.getElementById('searchKeyword').value) {
       document.getElementById('searchKeywordHidden').value = 'site:oskernellab.com ' + document.getElementById('searchKeyword').value;
       document.getElementById('searchForm').submit();
+    }
+  },
+  initImgPreviewer: function() {
+    var _this = this;
+    var $articleWrapper = document.getElementById(_this.name + '__articlePostContent');
+    var $imgs = $articleWrapper && $articleWrapper.getElementsByTagName('img');
+    if ($articleWrapper && $imgs.length) {
+      $articleWrapper.addEventListener('click', function(e) {
+        _this.handleImgPreview(e);
+      }, false);
+    }
+  },
+  handleImgPreview: function(e) {
+    var target = e.target;
+    if (target.nodeName.toUpperCase() === 'IMG') {
+      this.createImgPreviewer(target.src);
+      this.onRemoveImgPreviewer();
+    }
+  },
+  createImgPreviewer: function(src) {
+    var $imgPreviewer = document.createElement('div');
+    var $img = document.createElement('img');
+    $imgPreviewer.id = this.name + '__imgPreviewer';
+    $imgPreviewer.style = [
+      'position: fixed',
+      'display: flex',
+      'top: 0',
+      'right: 0',
+      'bottom: 0',
+      'left: 0',
+      'width: 100%',
+      'height: 100%',
+      'align-items: center',
+      'background-color: rgba(30, 30, 30, .9)',
+      'transition-duration: inherit',
+      'transition-property: opacity',
+      'transition-timing-function: cubic-bezier(.47,0,.74,.71)',
+      'z-index: 10000'
+    ].join(';');
+    $img.src = src;
+    $img.alt = '预览';
+    $img.style = [
+      'margin: 0 auto',
+      'max-width: 80%',
+      'max-height: 80%',
+      'transform: scale(1, 1)',
+      'z-index: 10001'
+    ].join(';');
+    $imgPreviewer.appendChild($img);
+    document.body.appendChild($imgPreviewer);
+  },
+  onRemoveImgPreviewer: function() {
+    var $imgPreviewer = document.getElementById(this.name + '__imgPreviewer');
+    if ($imgPreviewer) {
+      $imgPreviewer.onclick = function () {
+        document.body.removeChild($imgPreviewer);
+      }
     }
   }
 });
