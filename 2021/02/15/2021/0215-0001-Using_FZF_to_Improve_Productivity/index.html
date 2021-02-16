@@ -16,7 +16,7 @@
     
     <link rel="icon" href="/favicon.ico">
     
-    <link rel="stylesheet" href="/css/style.css?v=1613490643520">
+    <link rel="stylesheet" href="/css/style.css?v=1613491914424">
     <!--[if lt IE 9]>
     <script src="/js/html5.js"></script>
     <![endif]-->
@@ -243,8 +243,8 @@
 <li>Emacs 风格按键绑定</li>
 <li>支持鼠标操作</li>
 </ul>
-<h2 id="3-2-搜索"><a href="#3-2-搜索" class="headerlink" title="3.2 搜索"></a>3.2 搜索</h2><hr>
-<h3 id="3-2-1-搜索语法"><a href="#3-2-1-搜索语法" class="headerlink" title="3.2.1 搜索语法"></a>3.2.1 搜索语法</h3><hr>
+<h2 id="3-3-搜索"><a href="#3-3-搜索" class="headerlink" title="3.3 搜索"></a>3.3 搜索</h2><hr>
+<h3 id="3-3-1-搜索语法"><a href="#3-3-1-搜索语法" class="headerlink" title="3.3.1 搜索语法"></a>3.3.1 搜索语法</h3><hr>
 <p>fzf 默认会以 “extened-search” 模式启动, 这种模式下不支持正则搜索, 但是你可以输入多个搜索关键词, 以空格分隔, fzf 会无序查找匹配所有字符串.</p>
 <p>如 ^music .mp3$, sbtrkt !fire.</p>
 <p>fzf 提供了一些增强功能的搜索语法, 如下表所示: </p>
@@ -297,13 +297,13 @@
 <blockquote>
 <p>注: 如果不想使用模糊匹配或者不想”引用”每个文字, 可以使用 <code>-e/--exact</code> 选项. 注意如果使用 <code>-e/--exact</code>, 那么 <code>&#39;</code> 就变成了解引用, 即:’abc表示匹配a,b和c(a,b,c有序), 而不仅仅是匹配abc.</p>
 </blockquote>
-<h3 id="3-2-2-或操作"><a href="#3-2-2-或操作" class="headerlink" title="3.2.2 或操作"></a>3.2.2 或操作</h3><hr>
+<h3 id="3-3-2-或操作"><a href="#3-3-2-或操作" class="headerlink" title="3.3.2 或操作"></a>3.3.2 或操作</h3><hr>
 <p>fzf 以空格分隔, 默认使用的是 与 操作(无序), 如果想使用 或 操作, 那么可以使用 <code>|</code> : </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^core go$ | rb$ | py$ # 表示以`core`开头, 且以`go`或`rb`或`py`结尾</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注: | 前后必须带空格. </p>
 </blockquote>
-<h3 id="3-2-3-模糊补全"><a href="#3-2-3-模糊补全" class="headerlink" title="3.2.3 模糊补全"></a>3.2.3 模糊补全</h3><hr>
+<h3 id="3-3-3-模糊补全"><a href="#3-3-3-模糊补全" class="headerlink" title="3.3.3 模糊补全"></a>3.3.3 模糊补全</h3><hr>
 <p>在 bash 或 zsh 终端上, 可以通过输入 <code>**</code> 来触发 fzf 对文件/目录的模糊补全(查找), 如下例子所示:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Files under current directory</span><br><span class="line"># - You can select multiple items with TAB key</span><br><span class="line">vim **&lt;TAB&gt;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -437,12 +437,12 @@
 <h2 id="4-2-VIM-大杀器"><a href="#4-2-VIM-大杀器" class="headerlink" title="4.2 VIM 大杀器"></a>4.2 VIM 大杀器</h2><hr>
 <p>fzf 本身并不是一个vim 插件, 本来作者只提供了基本的wrapper函数(比如fzf#run). 但后来作者发现很多人并不熟悉 VIMScript, 所以就创建一个默认的 <a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">vim plugin</a>.</p>
 <p>如果对FZF和vim和结合感兴趣可以看： <a href="https://segmentfault.com/a/1190000016186540" target="_blank" rel="noopener">VIM与模糊搜索神器FZF的集成用法 - 从简单到高级</a></p>
-<h1 id="4-参考资料"><a href="#4-参考资料" class="headerlink" title="4 参考资料"></a>4 参考资料</h1><hr>
-<h2 id="4-1-中文资料"><a href="#4-1-中文资料" class="headerlink" title="4.1 中文资料"></a>4.1 中文资料</h2><hr>
+<h1 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5 参考资料"></a>5 参考资料</h1><hr>
+<h2 id="5-1-中文资料"><a href="#5-1-中文资料" class="headerlink" title="5.1 中文资料"></a>5.1 中文资料</h2><hr>
 <p>由于开始对于 FZF 不甚了解, 因此本博文较多参考了 <a href="https://www.jianshu.com/p/b48131e4ad06" target="_blank" rel="noopener">fzf - 命令行模糊搜索神器</a> 和 <a href="https://segmentfault.com/a/1190000011328080" target="_blank" rel="noopener">模糊搜索神器fzf</a>. 在这里对这两位作者的成果表示尊重和感谢. 鄙人同一时间正在写其他技术博文, 为了保证其他博文的细致, 因此这篇略显粗糙, 敬请谅解.</p>
 <p><a href="https://github.com/junegunn/fzf/wiki" target="_blank" rel="noopener">FZF wiki</a></p>
 <p><a href="https://segmentfault.com/a/1190000016186043" target="_blank" rel="noopener">模糊搜索神器FZF番外篇</a></p>
-<h2 id="4-2-外文资料"><a href="#4-2-外文资料" class="headerlink" title="4.2 外文资料"></a>4.2 外文资料</h2><hr>
+<h2 id="5-2-外文资料"><a href="#5-2-外文资料" class="headerlink" title="5.2 外文资料"></a>5.2 外文资料</h2><hr>
 <p><a href="https://pragmaticpineapple.com/improving-vim-workflow-with-fzf/" target="_blank" rel="noopener">Improving Vim Workflow With fzf</a></p>
 <p><a href="https://medium.com/akatsuki-taiwan-technology/using-fzf-to-improve-productivity-84da1df28163" target="_blank" rel="noopener">Using FZF to Improve Productivity</a></p>
 <p><a href="https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d" target="_blank" rel="noopener">Boost Your Command-Line Productivity With Fuzzy Finder</a></p>
@@ -520,7 +520,7 @@
 
 <!-- 文章评论 -->
 
-  <script src="/js/comment.js?v=1613490643113"></script>
+  <script src="/js/comment.js?v=1613491914008"></script>
   <div id="comments" class="comment">
     <!--
     <div class="sign-bar">
@@ -716,7 +716,7 @@
 
     <!--博客js脚本 -->
     <!-- 这里放网站js脚本 -->
-<script src="/js/main.js?v=1613490643527"></script>
+<script src="/js/main.js?v=1613491914430"></script>
 
 </body>
 </html>
