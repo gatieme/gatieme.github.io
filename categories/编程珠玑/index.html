@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>`hexo`分类下的文章 | OSKernelLAB</title>
+    <title>`编程珠玑`分类下的文章 | OSKernelLAB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="gatieme, 成坚, 内核, linux, kernel">
     <meta name="description" content="内核杂谈">
@@ -16,7 +16,7 @@
     
     <link rel="icon" href="/favicon.ico">
     
-    <link rel="stylesheet" href="/css/style.css?v=1613566436818">
+    <link rel="stylesheet" href="/css/style.css?v=1613567354465">
     <!--[if lt IE 9]>
     <script src="/js/html5.js"></script>
     <![endif]-->
@@ -56,27 +56,27 @@
         <div class="dropnav iconfont icon-nav" id="JELON__btnDropNav"></div>
         <ul class="menu hidden" id="JELON__menu">
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/" title="首页" class="iconfont icon-home">&nbsp;首页</a>
             </li>
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/archives/" title="归档" class="iconfont icon-archives">&nbsp;归档</a>
             </li>
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/lab/" title="实验室" class="iconfont icon-archives">&nbsp;实验室</a>
             </li>
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/navigation/" title="网址导航" class="iconfont icon-archives">&nbsp;网址导航</a>
             </li>
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/about/" title="关于" class="iconfont icon-staff">&nbsp;关于</a>
             </li>
             
-            <li rel="/categories/hexo/index.html" class="item ">
+            <li rel="/categories/编程珠玑/index.html" class="item ">
                 <a href="/comment/" title="留言" class="iconfont icon-comment">&nbsp;留言</a>
             </li>
             
@@ -128,7 +128,7 @@
     <h3 class="widget-hd">
         <strong>
             
-                `hexo`分类下的文章
+                `编程珠玑`分类下的文章
             
         </strong>
     </h3>
@@ -138,7 +138,109 @@
     <header>
         <!-- 标签这有且只能显示一个 -->
         
-        <a class="cat-link" href="/categories/hexo/">hexo</a>
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">
+    		用户态使用 glibc/backtrace 追踪函数调用堆栈定位段错误
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        gatieme 发表于
+        <time datetime="2018-11-17T07:22:00.000Z">2018-11-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/linux/" title="linux">linux</a> / 
+    
+        <a href="/tags/debug/" title="debug">debug</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                一般用户态程序出现段错误, 而我们想要察看函数运行时堆栈, 常用的方法是使用GDB(bt命令)之类的外部调试器,但是有些时候为了分析程序的BUG,(主要针对长时间运行程序的分析),在程序出错时打印出函数的调用堆栈是非常有用的. C 库中提供了一些堆栈 backtrace 的函数用于跟踪函数的堆栈信息, 我们也可以通过注册异常处理函数来实现函数异常时自动打印调用栈.
+            
+            <p class="more">
+                <a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://oskernellab.com/2018/11/17/2018/1117-0001-use_glibc_backtrace_to_report_active_stack_frames_userspace/" title="用户态使用 glibc/backtrace 追踪函数调用堆栈定位段错误">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">
+    		qemu中使用 9p virtio, 支持 host 和 guest 中共享目录
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        gatieme 发表于
+        <time datetime="2018-09-30T11:46:00.000Z">2018-09-30</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/qemu/" title="qemu">qemu</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                在使用qemu调试内核的时候, 如果没有网络，想要部署点驱动或者程序上去都需要重新制作文件系统，本文讲解了如何通过 9p virtio fs 实现在 qemu 和 host 机器上共享文件和目录。
+            
+            <p class="more">
+                <a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://oskernellab.com/2018/09/30/2018/0930-0003-qemu_use_9pnet_virtio_fs_to_share_folder/" title="qemu中使用 9p virtio, 支持 host 和 guest 中共享目录">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
         
         <!-- 文章标题 -->
         
@@ -157,7 +259,9 @@
             标签：
             
     
-        <a href="/tags/hexo/" title="hexo">hexo</a>
+        <a href="/tags/hexo/" title="hexo">hexo</a> / 
+    
+        <a href="/tags/blog/" title="blog">blog</a>
     
 
         </span>
@@ -188,7 +292,7 @@
     <header>
         <!-- 标签这有且只能显示一个 -->
         
-        <a class="cat-link" href="/categories/hexo/">hexo</a>
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
         
         <!-- 文章标题 -->
         
@@ -207,7 +311,9 @@
             标签：
             
     
-        <a href="/tags/hexo/" title="hexo">hexo</a>
+        <a href="/tags/hexo/" title="hexo">hexo</a> / 
+    
+        <a href="/tags/blog/" title="blog">blog</a>
     
 
         </span>
@@ -226,6 +332,112 @@
             <a href="https://oskernellab.com/2018/09/02/2018/0902-0001-use_hexo_to_build_your_github_page_blog/" title="使用 Hexo 搭建 GitHub Page 博客(一)">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/">
+    		cmatrix 炫酷的终端代码雨
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        gatieme 发表于
+        <time datetime="2018-08-05T06:38:00.000Z">2018-08-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/linux/" title="linux">linux</a> / 
+    
+        <a href="/tags/tools/" title="tools">tools</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                cmatrix
+            
+            <p class="more">
+                <a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://oskernellab.com/2018/08/05/2018/0805-0002_cmatrix/" title="cmatrix 炫酷的终端代码雨">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程珠玑/">编程珠玑</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/">
+    		Static site generators
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        gatieme 发表于
+        <time datetime="2018-08-05T06:37:00.000Z">2018-08-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/linux/" title="linux">linux</a> / 
+    
+        <a href="/tags/tools/" title="tools">tools</a> / 
+    
+        <a href="/tags/debug/" title="debug">debug</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                With the CMS of Wordpress and other blog systems, increasingly bloated. The emergence of static blog system to a certain extent, solve this problem, and thus get a lot of personal bloggers of all ages. So, what are static blog program in the end it?
+            
+            <p class="more">
+                <a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://oskernellab.com/2018/08/05/2018/0805-0001_static-site-generators/" title="Static site generators">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图">
                 
             </a>
         </div>
@@ -266,28 +478,23 @@
 <ul class="widget-bd">
     
     <li>
-        <a href="/categories/hexo/">hexo</a>
-        <span class="badge">(2)</span>
+        <a href="/categories/编程珠玑/">编程珠玑</a>
+        <span class="badge">(6)</span>
     </li>
     
     <li>
         <a href="/categories/linux/">linux</a>
-        <span class="badge">(5)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/qemu/">qemu</a>
-        <span class="badge">(1)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/debug/">debug</a>
-        <span class="badge">(2)</span>
+        <span class="badge">(3)</span>
     </li>
     
     <li>
         <a href="/categories/scheduler/">scheduler</a>
         <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/debug/">debug</a>
+        <span class="badge">(1)</span>
     </li>
     
     <li>
@@ -306,11 +513,15 @@
   
     <a class="tag-item" href="/tags/linux/" title="linux">linux (10)</a>
   
+    <a class="tag-item" href="/tags/debug/" title="debug">debug (5)</a>
+  
     <a class="tag-item" href="/tags/scheduler/" title="scheduler">scheduler (3)</a>
   
-    <a class="tag-item" href="/tags/debug/" title="debug">debug (3)</a>
+    <a class="tag-item" href="/tags/tools/" title="tools">tools (2)</a>
   
     <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (2)</a>
+  
+    <a class="tag-item" href="/tags/blog/" title="blog">blog (2)</a>
   
     <a class="tag-item" href="/tags/qemu/" title="qemu">qemu (1)</a>
   
@@ -359,7 +570,7 @@
 
     <!--博客js脚本 -->
     <!-- 这里放网站js脚本 -->
-<script src="/js/main.js?v=1613566436824"></script>
+<script src="/js/main.js?v=1613567354472"></script>
 
 </body>
 </html>
